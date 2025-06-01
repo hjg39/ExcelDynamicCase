@@ -12,7 +12,13 @@ namespace ExcelDynamicCase
         {
             foreach (Name name in Globals.ThisWorkbook.Names)
             {
-                name?.Delete();
+                try
+                {
+                    name?.Delete();
+                }
+                catch (System.Exception)
+                {
+                }
             }
         }
 
@@ -35,11 +41,14 @@ namespace ExcelDynamicCase
                 return;
             }
 
-            if (target.Formula is string[,] formulae)
+            if (target.Formula is object[,] formulae)
             {
-                foreach (string formula in formulae)
+                foreach (object formula in formulae)
                 {
-                    clearRange |= !ValidateFormula(formula);
+                    if (formula is string formulaString)
+                    {
+                        clearRange |= !ValidateFormula(formulaString);
+                    }
                 }
             }
 

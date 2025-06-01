@@ -32,7 +32,35 @@ namespace ExcelDynamicCase.Domain
             "CONCATENATE",
             "GROUPBY",
             "AGGREGATE",
-            "SUBTOTAL"
+            "SUBTOTAL",
+            "REDUCE",
+            "SCAN",
+            "MONTH",
+            "IFS",
+            "TOCOL",
+            "TOROW",
+            "SUM",
+            "PRODUCT",
+            "UNIQUE",
+            "BASE",
+            "CEILING.MATH",
+            "FLOOR.MATH",
+            "COMBINA",
+            "FACT",
+            "LCM",
+            "GCD",
+            "ROWS",
+            "COLS",
+            "SUMIF",
+            "SUMIFS",
+            "COUNTIF",
+            "COUNTIFS",
+            "AVERAGE",
+            "AVERAGEIFS",
+            "MEDIAN",
+            "MODE.SNGL",
+            "MODE.MULTI",
+            "SEQUENCE"
         };
 
         public static readonly List<string> LookupFunctions = new List<string>()
@@ -46,7 +74,28 @@ namespace ExcelDynamicCase.Domain
             "INDIRECT",
             "VLOOKUP",
             "XLOOKUP",
-            "INDEX"
+            "INDEX",
+            "LAMBDA",
+            "LET",
+            "EXACT",
+            "LOG10",
+            "RANDARRAY",
+            "DAY",
+            "IFERROR",
+            "SORT",
+            "SORTBY",
+            "SWITCH",
+            "MAKEARRAY",
+            "LARGE",
+            "SMALL",
+            "COMPLEX",
+            "IMAGINARY",
+            "IMREAL",
+            "IMSUM",
+            "IMPRODUCT",
+            "IMSUB",
+            "IMDIV",
+            "OFFSET"
         };
 
         public static readonly List<string> ManipulationFunctions = new List<string>()
@@ -61,7 +110,25 @@ namespace ExcelDynamicCase.Domain
             "WRAPCOLS",
             "WRAPROWS",
             "NOT",
-            "MOD"
+            "MOD",
+            "CHAR",
+            "CODE",
+            "FILTER",
+            "DATE",
+            "YEAR",
+            "IF",
+            "MAP",
+            "UPPER",
+            "LOWER",
+            "SUBSTITUTE",
+            "LEFT",
+            "RIGHT",
+            "MID",
+            "EXPAND",
+            "N",
+            "NA",
+            "MMULT",
+            "MUNIT"
         };
     }
 }

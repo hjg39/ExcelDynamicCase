@@ -1,12 +1,9 @@
-﻿using System;
-using System.Data;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Microsoft.VisualStudio.Tools.Applications.Runtime;
 using Excel = Microsoft.Office.Interop.Excel;
-using Office = Microsoft.Office.Core;
 
 namespace ExcelDynamicCase
 {
@@ -21,9 +18,26 @@ namespace ExcelDynamicCase
             LevelManagement.InitialiseLevels();
 
             this.SheetChange += ThisWorkbook_SheetChange;
+            this.NewSheet += ThisWorkbook_NewSheet;
 
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             
+        }
+
+        private void ThisWorkbook_NewSheet(object sh)
+        {
+            try
+            {
+                if (sh is Worksheet ws)
+                {
+                    ws.Delete();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void HookSheetChangeEvent()
@@ -55,6 +69,11 @@ namespace ExcelDynamicCase
         {
             SheetChangeValidator.DeleteAllNames();
             SheetChangeValidator.ValidateChanges(sheet, target);
+
+            if (Globals.L2_Battle.TimeDidElapse)
+            {
+                Globals.L2_Battle.YouLose();
+            }
         }
 
         #region VSTO Designer generated code

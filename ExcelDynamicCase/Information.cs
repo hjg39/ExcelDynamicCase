@@ -17,7 +17,7 @@ namespace ExcelDynamicCase
         private void Sheet2_Shutdown(object sender, System.EventArgs e)
         {
         }
-
+            
         public void UpdateLevelInfo(ILevel level)
         {
             this.Unprotect(Storage.PASSWORD);
