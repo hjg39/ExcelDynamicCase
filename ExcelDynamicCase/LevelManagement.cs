@@ -36,6 +36,8 @@ namespace ExcelDynamicCase
 
         public static void InitialiseLevels()
         {
+            Globals.ThisWorkbook.UnHookSheetChangeEvent();
+
             ThisWorkbook wb = Globals.ThisWorkbook;
 
             foreach (Interop.Worksheet ws in wb.Worksheets)
@@ -48,7 +50,7 @@ namespace ExcelDynamicCase
                 {
                     continue;
                 }
-                else if (ws.Name == Globals.L1_ChooseAStarter.Name)
+                else if (ws.Name == "L1_ChooseAStarter")
                 {
                     ws.Protect(Storage.PASSWORD);
                 }
@@ -60,7 +62,10 @@ namespace ExcelDynamicCase
             }
 
             Globals.L1_ChooseAStarter.Visible = Interop.XlSheetVisibility.xlSheetVisible;
+            Globals.L1_ChooseAStarter.RunSetup();
             Globals.L1_ChooseAStarter.Activate();
+
+            Globals.ThisWorkbook.HookSheetChangeEvent();
         }
     }
 }

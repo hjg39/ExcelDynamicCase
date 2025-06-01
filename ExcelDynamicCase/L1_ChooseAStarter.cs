@@ -46,7 +46,10 @@ namespace ExcelDynamicCase
             }
         }
 
-        public void RunSetup() { }
+        public void RunSetup()
+        {
+            this.Cells[8, 3].Value = null;
+        }
 
         public void NextLevel(object o)
         {
