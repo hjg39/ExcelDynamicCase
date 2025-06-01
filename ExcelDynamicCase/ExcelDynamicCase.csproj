@@ -101,12 +101,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ILevel.cs" />
+    <Compile Include="LevelManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sheet1.cs">
+    <Compile Include="L1_ChooseAStarter.cs">
       <DependentUpon>ExcelDynamicCase.xlsx</DependentUpon>
     </Compile>
-    <Compile Include="Sheet1.Designer.cs">
-      <DependentUpon>Sheet1.Designer.xml</DependentUpon>
+    <Compile Include="L1_ChooseAStarter.Designer.cs">
+      <DependentUpon>L1_ChooseAStarter.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="SheetChangeValidator.cs" />
+    <Compile Include="Storage.cs" />
+    <Compile Include="Workings.cs">
+      <DependentUpon>ExcelDynamicCase.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Workings.Designer.cs">
+      <DependentUpon>Workings.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Information.cs">
+      <DependentUpon>ExcelDynamicCase.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Information.Designer.cs">
+      <DependentUpon>Information.Designer.xml</DependentUpon>
     </Compile>
     <Compile Include="ThisWorkbook.cs">
       <DependentUpon>ExcelDynamicCase.xlsx</DependentUpon>
@@ -141,8 +157,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Sheet1.Designer.xml">
-      <DependentUpon>Sheet1.cs</DependentUpon>
+    <None Include="Workings.Designer.xml">
+      <DependentUpon>Workings.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Information.Designer.xml">
+      <DependentUpon>Information.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="L1_ChooseAStarter.Designer.xml">
+      <DependentUpon>L1_ChooseAStarter.cs</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>
@@ -165,7 +191,9 @@
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="ExcelDynamicCase.xlsx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\root\Office16\excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]ExcelDynamicCase.xlsx&quot;" />
         <Host Name="Excel Document" Path=".\ExcelDynamicCase.xlsx" GeneratedCodeNamespace="ExcelDynamicCase">
-          <HostItem Name="Sheet1" Code="Sheet1.cs" CanonicalName="Sheet1" DisplayName="Sheet1" Blueprint="Sheet1.Designer.xml" GeneratedCode="Sheet1.Designer.cs" />
+          <HostItem Name="Sheet3" Code="L1_ChooseAStarter.cs" CanonicalName="Sheet3" DisplayName="L1_ChooseAStarter" Blueprint="L1_ChooseAStarter.Designer.xml" GeneratedCode="L1_ChooseAStarter.Designer.cs" />
+          <HostItem Name="Sheet1" Code="Workings.cs" CanonicalName="Sheet1" DisplayName="Workings" Blueprint="Workings.Designer.xml" GeneratedCode="Workings.Designer.cs" />
+          <HostItem Name="Sheet2" Code="Information.cs" CanonicalName="Sheet2" DisplayName="Information" Blueprint="Information.Designer.xml" GeneratedCode="Information.Designer.cs" />
           <HostItem Name="ThisWorkbook" Code="ThisWorkbook.cs" CanonicalName="ThisWorkbook" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.cs" />
         </Host>
       </FlavorProperties>

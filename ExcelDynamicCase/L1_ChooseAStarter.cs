@@ -1,20 +1,24 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.Tools.Applications.Runtime;
+using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using Microsoft.VisualStudio.Tools.Applications.Runtime;
 using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
 
 namespace ExcelDynamicCase
 {
-    public partial class Sheet1
+    public partial class L1_ChooseAStarter : ILevel
     {
-        private void Sheet1_Startup(object sender, System.EventArgs e)
+        public string LevelName { get => "Choose A Starter"; }
+
+        public int BaseDeadline { get => 30; }
+
+        private void Sheet3_Startup(object sender, System.EventArgs e)
         {
         }
 
-        private void Sheet1_Shutdown(object sender, System.EventArgs e)
+        private void Sheet3_Shutdown(object sender, System.EventArgs e)
         {
         }
 
@@ -26,8 +30,8 @@ namespace ExcelDynamicCase
         /// </summary>
         private void InternalStartup()
         {
-            this.Startup += new System.EventHandler(Sheet1_Startup);
-            this.Shutdown += new System.EventHandler(Sheet1_Shutdown);
+            this.Startup += new System.EventHandler(Sheet3_Startup);
+            this.Shutdown += new System.EventHandler(Sheet3_Shutdown);
         }
 
         #endregion

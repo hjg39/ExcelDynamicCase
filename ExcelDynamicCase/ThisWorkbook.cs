@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.Tools.Applications.Runtime;
@@ -10,12 +11,22 @@ namespace ExcelDynamicCase
 {
     public partial class ThisWorkbook
     {
+        public static Stopwatch LevelStopwatch { get; set; } = Stopwatch.StartNew();
+
+
         private void ThisWorkbook_Startup(object sender, System.EventArgs e)
         {
+            this.SheetChange += ThisWorkbook_SheetChange;
+            LevelManagement.UpdateLevel(Globals.L1_ChooseAStarter);
         }
 
         private void ThisWorkbook_Shutdown(object sender, System.EventArgs e)
         {
+        }
+
+        private void ThisWorkbook_SheetChange(object sheet, Excel.Range target)
+        {
+            SheetChangeValidator.ValidateChanges(sheet, target);
         }
 
         #region VSTO Designer generated code
