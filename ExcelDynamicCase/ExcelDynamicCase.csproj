@@ -16,7 +16,7 @@
     <SolutionID>0f209017-7e55-43e4-808e-ec19c47883df</SolutionID>
     <IsWebBootstrapper>False</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\Users\harry\source\repos\ExcelDynamicCase\publish\</PublishUrl>
+    <PublishUrl>..\ExcelDynamicCase\publish\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>1.0.0.2</ApplicationVersion>
