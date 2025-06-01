@@ -25,5 +25,5 @@ If you want to build or modify the source code:
 
 ### Requirements
 
-- Visual Studio 2022 or later (with .NET 4.8 targeting pack and appropriate VSTO bulid tools and configurationp)
+- Visual Studio 2022 or later (with .NET 4.8 targeting pack and appropriate VSTO bulid tools and configuration)
 - Git (optional but recommended)
