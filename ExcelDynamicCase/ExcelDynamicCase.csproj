@@ -12,12 +12,35 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <OfficeApplication>Excel</OfficeApplication>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <BootstrapperComponentsLocation>HomeSite</BootstrapperComponentsLocation>
     <ProjectGuid>{4E6B1B7C-CA5E-4926-B0C3-063B2C91039D}</ProjectGuid>
     <SolutionID>0f209017-7e55-43e4-808e-ec19c47883df</SolutionID>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>C:\Users\harry\source\repos\ExcelDynamicCase\publish\</PublishUrl>
+    <InstallUrl />
+    <TargetCulture>en</TargetCulture>
+    <ApplicationVersion>1.0.0.2</ApplicationVersion>
+    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>days</UpdateIntervalUnits>
+    <ProductName>ExcelDynamicCase</ProductName>
+    <PublisherName />
+    <SupportUrl />
+    <FriendlyName>ExcelDynamicCase</FriendlyName>
+    <OfficeApplicationDescription />
   </PropertyGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
       <Visible>False</Visible>
       <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
@@ -271,14 +294,14 @@
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="ExcelDynamicCase.xlsx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\root\Office16\excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]ExcelDynamicCase.xlsx&quot;" />
-        <Host Name="Excel Document" Path=".\ExcelDynamicCase.xlsx" GeneratedCodeNamespace="ExcelDynamicCase">
-          <HostItem Name="Sheet2" Code="Information.cs" CanonicalName="Sheet2" DisplayName="Information" Blueprint="Information.Designer.xml" GeneratedCode="Information.Designer.cs" />
-          <HostItem Name="Sheet3" Code="L1_ChooseAStarter.cs" CanonicalName="Sheet3" DisplayName="L1_ChooseAStarter" Blueprint="L1_ChooseAStarter.Designer.xml" GeneratedCode="L1_ChooseAStarter.Designer.cs" />
-          <HostItem Name="Sheet4" Code="B1_RivalBattleOffer.cs" CanonicalName="Sheet4" DisplayName="B1_RivalBattleOffer" Blueprint="B1_RivalBattleOffer.Designer.xml" GeneratedCode="B1_RivalBattleOffer.Designer.cs" />
-          <HostItem Name="Sheet5" Code="L2_Battle.cs" CanonicalName="Sheet5" DisplayName="L2_Battle" Blueprint="L2_Battle.Designer.xml" GeneratedCode="L2_Battle.Designer.cs" />
-          <HostItem Name="Sheet6" Code="L2_ExcelHQ.cs" CanonicalName="Sheet6" DisplayName="L2_ExcelHQ" Blueprint="L2_ExcelHQ.Designer.xml" GeneratedCode="L2_ExcelHQ.Designer.cs" />
-          <HostItem Name="ThisWorkbook" Code="ThisWorkbook.cs" CanonicalName="ThisWorkbook" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.cs" />
-          <HostItem Name="Sheet1" Code="Workings.cs" CanonicalName="Sheet1" DisplayName="Workings" Blueprint="Workings.Designer.xml" GeneratedCode="Workings.Designer.cs" />
+        <Host Name="Excel Document" Path=".\ExcelDynamicCase.xlsx" GeneratedCodeNamespace="ExcelDynamicCase" PublishedHash="9B56F85A8859AFBE59D7125046F9F35896C5737F">
+          <HostItem Name="Sheet4" Code="B1_RivalBattleOffer.cs" CanonicalName="Sheet4" PublishedHash="A79D18217DD247D4D7E6ABDE4EE5DFE46FAC4E3A" DisplayName="B1_RivalBattleOffer" Blueprint="B1_RivalBattleOffer.Designer.xml" GeneratedCode="B1_RivalBattleOffer.Designer.cs" />
+          <HostItem Name="Sheet2" Code="Information.cs" CanonicalName="Sheet2" PublishedHash="8961866B9D6CF9D93078B68363C5AABEECEC7A1B" DisplayName="Information" Blueprint="Information.Designer.xml" GeneratedCode="Information.Designer.cs" />
+          <HostItem Name="Sheet3" Code="L1_ChooseAStarter.cs" CanonicalName="Sheet3" PublishedHash="407ACB6D2CFBDDF3B2EA0EE18E17F25406D83DB5" DisplayName="L1_ChooseAStarter" Blueprint="L1_ChooseAStarter.Designer.xml" GeneratedCode="L1_ChooseAStarter.Designer.cs" />
+          <HostItem Name="Sheet5" Code="L2_Battle.cs" CanonicalName="Sheet5" PublishedHash="FE808C7619F55AC4B0F2045721C4F31627812EA9" DisplayName="L2_Battle" Blueprint="L2_Battle.Designer.xml" GeneratedCode="L2_Battle.Designer.cs" />
+          <HostItem Name="Sheet6" Code="L2_ExcelHQ.cs" CanonicalName="Sheet6" PublishedHash="0581D19968AC2D313C18527E5C7055FCC23D06BB" DisplayName="L2_ExcelHQ" Blueprint="L2_ExcelHQ.Designer.xml" GeneratedCode="L2_ExcelHQ.Designer.cs" />
+          <HostItem Name="ThisWorkbook" Code="ThisWorkbook.cs" CanonicalName="ThisWorkbook" PublishedHash="41E376371A3C2ABC8CACF0C8C8B658C9AB400789" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.cs" />
+          <HostItem Name="Sheet1" Code="Workings.cs" CanonicalName="Sheet1" PublishedHash="91FFBA5F41E75E1FD08428E036AD7ABC82EC0C54" DisplayName="Workings" Blueprint="Workings.Designer.xml" GeneratedCode="Workings.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>
