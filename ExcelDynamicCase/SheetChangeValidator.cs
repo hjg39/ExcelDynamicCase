@@ -8,6 +8,14 @@ namespace ExcelDynamicCase
     {
         public static Regex ExcelFunctionRegex = new Regex(@"\b([A-Za-z_][A-Za-z0-9_.]*)\s*\(", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
 
+        public static void DeleteAllNames()
+        {
+            foreach (Name name in Globals.ThisWorkbook.Names)
+            {
+                name?.Delete();
+            }
+        }
+
         public static void ValidateChanges(object sheet, Range target)
         {
             bool clearRange = false;
@@ -27,6 +35,14 @@ namespace ExcelDynamicCase
                 return;
             }
 
+            if (target.Formula is string[,] formulae)
+            {
+                foreach (string formula in formulae)
+                {
+                    clearRange |= !ValidateFormula(formula);
+                }
+            }
+
             if (target.Formula is string s)
             {
                 clearRange |= !ValidateFormula(s);
@@ -40,6 +56,11 @@ namespace ExcelDynamicCase
 
         public static bool ValidateFormula(string formula)
         {
+            if (formula is null)
+            {
+                return true;
+            }
+
             MatchCollection matches = ExcelFunctionRegex.Matches(formula);
 
             foreach (Match match in matches)

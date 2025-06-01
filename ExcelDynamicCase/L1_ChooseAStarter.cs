@@ -46,6 +46,8 @@ namespace ExcelDynamicCase
             }
         }
 
+        public void RunSetup() { }
+
         public void NextLevel(object o)
         {
             LevelManagement.NextLevel(this, Globals.B1_RivalBattleOffer, Globals.B1_RivalBattleOffer);

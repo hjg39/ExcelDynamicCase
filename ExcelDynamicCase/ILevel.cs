@@ -16,5 +16,7 @@ namespace ExcelDynamicCase
         string LevelName { get; }
 
         int BaseDeadline { get; }
+
+        void RunSetup();
     }
 }

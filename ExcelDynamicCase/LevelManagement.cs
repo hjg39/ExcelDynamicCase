@@ -16,12 +16,22 @@ namespace ExcelDynamicCase
 
         public static void NextLevel(WorksheetBase worksheetFrom, WorksheetBase worksheetTo, ILevel levelTo)
         {
+            Globals.ThisWorkbook.UnHookSheetChangeEvent();
+
             worksheetFrom.Visible = Interop.XlSheetVisibility.xlSheetVeryHidden;
 
-            worksheetTo.Visible = Interop.XlSheetVisibility.xlSheetVisible;
+            worksheetTo.Unprotect(Storage.PASSWORD);
+            levelTo.RunSetup();
+            worksheetTo.Protect(Storage.PASSWORD);
+
             UpdateLevelInfo(levelTo);
 
+            worksheetTo.Visible = Interop.XlSheetVisibility.xlSheetVisible;
             worksheetTo.Activate();
+
+
+            Globals.Workings.Cells.Clear();
+            Globals.ThisWorkbook.HookSheetChangeEvent();
         }
 
         public static void InitialiseLevels()

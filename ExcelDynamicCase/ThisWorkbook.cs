@@ -2,6 +2,7 @@
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.Tools.Applications.Runtime;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -20,7 +21,30 @@ namespace ExcelDynamicCase
             LevelManagement.InitialiseLevels();
 
             this.SheetChange += ThisWorkbook_SheetChange;
+
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             
+        }
+
+        public void HookSheetChangeEvent()
+        {
+            this.SheetChange -= ThisWorkbook_SheetChange;
+            this.SheetChange += ThisWorkbook_SheetChange;
+        }
+
+        public void UnHookSheetChangeEvent()
+        {
+            this.SheetChange -= ThisWorkbook_SheetChange;
+        }
+
+        private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("An unhandled error occurred, oops.");
+            sb.AppendLine(e.ExceptionObject.ToString());
+
+            MessageBox.Show(sb.ToString());
         }
 
         private void ThisWorkbook_Shutdown(object sender, System.EventArgs e)
@@ -29,6 +53,7 @@ namespace ExcelDynamicCase
 
         private void ThisWorkbook_SheetChange(object sheet, Excel.Range target)
         {
+            SheetChangeValidator.DeleteAllNames();
             SheetChangeValidator.ValidateChanges(sheet, target);
         }
 

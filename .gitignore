@@ -44,6 +44,7 @@ YuGiOh/Temp/*
 YuGiOh/Logs/*
 YuGiOh/UserSettings/*
 
+packages/*
 
 # Unity3D generated meta files
 *.pidb.meta

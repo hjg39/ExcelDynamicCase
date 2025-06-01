@@ -8,17 +8,13 @@ using Office = Microsoft.Office.Core;
 
 namespace ExcelDynamicCase
 {
-    public partial class B1_RivalBattleOffer : ILevel
+    public partial class Sheet7
     {
-        public string LevelName => "Rival Battle Offer";
-
-        public int BaseDeadline => 2000;
-
-        private void Sheet4_Startup(object sender, System.EventArgs e)
+        private void Sheet7_Startup(object sender, System.EventArgs e)
         {
         }
 
-        private void Sheet4_Shutdown(object sender, System.EventArgs e)
+        private void Sheet7_Shutdown(object sender, System.EventArgs e)
         {
         }
 
@@ -30,8 +26,8 @@ namespace ExcelDynamicCase
         /// </summary>
         private void InternalStartup()
         {
-            this.Startup += new System.EventHandler(Sheet4_Startup);
-            this.Shutdown += new System.EventHandler(Sheet4_Shutdown);
+            this.Startup += new System.EventHandler(Sheet7_Startup);
+            this.Shutdown += new System.EventHandler(Sheet7_Shutdown);
         }
 
         #endregion

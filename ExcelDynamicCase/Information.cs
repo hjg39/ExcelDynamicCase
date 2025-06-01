@@ -32,6 +32,13 @@ namespace ExcelDynamicCase
                 this.Cells[startingRow++, 2].Value = formula;
             }
 
+            startingRow = 6;
+
+            foreach (string formula in Storage.GetAllLockedFunctions())
+            {
+                this.Cells[startingRow++, 3].Value = formula;
+            }
+
             this.Protect(Storage.PASSWORD);
         }
 
