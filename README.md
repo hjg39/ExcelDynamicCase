@@ -1,6 +1,6 @@
 # Excel Dynamic Case
 
-This is a C# VSTO Excel Workbook .NET Framework that calculates Elo ratings for players in the Excel World Championship series. It processes match data and produces updated Elo scores based on configurable parameters.
+This is a C#.NET Framework VSTO Excel Workbook that is a proof of concept for an Excel challenge that you play through, unlocking the use of new functions as you go.
 
 ## 🚀 Quick Start (Run the App)
 
