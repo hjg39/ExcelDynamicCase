@@ -59,6 +59,7 @@ namespace ExcelDynamicCase
                 }
             }
 
+            Globals.L1_ChooseAStarter.Visible = Interop.XlSheetVisibility.xlSheetVisible;
             Globals.L1_ChooseAStarter.Activate();
         }
     }
