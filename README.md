@@ -6,8 +6,16 @@ This is a C# VSTO Excel Workbook .NET Framework that calculates Elo ratings for 
 
 If you just want to run the pre-built version of this tool without building the solution yourself:
 
-1. **Download the [`Published`](https://github.com/hjg39/ExcelDynamicCase/tree/main/Published) folder** from the repository.
-2. Inside the folder, open the xlsx and hit run.
+1. **Download the repository (Code > Download ZIP).
+2. Right click on the download zip file and select 'unblock'
+3. Unzip the zip file to a folder
+4. Open a blank instance of Excel
+5. File > Options > Trust Centre > Trust Centre Settings > Trusted Locations
+6. Add the 'publish' subfolder to your trusted locations
+7. Go to the publish subfolder and open the xlsx
+8. Click 'Install'
+9. Enjoy!
+10. (Optionally when you are done, you can remove the installation from 'add or remove programs > ExcelDynamicCase' remove
 
 ---
 
