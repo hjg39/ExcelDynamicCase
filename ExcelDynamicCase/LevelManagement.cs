@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Interop = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Tools.Excel;
 
 namespace ExcelDynamicCase
 {
@@ -10,11 +7,49 @@ namespace ExcelDynamicCase
     {
         public static ILevel CurrentLevel = null;
 
-        public static void UpdateLevel(ILevel level)
+        public static void UpdateLevelInfo(ILevel level)
         {
             CurrentLevel = level;
 
             Globals.Information.UpdateLevelInfo(level);
+        }
+
+        public static void NextLevel(WorksheetBase worksheetFrom, WorksheetBase worksheetTo, ILevel levelTo)
+        {
+            worksheetFrom.Visible = Interop.XlSheetVisibility.xlSheetVeryHidden;
+
+            worksheetTo.Visible = Interop.XlSheetVisibility.xlSheetVisible;
+            UpdateLevelInfo(levelTo);
+
+            worksheetTo.Activate();
+        }
+
+        public static void InitialiseLevels()
+        {
+            ThisWorkbook wb = Globals.ThisWorkbook;
+
+            foreach (Interop.Worksheet ws in wb.Worksheets)
+            {
+                if (ws.Name == Globals.Information.Name)
+                {
+                    ws.Protect(Storage.PASSWORD);
+                }
+                else if (ws.Name == Globals.Workings.Name)
+                {
+                    continue;
+                }
+                else if (ws.Name == Globals.L1_ChooseAStarter.Name)
+                {
+                    ws.Protect(Storage.PASSWORD);
+                }
+                else
+                {
+                    ws.Visible = Interop.XlSheetVisibility.xlSheetVeryHidden;
+                    ws.Protect(Storage.PASSWORD);
+                }
+            }
+
+            Globals.L1_ChooseAStarter.Activate();
         }
     }
 }

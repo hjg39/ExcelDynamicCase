@@ -20,12 +20,19 @@ namespace ExcelDynamicCase
 
         public void UpdateLevelInfo(ILevel level)
         {
-            this.Unprotect("fdfbgiskfhdspaoojoFODBSVFIUS");
+            this.Unprotect(Storage.PASSWORD);
 
             ((Excel.Range)this.Cells[3, 2]).Value2 = level.LevelName;
             ((Excel.Range)this.Cells[3, 4]).Value2 = DateTime.Now.AddMinutes(level.BaseDeadline).ToOADate();
 
-            this.Protect("fdfbgiskfhdspaoojoFODBSVFIUS");
+            int startingRow = 6;
+
+            foreach (string formula in Storage.AllowedFormulae)
+            {
+                this.Cells[startingRow++, 2].Value = formula;
+            }
+
+            this.Protect(Storage.PASSWORD);
         }
 
         #region VSTO Designer generated code

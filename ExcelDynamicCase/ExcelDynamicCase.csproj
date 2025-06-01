@@ -110,6 +110,12 @@
     <Compile Include="L1_ChooseAStarter.Designer.cs">
       <DependentUpon>L1_ChooseAStarter.Designer.xml</DependentUpon>
     </Compile>
+    <Compile Include="B1_RivalBattle.cs">
+      <DependentUpon>ExcelDynamicCase.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="B1_RivalBattle.Designer.cs">
+      <DependentUpon>B1_RivalBattle.Designer.xml</DependentUpon>
+    </Compile>
     <Compile Include="SheetChangeValidator.cs" />
     <Compile Include="Storage.cs" />
     <Compile Include="Workings.cs">
@@ -171,6 +177,11 @@
       <DependentUpon>L1_ChooseAStarter.cs</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="B1_RivalBattle.Designer.xml">
+      <DependentUpon>B1_RivalBattle.cs</DependentUpon>
+    </None>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -191,10 +202,11 @@
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="ExcelDynamicCase.xlsx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\root\Office16\excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]ExcelDynamicCase.xlsx&quot;" />
         <Host Name="Excel Document" Path=".\ExcelDynamicCase.xlsx" GeneratedCodeNamespace="ExcelDynamicCase">
-          <HostItem Name="Sheet3" Code="L1_ChooseAStarter.cs" CanonicalName="Sheet3" DisplayName="L1_ChooseAStarter" Blueprint="L1_ChooseAStarter.Designer.xml" GeneratedCode="L1_ChooseAStarter.Designer.cs" />
-          <HostItem Name="Sheet1" Code="Workings.cs" CanonicalName="Sheet1" DisplayName="Workings" Blueprint="Workings.Designer.xml" GeneratedCode="Workings.Designer.cs" />
           <HostItem Name="Sheet2" Code="Information.cs" CanonicalName="Sheet2" DisplayName="Information" Blueprint="Information.Designer.xml" GeneratedCode="Information.Designer.cs" />
+          <HostItem Name="Sheet3" Code="L1_ChooseAStarter.cs" CanonicalName="Sheet3" DisplayName="L1_ChooseAStarter" Blueprint="L1_ChooseAStarter.Designer.xml" GeneratedCode="L1_ChooseAStarter.Designer.cs" />
+          <HostItem Name="Sheet4" Code="B1_RivalBattle.cs" CanonicalName="Sheet4" DisplayName="B1_RivalBattleOffer" Blueprint="B1_RivalBattle.Designer.xml" GeneratedCode="B1_RivalBattle.Designer.cs" />
           <HostItem Name="ThisWorkbook" Code="ThisWorkbook.cs" CanonicalName="ThisWorkbook" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.cs" />
+          <HostItem Name="Sheet1" Code="Workings.cs" CanonicalName="Sheet1" DisplayName="Workings" Blueprint="Workings.Designer.xml" GeneratedCode="Workings.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>
