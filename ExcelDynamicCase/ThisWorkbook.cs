@@ -9,6 +9,8 @@ namespace ExcelDynamicCase
 {
     public partial class ThisWorkbook
     {
+        private static Process _unity;
+
         public static Stopwatch LevelStopwatch { get; set; } = Stopwatch.StartNew();
 
 
@@ -21,7 +23,22 @@ namespace ExcelDynamicCase
             this.NewSheet += ThisWorkbook_NewSheet;
 
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-            
+
+            StartUnity();
+        }
+
+        private static void StartUnity()
+        {
+            if (_unity is null || _unity.HasExited)
+            {
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = @"C:\Users\harry\source\repos\ExcelDynamicCase\ExcelDynamicCase\overworld\My project.exe",
+                    Arguments = "-screen-fullscreen 0 -popupwindow",
+                    UseShellExecute = true
+                };
+                _unity = Process.Start(psi);
+            }
         }
 
         private void ThisWorkbook_NewSheet(object sh)
