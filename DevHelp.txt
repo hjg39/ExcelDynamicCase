@@ -1,0 +1,16 @@
+Option A – Manual DLL drop (quickest)
+Build the class-library project once in Visual Studio (Build ▸ Build GameContracts).
+The DLL appears in bin\Release\netstandard2.0\GameContracts.dll.
+
+Copy that DLL (and its GameContracts.pdb if you want step-through debugging) into your Unity project:
+YourUnityProject/Assets/Plugins/.
+
+Unity detects the new file, imports it, and you can immediately:
+
+csharp
+Copy
+Edit
+using GameContracts;   // in any Unity script
+Whenever you make changes, rebuild the DLL and copy it over again.
+
+Tip: If Unity shows “Assembly has reference to missing package XYZ”, copy any dependency DLLs the same way (e.g., System.Text.Json if you’re on a very old Unity build).
