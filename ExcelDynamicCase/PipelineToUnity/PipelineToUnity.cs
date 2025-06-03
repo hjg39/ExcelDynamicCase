@@ -17,23 +17,25 @@ namespace ExcelDynamicCase.PipelineToUnity
                 Trace.WriteLine("Connecting to pipe...");
                 await pipe.ConnectAsync();
                 Trace.WriteLine("Pipe connected.");
+                pipe.ReadMode = PipeTransmissionMode.Message;
+                Trace.WriteLine("Assigned read mode.");
 
                 try
                 {
 
+                    await PipeHelper.WriteAsync(pipe, battleResult);   // ➜ Unity
+                    BattleParameters result = await PipeHelper.ReadAsync<BattleParameters>(pipe); // ⬅ Unity
+
+                    Trace.WriteLine(result.ToString());
+                    Trace.WriteLine(result.QuestionId);
+                    Trace.WriteLine(string.Join(",", result.AllowedFunctions));
                 }
-                catch (System.Exception)
+                catch (System.Exception ex)
                 {
 
                     throw;
                 }
 
-                await PipeHelper.WriteAsync(pipe, battleResult);   // ➜ Unity
-                BattleParameters result = await PipeHelper.ReadAsync<BattleParameters>(pipe); // ⬅ Unity
-
-                Trace.WriteLine(result.ToString());
-                Trace.WriteLine(result.QuestionId);
-                Trace.WriteLine(string.Join(",", result.AllowedFunctions));
             }
 
         }

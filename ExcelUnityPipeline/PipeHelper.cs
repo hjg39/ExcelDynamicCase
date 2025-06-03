@@ -1,45 +1,41 @@
-﻿using System;
-using System.Buffers;
+﻿// PipeHelper.cs  (works everywhere)
+
+using Newtonsoft.Json;
 using System.IO;
 using System.IO.Pipes;
-using System.Text.Json;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 public static class PipeHelper
 {
-    private static readonly JsonSerializerOptions JsonOpts = new JsonSerializerOptions()
-    {
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-    };
-
+    /// write any object as UTF-8 JSON
     public static async Task WriteAsync<T>(
         PipeStream pipe, T payload, CancellationToken token = default)
     {
-        // Serialize directly to a fresh byte[] (no spans involved)
-        byte[] json = JsonSerializer.SerializeToUtf8Bytes(payload, JsonOpts);
-        await pipe.WriteAsync(json, 0, json.Length, token).ConfigureAwait(false);
-        await pipe.FlushAsync(token).ConfigureAwait(false);
+        string json = JsonConvert.SerializeObject(payload);
+        byte[] buf = Encoding.UTF8.GetBytes(json);
+        await pipe.WriteAsync(buf, 0, buf.Length, token);
+        await pipe.FlushAsync(token);
     }
 
+    /// read a complete message and deserialize it
     public static async Task<T> ReadAsync<T>(
         PipeStream pipe, CancellationToken token = default)
     {
         using (var ms = new MemoryStream())
         {
-            var buf = new byte[8 * 1024];
+            var chunk = new byte[8 * 1024];
             do
             {
-                int n = await pipe.ReadAsync(buf, 0, buf.Length, token)
-                                    .ConfigureAwait(false);
+                int n = await pipe.ReadAsync(chunk, 0, chunk.Length, token);
                 if (n == 0) throw new EndOfStreamException();
-                ms.Write(buf, 0, n);
+                ms.Write(chunk, 0, n);
             }
             while (!pipe.IsMessageComplete);
 
-            ms.Position = 0;
-            return await JsonSerializer.DeserializeAsync<T>(ms, JsonOpts, token)
-                                        .ConfigureAwait(false);
+            string json = Encoding.UTF8.GetString(ms.GetBuffer(), 0, (int)ms.Length);
+            return JsonConvert.DeserializeObject<T>(json);
         }
     }
 }
