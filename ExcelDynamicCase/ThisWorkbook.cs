@@ -1,7 +1,9 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿using ExcelDynamicCase.PipelineToUnity;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Diagnostics;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -24,10 +26,10 @@ namespace ExcelDynamicCase
 
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
-            StartUnity();
+            Task.Run(async () => await StartUnity());
         }
 
-        private static void StartUnity()
+        private async static Task StartUnity()
         {
             if (_unity is null || _unity.HasExited)
             {
@@ -39,6 +41,12 @@ namespace ExcelDynamicCase
                 };
                 _unity = Process.Start(psi);
             }
+
+            await PipelineToUnity.PipelineToUnity.SendOverworldStateAsync(new ExcelUnityPipeline.BattleResult()
+            {
+                BattleResultId = Guid.NewGuid(),
+                IsSuccess = true,
+            });
         }
 
         private void ThisWorkbook_NewSheet(object sh)

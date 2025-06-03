@@ -168,6 +168,7 @@
     <Compile Include="Domain\Rival.cs" />
     <Compile Include="ILevel.cs" />
     <Compile Include="LevelManagement.cs" />
+    <Compile Include="PipelineToUnity\PipelineToUnity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="L1_ChooseAStarter.cs">
       <DependentUpon>ExcelDynamicCase.xlsx</DependentUpon>
@@ -274,7 +275,12 @@
       <DependentUpon>L2_ExcelHQ.cs</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ExcelUnityPipeline\ExcelUnityPipeline.csproj">
+      <Project>{9130accf-a59f-42e6-96b9-555c538f46c8}</Project>
+      <Name>ExcelUnityPipeline</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

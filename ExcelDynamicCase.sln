@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelDynamicCase", "ExcelDynamicCase\ExcelDynamicCase.csproj", "{4E6B1B7C-CA5E-4926-B0C3-063B2C91039D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelUnityPipeline", "ExcelUnityPipeline\ExcelUnityPipeline.csproj", "{9130ACCF-A59F-42E6-96B9-555C538F46C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4E6B1B7C-CA5E-4926-B0C3-063B2C91039D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E6B1B7C-CA5E-4926-B0C3-063B2C91039D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E6B1B7C-CA5E-4926-B0C3-063B2C91039D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9130ACCF-A59F-42E6-96B9-555C538F46C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9130ACCF-A59F-42E6-96B9-555C538F46C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9130ACCF-A59F-42E6-96B9-555C538F46C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9130ACCF-A59F-42E6-96B9-555C538F46C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
