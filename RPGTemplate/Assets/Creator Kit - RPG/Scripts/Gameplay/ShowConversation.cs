@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Creator_Kit___RPG.Persistence;
 using RPGM.Core;
 using RPGM.Gameplay;
 using RPGM.UI;
@@ -27,6 +28,10 @@ namespace RPGM.Events
             else
                 ci = conversation.Get(conversationItemKey);
 
+            if (!string.IsNullOrEmpty(ci.unlockedFunction))
+            {
+                SaveManager.SaveUnlockedFunction(ci.unlockedFunction);
+            }
 
             //if this item contains an unstarted quest, schedule a start quest event for the quest.
             if (ci.quest != null)

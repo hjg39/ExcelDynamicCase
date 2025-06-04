@@ -27823,7 +27823,7 @@ PrefabInstance:
     - target: {fileID: 6576607644387126882, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
       propertyPath: m_AnimatedTiles.Array.data[5].second.m_AnimationSpeed
-      value: 3.0000002
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6576607644387126882, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
@@ -27863,7 +27863,7 @@ PrefabInstance:
     - target: {fileID: 6576607644387126882, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
       propertyPath: m_AnimatedTiles.Array.data[13].second.m_AnimationSpeed
-      value: 3
+      value: 3.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 6576607644387126882, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
@@ -27883,7 +27883,7 @@ PrefabInstance:
     - target: {fileID: 6576607644387126882, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
       propertyPath: m_AnimatedTiles.Array.data[17].second.m_AnimationSpeed
-      value: 3.0000002
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6576607644387126882, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
@@ -38576,7 +38576,7 @@ PrefabInstance:
     - target: {fileID: 7195864304880846418, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
       propertyPath: m_AnimatedTiles.Array.data[13].second.m_AnimationSpeed
-      value: 3.0000002
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7195864304880846418, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
@@ -38691,7 +38691,7 @@ PrefabInstance:
     - target: {fileID: 7195864304880846418, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
       propertyPath: m_AnimatedTiles.Array.data[36].second.m_AnimationSpeed
-      value: 3.0000002
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7195864304880846418, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
@@ -38766,7 +38766,7 @@ PrefabInstance:
     - target: {fileID: 7195864304880846418, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
       propertyPath: m_AnimatedTiles.Array.data[51].second.m_AnimationSpeed
-      value: 3
+      value: 3.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 7195864304880846418, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
@@ -38791,7 +38791,7 @@ PrefabInstance:
     - target: {fileID: 7195864304880846418, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
       propertyPath: m_AnimatedTiles.Array.data[56].second.m_AnimationSpeed
-      value: 3
+      value: 3.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 7195864304880846418, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
@@ -38801,7 +38801,7 @@ PrefabInstance:
     - target: {fileID: 7195864304880846418, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
       propertyPath: m_AnimatedTiles.Array.data[58].second.m_AnimationSpeed
-      value: 3
+      value: 3.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 7195864304880846418, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
@@ -38866,7 +38866,7 @@ PrefabInstance:
     - target: {fileID: 7195864304880846418, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
       propertyPath: m_AnimatedTiles.Array.data[71].second.m_AnimationSpeed
-      value: 3
+      value: 3.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 7195864304880846418, guid: a6ecdc63374074e6eb42a738a5683a91,
         type: 3}
@@ -49206,15 +49206,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353955888, guid: 74b5c6b26f0fc4028b9aac1a7a36767d, type: 3}
       propertyPath: items.Array.data[2].text
-      value: Thanks!
+      value: Here you go, you have now unlocked INDEX
       objectReference: {fileID: 0}
     - target: {fileID: 353955888, guid: 74b5c6b26f0fc4028b9aac1a7a36767d, type: 3}
       propertyPath: items.Array.data[3].text
-      value: Thanks!
+      value: You sweet Summer child, you have now unlocked VLOOKUP!
       objectReference: {fileID: 0}
     - target: {fileID: 353955888, guid: 74b5c6b26f0fc4028b9aac1a7a36767d, type: 3}
       propertyPath: items.Array.data[4].text
-      value: Thanks!
+      value: Here you go, you have now unlocked XLOOKUP!
+      objectReference: {fileID: 0}
+    - target: {fileID: 353955888, guid: 74b5c6b26f0fc4028b9aac1a7a36767d, type: 3}
+      propertyPath: items.Array.data[2].unlockedFunction
+      value: INDEX
+      objectReference: {fileID: 0}
+    - target: {fileID: 353955888, guid: 74b5c6b26f0fc4028b9aac1a7a36767d, type: 3}
+      propertyPath: items.Array.data[3].unlockedFunction
+      value: VLOOKUP
+      objectReference: {fileID: 0}
+    - target: {fileID: 353955888, guid: 74b5c6b26f0fc4028b9aac1a7a36767d, type: 3}
+      propertyPath: items.Array.data[4].unlockedFunction
+      value: XLOOKUP
       objectReference: {fileID: 0}
     - target: {fileID: 353955888, guid: 74b5c6b26f0fc4028b9aac1a7a36767d, type: 3}
       propertyPath: items.Array.data[0].options.Array.size

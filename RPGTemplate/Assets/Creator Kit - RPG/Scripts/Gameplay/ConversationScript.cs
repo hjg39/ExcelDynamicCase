@@ -32,7 +32,7 @@ namespace RPGM.Gameplay
         {
             if (originalConversationPiece.id != newConversationPiece.id)
             {
-                foreach (var i in items)
+                foreach (ConversationPiece i in items)
                 {
                     var options = i.options;
                     for (var j = 0; j < options.Count; j++)
@@ -46,7 +46,7 @@ namespace RPGM.Gameplay
                     }
                 }
             }
-            for (var i = 0; i < items.Count; i++)
+            for (int i = 0; i < items.Count; i++)
             {
                 if (items[i].id == originalConversationPiece.id)
                 {
@@ -58,7 +58,7 @@ namespace RPGM.Gameplay
 
         public void Delete(string id)
         {
-            for (var i = 0; i < items.Count; i++)
+            for (int i = 0; i < items.Count; i++)
             {
                 if (items[i].id == id)
                 {

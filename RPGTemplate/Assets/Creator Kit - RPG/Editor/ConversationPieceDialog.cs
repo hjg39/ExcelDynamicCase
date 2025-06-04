@@ -130,6 +130,9 @@ namespace RPGM.Gameplay
             conversationPiece.audio = (AudioClip)EditorGUILayout.ObjectField(conversationPiece.audio, typeof(AudioClip), false);
             EditorGUILayout.PrefixLabel("Quest (Optional)");
             conversationPiece.quest = (Quest)EditorGUILayout.ObjectField(conversationPiece.quest, typeof(Quest), true);
+            EditorGUILayout.PrefixLabel("Unlocked func (Optional)");
+            conversationPiece.unlockedFunction = (string)EditorGUILayout.TextArea(conversationPiece.unlockedFunction);
+
 
             if (conversationScript.items.Count > 0)
             {

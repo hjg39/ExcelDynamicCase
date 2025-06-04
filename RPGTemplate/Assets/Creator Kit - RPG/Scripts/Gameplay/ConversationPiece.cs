@@ -20,5 +20,6 @@ namespace RPGM.Gameplay
         public AudioClip audio;
         public Quest quest;
         public List<ConversationOption> options;
+        public string unlockedFunction;
     }
 }
