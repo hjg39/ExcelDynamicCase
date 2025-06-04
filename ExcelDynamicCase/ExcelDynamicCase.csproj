@@ -188,6 +188,7 @@
     </Compile>
     <Compile Include="SheetChangeValidator.cs" />
     <Compile Include="Storage.cs" />
+    <Compile Include="Utility\WindowHelpers.cs" />
     <Compile Include="Workings.cs">
       <DependentUpon>ExcelDynamicCase.xlsx</DependentUpon>
     </Compile>

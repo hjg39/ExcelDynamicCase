@@ -1,4 +1,5 @@
 ﻿using ExcelDynamicCase.PipelineToUnity;
+using ExcelDynamicCase.Utility;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Diagnostics;
@@ -25,7 +26,17 @@ namespace ExcelDynamicCase
 
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
-            Task.Run(async () => await StartUnity());
+            //Application.Interactive = false;
+
+            try
+            {
+                Task.Run(async () => await StartUnity());
+            }
+            finally
+            {
+                //Globals.ThisWorkbook.inter
+            }
+
         }
 
         private async static Task StartUnity()
@@ -39,6 +50,7 @@ namespace ExcelDynamicCase
                     UseShellExecute = true
                 };
                 _unity = Process.Start(psi);
+                WindowHelpers.ActivateWindow(_unity);
             }
 
             await PipelineToUnity.PipelineToUnity.SendOverworldStateAsync(new ExcelUnityPipeline.BattleResult()
