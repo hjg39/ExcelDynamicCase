@@ -1,5 +1,8 @@
 ﻿using Interop = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools.Excel;
+using ExcelUnityPipeline;
+using System;
+using System.Threading.Tasks;
 
 namespace ExcelDynamicCase
 {
@@ -34,6 +37,11 @@ namespace ExcelDynamicCase
             Globals.ThisWorkbook.HookSheetChangeEvent();
         }
 
+        public static void ReturnToUnity(BattleResult battleResult)
+        {
+            Task.Run(async () => await PipelineToUnity.PipelineToUnity.SendOverworldStateAsync(battleResult)).RunSynchronously();
+        }
+
         public static void InitialiseLevels()
         {
             Globals.ThisWorkbook.UnHookSheetChangeEvent();
@@ -42,17 +50,19 @@ namespace ExcelDynamicCase
 
             foreach (Interop.Worksheet ws in wb.Worksheets)
             {
-                if (ws.Name == Globals.Information.Name)
+                // if (ws.Name == Globals.Information.Name)
+                // {
+                //    ws.Protect(Storage.PASSWORD);
+
+                // }
+                // else if (ws.Name == Globals.Workings.Name)
+                // {
+                //    continue;
+                // }
+                if (ws.Name == Globals.UnityIsActive.Name)
                 {
                     ws.Protect(Storage.PASSWORD);
-                }
-                else if (ws.Name == Globals.Workings.Name)
-                {
-                    continue;
-                }
-                else if (ws.Name == "L1_ChooseAStarter")
-                {
-                    ws.Protect(Storage.PASSWORD);
+                    Globals.UnityIsActive.Activate();
                 }
                 else
                 {
@@ -60,10 +70,6 @@ namespace ExcelDynamicCase
                     ws.Protect(Storage.PASSWORD);
                 }
             }
-
-            Globals.L1_ChooseAStarter.Visible = Interop.XlSheetVisibility.xlSheetVisible;
-            Globals.L1_ChooseAStarter.RunSetup();
-            Globals.L1_ChooseAStarter.Activate();
 
             Globals.ThisWorkbook.HookSheetChangeEvent();
         }

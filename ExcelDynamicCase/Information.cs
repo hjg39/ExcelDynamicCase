@@ -25,20 +25,6 @@ namespace ExcelDynamicCase
             ((Excel.Range)this.Cells[3, 2]).Value2 = level.LevelName;
             ((Excel.Range)this.Cells[3, 4]).Value2 = DateTime.Now.AddMinutes(level.BaseDeadline).ToOADate();
 
-            int startingRow = 6;
-
-            foreach (string formula in Storage.AllowedFormulae)
-            {
-                this.Cells[startingRow++, 2].Value = formula;
-            }
-
-            startingRow = 6;
-
-            foreach (string formula in Storage.GetAllLockedFunctions())
-            {
-                this.Cells[startingRow++, 3].Value = formula;
-            }
-
             this.Protect(Storage.PASSWORD);
         }
 

@@ -15,7 +15,7 @@ namespace ExcelDynamicCase {
     /// 
     [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(4)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
-    public sealed partial class B1_RivalBattleOffer : Microsoft.Office.Tools.Excel.WorksheetBase {
+    public sealed partial class UnityIsActive : Microsoft.Office.Tools.Excel.WorksheetBase {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         private global::System.Object missing = global::System.Type.Missing;
@@ -23,8 +23,8 @@ namespace ExcelDynamicCase {
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public B1_RivalBattleOffer(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
-                base(factory, serviceProvider, "Sheet4", "Sheet4") {
+        public UnityIsActive(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
+                base(factory, serviceProvider, "Sheet3", "Sheet3") {
         }
         
         /// 
@@ -33,7 +33,7 @@ namespace ExcelDynamicCase {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void Initialize() {
             base.Initialize();
-            Globals.B1_RivalBattleOffer = this;
+            Globals.UnityIsActive = this;
             global::System.Windows.Forms.Application.EnableVisualStyles();
             this.InitializeCachedData();
             this.InitializeControls();
@@ -148,15 +148,15 @@ namespace ExcelDynamicCase {
     
     internal sealed partial class Globals {
         
-        private static B1_RivalBattleOffer _B1_RivalBattleOffer;
+        private static UnityIsActive _UnityIsActive;
         
-        internal static B1_RivalBattleOffer B1_RivalBattleOffer {
+        internal static UnityIsActive UnityIsActive {
             get {
-                return _B1_RivalBattleOffer;
+                return _UnityIsActive;
             }
             set {
-                if ((_B1_RivalBattleOffer == null)) {
-                    _B1_RivalBattleOffer = value;
+                if ((_UnityIsActive == null)) {
+                    _UnityIsActive = value;
                 }
                 else {
                     throw new System.NotSupportedException();

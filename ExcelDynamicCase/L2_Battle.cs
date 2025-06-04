@@ -1,4 +1,5 @@
 ﻿using ExcelDynamicCase.Questions;
+using ExcelUnityPipeline;
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -52,14 +53,23 @@ namespace ExcelDynamicCase
 
             if (answer == QuestionSolutions.GetSolution(QuestionNumber))
             {
-                MessageBox.Show(string.IsNullOrWhiteSpace(ContestedFunction) ? $"You won, but the relevant functions were already all unlocked!" : $"You won and unlocked the {ContestedFunction} function!");
-                Storage.AllowedFormulae.Add(ContestedFunction);
-                LevelManagement.NextLevel(this, Globals.L2_ExcelHQ, Globals.L2_ExcelHQ);
+                BattleResult winResult = new BattleResult()
+                {
+                    BattleResultId = Guid.NewGuid(),
+                    IsSuccess = true,
+                };
+
+                LevelManagement.ReturnToUnity(winResult);
             }
             else if (answer == (-1).ToString())
             {
-                MessageBox.Show("You were defeated spiritually :(");
-                LevelManagement.NextLevel(this, Globals.L2_ExcelHQ, Globals.L2_ExcelHQ);
+                BattleResult lossResult = new BattleResult()
+                {
+                    BattleResultId = Guid.NewGuid(),
+                    IsSuccess = false,
+                };
+
+                LevelManagement.ReturnToUnity(lossResult);
             }
 
             stopwatch.Stop();
@@ -70,7 +80,14 @@ namespace ExcelDynamicCase
         public void YouLose()
         {
             MessageBox.Show("You were defeated :(");
-            LevelManagement.NextLevel(this, Globals.L2_ExcelHQ, Globals.L2_ExcelHQ);
+
+            BattleResult loseResult = new BattleResult()
+            {
+                BattleResultId = Guid.NewGuid(),
+                IsSuccess = false,
+            };
+
+            LevelManagement.ReturnToUnity(loseResult);
             stopwatch.Stop();
         }
 

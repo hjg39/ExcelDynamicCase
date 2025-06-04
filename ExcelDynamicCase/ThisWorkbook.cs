@@ -18,7 +18,6 @@ namespace ExcelDynamicCase
 
         private void ThisWorkbook_Startup(object sender, System.EventArgs e)
         {
-            LevelManagement.UpdateLevelInfo(Globals.L1_ChooseAStarter);
             LevelManagement.InitialiseLevels();
 
             this.SheetChange += ThisWorkbook_SheetChange;
