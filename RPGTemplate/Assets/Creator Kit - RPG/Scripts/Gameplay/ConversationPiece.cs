@@ -21,5 +21,6 @@ namespace RPGM.Gameplay
         public Quest quest;
         public List<ConversationOption> options;
         public string unlockedFunction;
+        public string tag;
     }
 }

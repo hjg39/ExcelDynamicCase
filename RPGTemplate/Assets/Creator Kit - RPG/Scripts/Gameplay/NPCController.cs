@@ -10,9 +10,10 @@ namespace RPGM.Gameplay
     public class NPCController : MonoBehaviour
     {
         public ConversationScript[] conversations;
+        public int conversationNumber = 0;
 
         Quest activeQuest = null;
-
+        
         Quest[] quests;
 
         GameModel model = Schedule.GetModel<GameModel>();
@@ -55,21 +56,23 @@ namespace RPGM.Gameplay
 
         ConversationScript GetConversation()
         {
-            if (activeQuest == null)
-                return conversations[0];
-            foreach (var q in quests)
-            {
-                if (q == activeQuest)
-                {
-                    if (q.IsQuestComplete())
-                    {
-                        CompleteQuest(q);
-                        return q.questCompletedConversation;
-                    }
-                    return q.questInProgressConversation;
-                }
-            }
-            return null;
+            return conversations[conversationNumber];
+
+            //if (activeQuest == null)
+            //    return conversations[0];
+            //foreach (var q in quests)
+            //{
+            //    if (q == activeQuest)
+            //    {
+            //        if (q.IsQuestComplete())
+            //        {
+            //            CompleteQuest(q);
+            //            return q.questCompletedConversation;
+            //        }
+            //        return q.questInProgressConversation;
+            //    }
+            //}
+            //return null;
         }
     }
 }

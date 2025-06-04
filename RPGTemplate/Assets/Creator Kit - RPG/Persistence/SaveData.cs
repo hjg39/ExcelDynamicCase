@@ -9,7 +9,7 @@ namespace Assets.Creator_Kit___RPG.Persistence
     [Serializable]
     public class SaveData
     {
-        public bool ReceivedStarter;
+        public Dictionary<string, int> Tags = new();
 
         public List<string> UnlockedFunctions = new();
     }

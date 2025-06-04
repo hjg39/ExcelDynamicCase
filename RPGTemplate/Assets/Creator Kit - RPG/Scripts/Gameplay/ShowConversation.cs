@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Assets.Creator_Kit___RPG.Persistence;
 using RPGM.Core;
@@ -31,6 +32,11 @@ namespace RPGM.Events
             if (!string.IsNullOrEmpty(ci.unlockedFunction))
             {
                 SaveManager.SaveUnlockedFunction(ci.unlockedFunction);
+            }
+
+            if (!string.IsNullOrEmpty(ci.tag))
+            {
+                TaggingManager.ProcessTag(ci.tag, false);
             }
 
             //if this item contains an unstarted quest, schedule a start quest event for the quest.
@@ -121,6 +127,5 @@ namespace RPGM.Events
             //if conversation has an icon associated, this will display it.
             model.dialog.SetIcon(ci.image);
         }
-
     }
 }

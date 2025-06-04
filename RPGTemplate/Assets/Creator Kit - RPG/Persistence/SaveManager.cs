@@ -33,6 +33,13 @@ namespace Assets.Creator_Kit___RPG.Persistence
             }
         }
 
+        public static void SaveTag(string tag, int number)
+        {
+            _ = LoadGameData(out SaveData saveData);
+            saveData.Tags[tag] = number;
+            SaveGame(saveData);
+        }
+
         public static void SaveUnlockedFunction(string functionName)
         {
             _ = LoadGameData(out SaveData saveData);
@@ -57,7 +64,7 @@ namespace Assets.Creator_Kit___RPG.Persistence
 
                 SaveData startingSaveData = new()
                 {
-                    ReceivedStarter = false,
+                    Tags = new(),
                     UnlockedFunctions = new() { }
                 };
 

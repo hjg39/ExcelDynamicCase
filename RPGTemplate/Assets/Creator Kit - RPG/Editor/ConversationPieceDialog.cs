@@ -132,7 +132,8 @@ namespace RPGM.Gameplay
             conversationPiece.quest = (Quest)EditorGUILayout.ObjectField(conversationPiece.quest, typeof(Quest), true);
             EditorGUILayout.PrefixLabel("Unlocked func (Optional)");
             conversationPiece.unlockedFunction = (string)EditorGUILayout.TextArea(conversationPiece.unlockedFunction);
-
+            EditorGUILayout.PrefixLabel("Tag");
+            conversationPiece.tag = (string)EditorGUILayout.TextArea(conversationPiece.tag);
 
             if (conversationScript.items.Count > 0)
             {
