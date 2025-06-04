@@ -21,13 +21,19 @@ namespace Assets.Creator_Kit___RPG.Persistence
                         SaveManager.SaveTag(tag, 1);
                     }
 
-                    GameObject obj = GameObject.Find("AndrewG");
-                    NPCController npcController = obj.GetComponent<NPCController>();
-                    npcController.conversationNumber = 1;
+                    SetConversationNumber("AndrewG", 1);
+                    SetConversationNumber("AndrewN", 1);
                     break;
                 default:
                     throw new NotImplementedException();
             }
+        }
+
+        private static void SetConversationNumber(string npcName, int conversationNumber)
+        {
+            GameObject obj = GameObject.Find(npcName);
+            NPCController npcController = obj.GetComponent<NPCController>();
+            npcController.conversationNumber = conversationNumber;
         }
     }
 }
