@@ -24,7 +24,7 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
             d.gameObject.SetActive(true);
             d.SetText(text);
             SetPosition(position);
-            model.input.ChangeState(InputController.State.DialogControl);
+            model.input.ChangeState(InputController.State.FunctionInventoryControl);
         }
 
         void SetPosition(Vector3 position)

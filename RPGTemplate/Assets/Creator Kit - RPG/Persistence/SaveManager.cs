@@ -35,14 +35,14 @@ namespace Assets.Creator_Kit___RPG.Persistence
 
         public static void SaveTag(string tag, int number)
         {
-            _ = LoadGameData(out SaveData saveData);
+            LoadGameData(out SaveData saveData);
             saveData.Tags[tag] = number;
             SaveGame(saveData);
         }
 
         public static void SaveUnlockedFunction(string functionName)
         {
-            _ = LoadGameData(out SaveData saveData);
+            LoadGameData(out SaveData saveData);
             if (saveData.UnlockedFunctions.Contains(functionName))
             {
                 return;
@@ -52,9 +52,9 @@ namespace Assets.Creator_Kit___RPG.Persistence
             SaveGame(saveData);
         }
 
-        public static bool LoadGameData(out SaveData data)
+        public static void LoadGameData(out SaveData data)
         {
-            data = null;
+            data = new SaveData();
 
             if (!File.Exists(SaveFilePath))
             {
@@ -70,8 +70,6 @@ namespace Assets.Creator_Kit___RPG.Persistence
 
                 string json = JsonUtility.ToJson(startingSaveData, prettyPrint: true);
                 File.WriteAllText(SaveFilePath, json);
-                return true;
-
             }
 
             try
@@ -79,12 +77,10 @@ namespace Assets.Creator_Kit___RPG.Persistence
                 string json = File.ReadAllText(SaveFilePath);
                 data = JsonUtility.FromJson<SaveData>(json);
                 data.UnlockedFunctions ??= new();
-                return true;
             }
             catch (Exception e)
             {
                 Debug.LogError($"Failed to load game: {e.Message}");
-                return false;
             }
         }
     }

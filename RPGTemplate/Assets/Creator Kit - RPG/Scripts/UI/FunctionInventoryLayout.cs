@@ -1,11 +1,14 @@
-﻿using RPGM.UI;
+﻿using Assets.Creator_Kit___RPG.Persistence;
+using RPGM.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Creator_Kit___RPG.Scripts.UI
 {
@@ -15,6 +18,9 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
         public float padding = 0.25f;
         public SpriteRenderer spriteRenderer;
         public TextMeshPro textMeshPro;
+        public TMP_Text itemTextMeshPro;
+        public ScrollRect unlockedFunctions;
+        public ScrollRect lockedFunctions;
 
         Vector2 minSize;
 
@@ -26,6 +32,22 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
         public void SetText(string text)
         {
             SetDialogText(text);
+
+            SaveManager.LoadGameData(out SaveData saveData);
+
+            List<string> savedUnlockedFunctions = saveData.UnlockedFunctions;
+
+            Fill(unlockedFunctions.content, savedUnlockedFunctions, 0, savedUnlockedFunctions.Count);
+        }
+
+        void Fill(RectTransform parent, IReadOnlyList<string> src, int start, int end)
+        {
+            for (int i = start; i < end; ++i)
+            {
+                var t = Instantiate(itemTextMeshPro, parent);
+                t.text = src[i];
+                t.ForceMeshUpdate();                        // ensures the layout is current :contentReference[oaicite:1]{index=1}
+            }
         }
 
         void SetDialogText(string text)

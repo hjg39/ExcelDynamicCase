@@ -73,6 +73,12 @@ namespace RPGM.UI
         void FunctionInventoryControl()
         {
             model.player.nextMoveCommand = Vector3.zero;
+
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                model.functionInventory.Hide();
+                ChangeState(State.CharacterControl);
+            }
         }
     }
 }
