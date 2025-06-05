@@ -16,6 +16,7 @@ namespace RPGM.UI
         {
             CharacterControl,
             DialogControl,
+            FunctionInventoryControl,
             Pause
         }
 
@@ -32,6 +33,9 @@ namespace RPGM.UI
                     break;
                 case State.DialogControl:
                     DialogControl();
+                    break;
+                case State.FunctionInventoryControl:
+                    FunctionInventoryControl();
                     break;
             }
         }
@@ -59,6 +63,16 @@ namespace RPGM.UI
                 model.player.nextMoveCommand = Vector3.right * stepSize;
             else
                 model.player.nextMoveCommand = Vector3.zero;
+
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                model.functionInventory.Show(model.player.gameObject.transform.position, "Press M to close");
+            }
+        }
+
+        void FunctionInventoryControl()
+        {
+            model.player.nextMoveCommand = Vector3.zero;
         }
     }
 }

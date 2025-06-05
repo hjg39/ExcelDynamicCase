@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Creator_Kit___RPG.Scripts.UI;
 using RPGM.Core;
 using RPGM.Gameplay;
 using RPGM.UI;
@@ -17,6 +18,7 @@ namespace RPGM.Gameplay
         public CharacterController2D player;
         public DialogController dialog;
         public InputController input;
+        public FunctionInventoryController functionInventory;
         public InventoryController inventoryController;
         public MusicController musicController;
 
