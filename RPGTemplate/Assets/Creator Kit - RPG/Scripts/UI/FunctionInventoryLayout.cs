@@ -42,6 +42,12 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
 
         void Fill(RectTransform parent, IReadOnlyList<string> src, int start, int end)
         {
+            int totalChildCount = parent.childCount;
+            for (int i = 0; i < totalChildCount; i++)
+            {
+                Destroy(parent.GetChild(totalChildCount - i - 1).gameObject);
+            }
+
             for (int i = start; i < end; ++i)
             {
                 var t = Instantiate(itemTextMeshPro, parent);

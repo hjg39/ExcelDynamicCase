@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2000564459979114751}
   - component: {fileID: 1846891880950570767}
   m_Layer: 5
-  m_Name: MToHide (2)
+  m_Name: UnlockedFunctionsLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
