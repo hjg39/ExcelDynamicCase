@@ -1,4 +1,5 @@
 ﻿using Assets.Creator_Kit___RPG.Persistence;
+using Assets.ExcelDomain;
 using RPGM.UI;
 using System;
 using System.Collections.Generic;
@@ -35,9 +36,13 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
 
             SaveManager.LoadGameData(out SaveData saveData);
 
-            List<string> savedUnlockedFunctions = saveData.UnlockedFunctions;
+            List<string> savedUnlockedFunctions = saveData.UnlockedFunctions.OrderBy(x => x).ToList();
+            HashSet<string> unlockedFunctionsByHash = savedUnlockedFunctions.ToHashSet();
+
+            string[] savedLockedFunctions = ExcelFunctions.AllFunctions.Where(x => !unlockedFunctionsByHash.Contains(x)).ToArray();
 
             Fill(unlockedFunctions.content, savedUnlockedFunctions, 0, savedUnlockedFunctions.Count);
+            Fill(lockedFunctions.content, savedLockedFunctions, 0, savedLockedFunctions.Length);
         }
 
         void Fill(RectTransform parent, IReadOnlyList<string> src, int start, int end)
