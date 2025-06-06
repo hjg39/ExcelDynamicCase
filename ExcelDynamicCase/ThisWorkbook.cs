@@ -45,7 +45,7 @@ namespace ExcelDynamicCase
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
-                    FileName = @"C:\Users\harry\source\repos\ExcelDynamicCase\ExcelDynamicCase\overworld\My project.exe",
+                    FileName = @"C:\Users\harry\source\repos\ExcelDynamicCase\ExcelDynamicCase\overworld\Excelopolis.exe",
                     Arguments = "-screen-fullscreen 0 -popupwindow",
                     UseShellExecute = true
                 };
