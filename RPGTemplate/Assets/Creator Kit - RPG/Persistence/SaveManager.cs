@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.ExcelDomain;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -50,6 +51,22 @@ namespace Assets.Creator_Kit___RPG.Persistence
 
             saveData.UnlockedFunctions.Add(functionName);
             SaveGame(saveData);
+        }
+
+        public static string[] GetFunctionsToUnlock(QuestionRewardClassification questionRewardClassification)
+        {
+            LoadGameData(out SaveData data);
+
+            string[] functionRewards = QuestionsDatabase.FunctionRewardsByClassification[questionRewardClassification];
+
+            string[] unlockableRewards = functionRewards.Where(x => !data.UnlockedFunctions.Contains(x)).ToArray();
+
+            if (unlockableRewards.Any())
+            {
+                return unlockableRewards;
+            }
+
+            return new string[1] { "Nothing" };
         }
 
         public static void LoadGameData(out SaveData data)

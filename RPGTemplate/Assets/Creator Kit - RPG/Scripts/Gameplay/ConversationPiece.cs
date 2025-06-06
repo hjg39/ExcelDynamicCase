@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Assets.ExcelDomain;
 using RPGM.Gameplay;
 using UnityEngine;
 
@@ -22,5 +23,6 @@ namespace RPGM.Gameplay
         public List<ConversationOption> options;
         public string unlockedFunction;
         public string tag;
+        public QuestionRewardClassification rewardClassification;
     }
 }

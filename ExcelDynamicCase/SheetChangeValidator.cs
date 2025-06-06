@@ -57,6 +57,24 @@ namespace ExcelDynamicCase
                 clearRange |= !ValidateFormula(s);
             }
 
+            if (target.FormulaArray is object[,] formulae2)
+            {
+                foreach (object formula in formulae2)
+                {
+                    if (formula is string formulaString)
+                    {
+                        clearRange |= !ValidateFormula(formulaString);
+                    }
+                }
+            }
+
+            if (target.Formula is string s2)
+            {
+                clearRange |= !ValidateFormula(s2);
+            }
+
+
+
             if (clearRange)
             {
                 target.Formula = null;
@@ -76,7 +94,7 @@ namespace ExcelDynamicCase
             {
                 string functionPart = match.Value.Replace("(", "").Trim();
 
-                if (Storage.AllowedFormulae.Contains(functionPart))
+                if ((Storage.AllowedFormulae ?? new List<string>()).Contains(functionPart))
                 {
                     continue;
                 }

@@ -1,3 +1,4 @@
+using Assets.ExcelDomain;
 using RPGM.Core;
 using RPGM.Gameplay;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace RPGM.Gameplay
     {
         public ConversationScript[] conversations;
         public int conversationNumber = 0;
+        public QuestionRewardClassification rewardClassification;
 
         Quest activeQuest = null;
         

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.ExcelDomain;
 using Assets.Creator_Kit___RPG.Persistence;
 using RPGM.Core;
 using RPGM.Gameplay;
 using RPGM.UI;
 using UnityEngine;
+using System.Linq;
 
 namespace RPGM.Events
 {
@@ -39,6 +41,13 @@ namespace RPGM.Events
                 TaggingManager.ProcessTag(ci.tag, false);
             }
 
+            string textToSpeak = ci.text;
+
+            if (ci.text == "REWARD")
+            {
+                textToSpeak = string.Join(", ", SaveManager.GetFunctionsToUnlock(npc.rewardClassification).OrderBy(x => x));
+            }
+
             //if this item contains an unstarted quest, schedule a start quest event for the quest.
             if (ci.quest != null)
             {
@@ -63,7 +72,7 @@ namespace RPGM.Events
             }
 
             //show the dialog
-            model.dialog.Show(position, ci.text);
+            model.dialog.Show(position, textToSpeak);
             var animator = gameObject.GetComponent<Animator>();
             if (animator != null)
             {
@@ -78,7 +87,7 @@ namespace RPGM.Events
             }
 
             //speak some gibberish at two speech syllables per word.
-            UserInterfaceAudio.Speak(gameObject.GetInstanceID(), ci.text.Split(' ').Length * 2, 1);
+            //UserInterfaceAudio.Speak(gameObject.GetInstanceID(), ci.text.Split(' ').Length * 2, 1);
 
             //if this conversation item has an id, register it in the model.
             if (!string.IsNullOrEmpty(ci.id))
