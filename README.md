@@ -8,7 +8,7 @@ If you just want to run the pre-built version of this tool without building the 
 
 1. **Download the repository (Code > Download ZIP).
 2. Right click on the download zip file and select 'unblock'
-3. Unzip the zip file to a folder
+3. Unzip the zip file to a folder (to a non-cloud location, cloud locations like places automatically backup up to onedrive will not work)
 4. Open a blank instance of Excel
 5. File > Options > Trust Centre > Trust Centre Settings > Trusted Locations
 6. Add the 'publish' subfolder to your trusted locations
