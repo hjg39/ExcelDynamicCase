@@ -42,13 +42,13 @@ public class PipeBootstrap : MonoBehaviour
                 BattleResult battleResult =
                     await PipeHelper.ReadAsync<BattleResult>(_pipe, _cts.Token);
 
-                BattleParameters result = new()
+                BattleParameters battleParameters = new()
                 {
                     QuestionId = 7,
                     AllowedFunctions = new List<string>() { "HiIAmFromUnity" },
                 };
 
-                await PipeHelper.WriteAsync(_pipe, result, _cts.Token);
+                // await PipeHelper.WriteAsync(_pipe, battleParameters, _cts.Token);
             }
             catch (EndOfStreamException) { break; } // Excel closed the pipe
             catch (IOException ex)
@@ -59,6 +59,12 @@ public class PipeBootstrap : MonoBehaviour
         }
 
         Debug.Log("[PipeBootstrap] Pipe closed — exiting bootstrap.");
+    }
+
+    public async Task<BattleResult> RunBattle(BattleParameters battleParameters)
+    {
+        await PipeHelper.WriteAsync(_pipe, battleParameters, _cts.Token);
+        return await PipeHelper.ReadAsync<BattleResult>( _pipe, _cts.Token);
     }
 
     private void OnApplicationQuit()

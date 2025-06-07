@@ -8,6 +8,8 @@ using RPGM.Gameplay;
 using RPGM.UI;
 using UnityEngine;
 using System.Linq;
+using ExcelUnityPipeline;
+using Assets.Creator_Kit___RPG.Logic;
 
 namespace RPGM.Events
 {
@@ -46,6 +48,16 @@ namespace RPGM.Events
             if (ci.text == "REWARD")
             {
                 textToSpeak = string.Join(", ", SaveManager.GetFunctionsToUnlock(npc.rewardClassification).OrderBy(x => x));
+            }
+
+            if (ci.text == "BATTLE")
+            {
+                GameObject gameObject = GameObject.Find("PipeBootstrap");
+                PipeBootstrap pipeBootstrap = gameObject.GetComponent<PipeBootstrap>();
+
+                BattleParameters battleParameters = BattleManager.GetBattleParameters(npc.rewardClassification);
+
+                pipeBootstrap.RunBattle(battleParameters).RunSynchronously();
             }
 
             //if this item contains an unstarted quest, schedule a start quest event for the quest.
