@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics;
 using System.IO.Pipes;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -47,21 +48,73 @@ namespace ExcelDynamicCase.PipelineToUnity
 
                 // …use parms …
             }
+            catch (Exception)
+            {
+                QuitExcelGracefully();
+                ThisWorkbook.ExcelCtx.Post(_ => Globals.ThisWorkbook.Close(false), null);
+            }
             finally
             {
                 _sync.Release();
             }
         }
 
-        /// somewhere in your shutdown/cleanup path
-        public static void ClosePipe()
+        static void QuitExcelGracefully()
         {
-            _pipe?.Dispose();
+            // First make sure the pipe is cleaned up; never throw here.
+            try { _pipe?.Dispose(); } catch { /**/ }
+
+            // Everything below MUST run on Excel's main thread.
+            void QuitCore()
+            {
+                var app = Globals.ThisWorkbook.Application;
+
+                try
+                {
+
+
+                    bool justThisWorkbook = app.Workbooks.Count == 1;
+
+                    app.DisplayAlerts = false;   // no “Save changes?” dialogs
+                    Globals.ThisWorkbook.Saved = true;   // mark as saved
+                    Globals.ThisWorkbook.Close(false);   // close the workbook
+
+                    if (justThisWorkbook)
+                    {
+                        app.Quit();                          // quit Excel
+                    }
+                }
+                catch (ThreadAbortException)
+                {
+                    /* swallow – Excel is already on its way out */
+                }
+                catch (Exception quitEx)
+                {
+                    Debug.Fail($"Excel refused to quit: {quitEx}");
+                    Environment.Exit(0);                 // last-resort hard exit
+                }
+                finally
+                {
+                    // Release COM objects so the process can really terminate
+                    Marshal.FinalReleaseComObject(app);
+                }
+            }
+
+            if (SynchronizationContext.Current == ThisWorkbook.ExcelCtx)
+                QuitCore();                             // already on Excel thread
+            else
+                ThisWorkbook.ExcelCtx.Post(_ => QuitCore(), null);
         }
 
-        public static void StartBattleMode()
-        {
-            LevelManagement.StartCaseQuestion();
-        }
+    /// somewhere in your shutdown/cleanup path
+    public static void ClosePipe()
+    {
+        _pipe?.Dispose();
+    }
+
+    public static void StartBattleMode()
+    {
+        LevelManagement.StartCaseQuestion();
+    }
     }
 }
