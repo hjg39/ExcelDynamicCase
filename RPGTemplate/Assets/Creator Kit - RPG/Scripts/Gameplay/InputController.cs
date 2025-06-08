@@ -38,6 +38,9 @@ namespace RPGM.UI
                 case State.FunctionInventoryControl:
                     FunctionInventoryControl();
                     break;
+                case State.Battle:
+                    BattleControl();
+                    break;
             }
         }
 
@@ -50,6 +53,11 @@ namespace RPGM.UI
                 model.dialog.FocusButton(+1);
             if (Input.GetKeyDown(KeyCode.Space))
                 model.dialog.SelectActiveButton();
+        }
+
+        void BattleControl()
+        {
+            model.player.nextMoveCommand = Vector3.zero;
         }
 
         void CharacterControl()

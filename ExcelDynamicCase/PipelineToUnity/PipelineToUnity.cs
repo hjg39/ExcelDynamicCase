@@ -23,14 +23,20 @@ namespace ExcelDynamicCase.PipelineToUnity
 
                 try
                 {
+                    while (true)
+                    {
+                        await PipeHelper.WriteAsync(pipe, battleResult);   // ➜ Unity
+                        BattleParameters battleParameters = await PipeHelper.ReadAsync<BattleParameters>(pipe); // ⬅ Unity
 
-                    await PipeHelper.WriteAsync(pipe, battleResult);   // ➜ Unity
-                    BattleParameters battleParameters = await PipeHelper.ReadAsync<BattleParameters>(pipe); // ⬅ Unity
+                        
+                        CaseQuestionEnum questionCode = (CaseQuestionEnum)battleParameters.QuestionId;
+                        LevelManagement.Challenger = battleParameters.Challenger;
+                        LevelManagement.CaseQuestionCode = questionCode;
 
-                    CaseQuestionEnum questionCode = (CaseQuestionEnum)battleParameters.QuestionId;
-                    LevelManagement.Challenger = battleParameters.Challenger;
-                    LevelManagement.CaseQuestionCode = questionCode;
+                        // await battle result
+                        await Task.Delay(100000000);
 
+                    }
                 }
                 catch (System.Exception ex)
                 {
