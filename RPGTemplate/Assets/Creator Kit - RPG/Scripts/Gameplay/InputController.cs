@@ -17,6 +17,7 @@ namespace RPGM.UI
             CharacterControl,
             DialogControl,
             FunctionInventoryControl,
+            Battle,
             Pause
         }
 

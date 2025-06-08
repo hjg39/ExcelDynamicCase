@@ -21,8 +21,8 @@ namespace Assets.Creator_Kit___RPG.Persistence
                         SaveManager.SaveTag(tag, 1);
                     }
 
-                    SetConversationNumber("AndrewG", 1);
-                    SetConversationNumber("AndrewN", 1);
+                    SetConversationNumber("AndrewGrigolyunovich", 1);
+                    SetConversationNumber("AndrewNgai", 1);
                     break;
                 default:
                     throw new NotImplementedException();

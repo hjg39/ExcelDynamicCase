@@ -57,7 +57,7 @@ namespace RPGM.Events
 
                 BattleParameters battleParameters = BattleManager.GetBattleParameters(npc.gameObject.name, npc.rewardClassification);
 
-                pipeBootstrap.RunBattle(battleParameters).RunSynchronously();
+                npc.StartCoroutine(ExecuteBattleRoutine(pipeBootstrap, battleParameters));
             }
 
             //if this item contains an unstarted quest, schedule a start quest event for the quest.
@@ -147,6 +147,26 @@ namespace RPGM.Events
 
             //if conversation has an icon associated, this will display it.
             model.dialog.SetIcon(ci.image);
+        }
+
+        private IEnumerator ExecuteBattleRoutine(PipeBootstrap pipeBootstrap, BattleParameters battleParameters)
+        {
+            // 1.  Tell whatever system you use to stop processing input.
+            model.input.ChangeState(InputController.State.Battle);
+
+            // 2.  Kick off the pipeline *without* blocking.
+            var task = pipeBootstrap.RunBattle(battleParameters);
+
+            // 3.  Yield until it completes.
+            while (!task.IsCompleted)
+                yield return null;
+
+            // 4.  Handle success / failure.
+            if (task.IsFaulted)
+                Debug.LogException(task.Exception);   // make the error visible
+
+            // 5.  Always re-enable input.
+            model.input.ChangeState(InputController.State.CharacterControl);
         }
     }
 }
