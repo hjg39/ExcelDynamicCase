@@ -19,7 +19,21 @@ namespace ExcelDynamicCase
         public static void StartCaseQuestion()
         {
             CaseQuestion caseQuestion = GetCaseQuestion(CaseQuestionCode);
+            Battle.CaseQuestion = caseQuestion;
             StartBattle(caseQuestion);
+        }
+
+        public static void StopBattle(BattleResult battleResult)
+        {
+            Globals.ThisWorkbook.UnHookSheetChangeEvent();
+
+            EnableUnityIsActiveSheet();
+            DisableWorkingsSheet();
+            DisableBattleSheet();
+
+            Globals.UnityIsActive.Activate();
+
+            Task.Run(async () => await PipelineToUnity.PipelineToUnity.SendOverworldStateAsync(battleResult));
         }
 
         public static void StartBattle(CaseQuestion caseQuestion)
@@ -40,11 +54,24 @@ namespace ExcelDynamicCase
             Globals.UnityIsActive.Protect(Storage.PASSWORD);
         }
 
+        private static void EnableUnityIsActiveSheet()
+        {
+            Globals.UnityIsActive.Unprotect(Storage.PASSWORD);
+            Globals.UnityIsActive.Visible = Interop.XlSheetVisibility.xlSheetVisible;
+            Globals.UnityIsActive.Protect(Storage.PASSWORD);
+        }
+
         private static void EnableWorkingsSheet()
         {
             Globals.Workings.Unprotect(Storage.PASSWORD);
             Globals.Workings.Cells.Clear();
             Globals.Workings.Visible = Interop.XlSheetVisibility.xlSheetVisible;
+        }
+
+        private static void DisableWorkingsSheet()
+        {
+            Globals.Workings.Visible = Interop.XlSheetVisibility.xlSheetVeryHidden;
+            Globals.Workings.Protect(Storage.PASSWORD);
         }
 
         public static void EnableBattleSheet(CaseQuestion caseQuestion)
@@ -57,9 +84,11 @@ namespace ExcelDynamicCase
             Globals.Battle.Activate();
         }
 
-        public static void ReturnToUnity(BattleResult battleResult)
+        public static void DisableBattleSheet()
         {
-            Task.Run(async () => await PipelineToUnity.PipelineToUnity.SendOverworldStateAsync(battleResult)).RunSynchronously();
+            Globals.Battle.Unprotect(Storage.PASSWORD);
+            Globals.Battle.Visible = Interop.XlSheetVisibility.xlSheetVeryHidden;
+            Globals.Battle.Protect(Storage.PASSWORD);
         }
 
         public static void InitialiseLevels()

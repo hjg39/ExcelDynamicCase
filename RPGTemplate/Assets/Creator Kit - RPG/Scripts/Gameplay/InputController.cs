@@ -1,3 +1,4 @@
+using ExcelUnityPipeline;
 using RPGM.Core;
 using RPGM.Gameplay;
 using UnityEngine;
@@ -31,6 +32,13 @@ namespace RPGM.UI
             }
 
             this.state = state;
+        }
+
+        public void EndBattleState(BattleResult battleResult)
+        {
+
+
+            this.state = State.CharacterControl;
         }
 
         void Update()

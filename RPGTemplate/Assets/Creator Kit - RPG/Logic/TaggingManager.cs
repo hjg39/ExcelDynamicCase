@@ -33,7 +33,7 @@ namespace Assets.Creator_Kit___RPG.Persistence
         {
             GameObject obj = GameObject.Find(npcName);
             NPCController npcController = obj.GetComponent<NPCController>();
-            npcController.conversationNumber = conversationNumber;
+            npcController.conversationNumber = Math.Max(npcController.conversationNumber, conversationNumber);
         }
     }
 }

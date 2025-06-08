@@ -5,7 +5,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using ExcelUnityPipeline;
-using System.IO;                 // DTOs
+using System.IO;
+using RPGM.UI;
+using RPGM.Gameplay;
+using RPGM.Core;                 // DTOs
                                  // PipeHelper lives in the same assembly
 public class PipeBootstrap : MonoBehaviour
 {
@@ -34,19 +37,15 @@ public class PipeBootstrap : MonoBehaviour
 
         Debug.Log("[PipeBootstrap] Excel connected!");
 
+        GameModel model = Schedule.GetModel<GameModel>();
+
         // Main message loop
         while (!_cts.Token.IsCancellationRequested && _pipe.IsConnected)
         {
             try
             {
-                BattleResult battleResult =
-                    await PipeHelper.ReadAsync<BattleResult>(_pipe, _cts.Token);
-
-                BattleParameters battleParameters = new()
-                {
-                    QuestionId = 7,
-                    AllowedFunctions = new List<string>() { "HiIAmFromUnity" },
-                };
+                BattleResult battleResult = await PipeHelper.ReadAsync<BattleResult>(_pipe, _cts.Token);
+                model.input.EndBattleState(battleResult);
 
                 // await PipeHelper.WriteAsync(_pipe, battleParameters, _cts.Token);
             }
@@ -61,10 +60,9 @@ public class PipeBootstrap : MonoBehaviour
         Debug.Log("[PipeBootstrap] Pipe closed — exiting bootstrap.");
     }
 
-    public async Task<BattleResult> RunBattle(BattleParameters battleParameters)
+    public async Task RunBattle(BattleParameters battleParameters)
     {
         await PipeHelper.WriteAsync(_pipe, battleParameters, _cts.Token);
-        return await PipeHelper.ReadAsync<BattleResult>( _pipe, _cts.Token);
     }
 
     private void OnApplicationQuit()

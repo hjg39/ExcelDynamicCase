@@ -3,15 +3,13 @@ using ExcelDynamicCase.Questions;
 using ExcelUnityPipeline;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ExcelDynamicCase
 {
     public partial class Battle
     {
-        public static int QuestionNumber { get; set; }
+        public static CaseQuestion CaseQuestion { get; set; }
 
         private void Sheet5_Startup(object sender, System.EventArgs e)
         {
@@ -38,7 +36,7 @@ namespace ExcelDynamicCase
 
             string answer = o.ToString();
 
-            if (answer == QuestionSolutions.GetSolution(QuestionNumber))
+            if (answer == CaseQuestion.Answer)
             {
                 BattleResult winResult = new BattleResult()
                 {
@@ -46,7 +44,7 @@ namespace ExcelDynamicCase
                     IsSuccess = true,
                 };
 
-                LevelManagement.ReturnToUnity(winResult);
+                LevelManagement.StopBattle(winResult);
             }
             else if (answer == (-1).ToString())
             {
@@ -56,7 +54,7 @@ namespace ExcelDynamicCase
                     IsSuccess = false,
                 };
 
-                LevelManagement.ReturnToUnity(lossResult);
+                LevelManagement.StopBattle(lossResult);
             }
 
             return;
@@ -67,6 +65,7 @@ namespace ExcelDynamicCase
             ((Excel.Range)this.Cells[3, 15]).Formula = caseQuestion.QuestionLink is null ? "None" : string.Format("=HYPERLINK(\"{0}\",\"{0}\")", caseQuestion.QuestionLink);
             ((Excel.Range)this.Cells[6, 15]).Value = caseQuestion.Id.ToString();
 
+            ((Excel.Range)this.Cells[2, 5]).Value = null;
             ((Excel.Range)this.Cells[4, 5]).Value = caseQuestion.ExampleAnswer;
             ((Excel.Range)this.Cells[6, 2]).Value = $"{challenger} has challenged you to a battle";
             ((Excel.Range)this.Cells[8, 2]).Value = $"You have {caseQuestion.Minutes} minutes (which you can follow in the overworld window).";

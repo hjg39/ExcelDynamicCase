@@ -13,7 +13,7 @@ namespace ExcelDynamicCase
 {
     public partial class ThisWorkbook
     {
-        private static Process _unity;
+        private static readonly Process _unity;
 
         public static Stopwatch LevelStopwatch { get; set; } = Stopwatch.StartNew();
 

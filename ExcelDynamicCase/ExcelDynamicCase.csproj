@@ -178,7 +178,6 @@
       <DependentUpon>Battle.Designer.xml</DependentUpon>
     </Compile>
     <Compile Include="Questions\AllowedQuestions.cs" />
-    <Compile Include="Questions\QuestionSolutions.cs" />
     <Compile Include="UnityIsActive.cs">
       <DependentUpon>ExcelDynamicCase.xlsx</DependentUpon>
     </Compile>
