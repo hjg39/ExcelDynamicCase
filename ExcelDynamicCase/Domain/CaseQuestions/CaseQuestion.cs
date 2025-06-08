@@ -12,8 +12,6 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
 
         public string QuestionLink { get; set; }
 
-        public bool HasLink { get; set; }
-
         public string QuestionText { get; set; }
 
         public Dictionary<string, object[,]> Data { get; set; }

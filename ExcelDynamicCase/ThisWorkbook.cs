@@ -55,8 +55,8 @@ namespace ExcelDynamicCase
                     UseShellExecute = true,
                     WindowStyle = ProcessWindowStyle.Normal,
                 };
-                _unity = Process.Start(psi);
-                WindowHelpers.ActivateWindow(_unity);
+                //_unity = Process.Start(psi);
+                //WindowHelpers.ActivateWindow(_unity);
             }
 
             await PipelineToUnity.PipelineToUnity.InitPipeAsync();

@@ -1,5 +1,6 @@
 using Assets.Creator_Kit___RPG.Persistence;
 using Assets.Creator_Kit___RPG.Scripts.Gameplay;
+using Assets.Creator_Kit___RPG.Scripts.UI;
 using ExcelUnityPipeline;
 using RPGM.Core;
 using RPGM.Gameplay;
@@ -40,6 +41,9 @@ namespace RPGM.UI
 
         public void EndBattleState(BattleResult battleResult)
         {
+            CountdownTimer countdownTimer = GameObject.FindObjectOfType<CountdownTimer>();
+            countdownTimer.Hide();
+
             NPCController npcController = Events.ShowConversation.LastNpc;
 
             string[] unlockedFunctions = SaveManager.UnlockRandomFunctions(npcController.rewardClassification);            

@@ -10,7 +10,7 @@ namespace Assets.ExcelDomain
     {
         None = 0,
 
-        EasyAggregates = 10,
+        BasicAggregates = 10,
         AdvancedAggregates = 11,
         ExpertAggregates = 12,
         DivineAggregates = 13,
@@ -19,13 +19,13 @@ namespace Assets.ExcelDomain
 
         ExpertBases = 32,
 
-        EasyLookup = 40,
+        BasicLookup = 40,
         AdvancedLookup = 41,
 
-        EasyMaths = 50,
+        BasicMaths = 50,
         ExpertMaths = 52,
 
-        EasyText = 60,
+        BasicText = 60,
         AdvancedText = 61,
 
         BasicManipulation = 70,

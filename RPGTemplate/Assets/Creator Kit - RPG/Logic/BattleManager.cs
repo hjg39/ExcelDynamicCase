@@ -9,7 +9,7 @@ namespace Assets.Creator_Kit___RPG.Logic
 {
     public static class BattleManager
     {
-        public static BattleParameters GetBattleParameters(string character, QuestionRewardClassification questionRewardClassification)
+        public static BattleParameters GetBattleParameters(string character, QuestionRewardClassification questionRewardClassification, out float timeRemaining)
         {
             SaveManager.LoadGameData(out SaveData saveData);
 
@@ -29,6 +29,8 @@ namespace Assets.Creator_Kit___RPG.Logic
                 questionId = allPossibleQuestions[UnityEngine.Random.Range(0, allPossibleQuestions.Length)];
             }
 
+            timeRemaining = GetTimeAllowedByQuestionNumber(questionId);
+
             return new BattleParameters()
             {
                 Challenger = character,
@@ -40,22 +42,29 @@ namespace Assets.Creator_Kit___RPG.Logic
         private static int[] GetQuestionsByRewardClassification(QuestionRewardClassification questionRewardClassification)
         => questionRewardClassification switch
         {
-            QuestionRewardClassification.EasyAggregates => new int[] { },
+            QuestionRewardClassification.BasicAggregates => new int[] { },
             QuestionRewardClassification.AdvancedAggregates => new int[] { },
             QuestionRewardClassification.ExpertAggregates => new int[] { },
             QuestionRewardClassification.DivineAggregates => new int[] { },
             QuestionRewardClassification.AdvancedComplex => new int[] { },
             QuestionRewardClassification.ExpertBases => new int[] { },
-            QuestionRewardClassification.EasyLookup => new int[] { },
+            QuestionRewardClassification.BasicLookup => new int[] { },
             QuestionRewardClassification.AdvancedLookup => new int[] { },
-            QuestionRewardClassification.EasyMaths => new int[] { 1 },
+            QuestionRewardClassification.BasicMaths => new int[] { 1 },
             QuestionRewardClassification.ExpertMaths => new int[] { },
-            QuestionRewardClassification.EasyText => new int[] { },
+            QuestionRewardClassification.BasicText => new int[] { },
             QuestionRewardClassification.AdvancedText => new int[] { },
             QuestionRewardClassification.BasicManipulation => new int[] { },
             QuestionRewardClassification.AdvancedManipulation => new int[] { },
             QuestionRewardClassification.AdvancedDates => new int[] { },
             QuestionRewardClassification.ExpertDates => new int[] { },
+            _ => throw new NotImplementedException(),
+        };
+
+        public static float GetTimeAllowedByQuestionNumber(int i)
+        => i switch
+        {
+            1 => 0.3f,
             _ => throw new NotImplementedException(),
         };
     }

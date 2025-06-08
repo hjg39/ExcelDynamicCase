@@ -10,6 +10,8 @@ using UnityEngine;
 using System.Linq;
 using ExcelUnityPipeline;
 using Assets.Creator_Kit___RPG.Logic;
+using Assets.Creator_Kit___RPG.Scripts.UI;
+using Unity.VisualScripting;
 
 namespace RPGM.Events
 {
@@ -58,7 +60,11 @@ namespace RPGM.Events
                 GameObject gameObject = GameObject.Find("PipeBootstrap");
                 PipeBootstrap pipeBootstrap = gameObject.GetComponent<PipeBootstrap>();
 
-                BattleParameters battleParameters = BattleManager.GetBattleParameters(npc.gameObject.name, npc.rewardClassification);
+                BattleParameters battleParameters = BattleManager.GetBattleParameters(npc.gameObject.name, npc.rewardClassification, out float minutes);
+
+                CountdownTimer countdownTimer = GameObject.FindObjectOfType<CountdownTimer>(true);
+
+                countdownTimer.Show(gameObject.transform.position, minutes);
 
                 npc.StartCoroutine(ExecuteBattleRoutine(pipeBootstrap, battleParameters));
             }
