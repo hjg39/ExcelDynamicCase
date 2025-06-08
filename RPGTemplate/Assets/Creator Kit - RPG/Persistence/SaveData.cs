@@ -12,5 +12,7 @@ namespace Assets.Creator_Kit___RPG.Persistence
         public List<string> Tags = new();
 
         public List<string> UnlockedFunctions = new();
+
+        public List<int> CompletedQuestions = new();
     }
 }
