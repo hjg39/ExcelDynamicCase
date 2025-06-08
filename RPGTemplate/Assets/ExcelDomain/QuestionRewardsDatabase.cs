@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assets.ExcelDomain
 {
-    public static class QuestionsDatabase
+    public static class QuestionRewardsDatabase
     {
         public static Dictionary<QuestionRewardClassification, int[]> CaseNumbersByRewardClassification =
         new()

@@ -39,7 +39,7 @@ namespace Assets.Creator_Kit___RPG.Persistence
         public static void SaveTag(string tag, int number)
         {
             LoadGameData(out SaveData saveData);
-            saveData.Tags[tag] = number;
+            saveData.Tags.Add(tag);
             SaveGame(saveData);
         }
 
@@ -76,7 +76,7 @@ namespace Assets.Creator_Kit___RPG.Persistence
 
         public static string[] UnlockRandomFunctions(QuestionRewardClassification questionRewardClassification)
         {
-            string[] candidateUnlocks = QuestionsDatabase.FunctionRewardsByClassification[questionRewardClassification];
+            string[] candidateUnlocks = QuestionRewardsDatabase.FunctionRewardsByClassification[questionRewardClassification];
 
             List<string> selectedFunctions = new();
 
@@ -100,7 +100,7 @@ namespace Assets.Creator_Kit___RPG.Persistence
         {
             LoadGameData(out SaveData data);
 
-            string[] functionRewards = QuestionsDatabase.FunctionRewardsByClassification[questionRewardClassification];
+            string[] functionRewards = QuestionRewardsDatabase.FunctionRewardsByClassification[questionRewardClassification];
 
             string[] unlockableRewards = functionRewards.Where(x => !data.UnlockedFunctions.Contains(x)).ToArray();
 
