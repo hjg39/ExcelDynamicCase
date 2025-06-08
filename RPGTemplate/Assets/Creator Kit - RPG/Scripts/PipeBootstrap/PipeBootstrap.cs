@@ -8,8 +8,9 @@ using ExcelUnityPipeline;
 using System.IO;
 using RPGM.UI;
 using RPGM.Gameplay;
-using RPGM.Core;                 // DTOs
-                                 // PipeHelper lives in the same assembly
+using RPGM.Core;
+using UnityEditor;                 // DTOs
+                                   // PipeHelper lives in the same assembly
 public class PipeBootstrap : MonoBehaviour
 {
     private const string PIPE = "BattlePipe";
@@ -49,15 +50,30 @@ public class PipeBootstrap : MonoBehaviour
 
                 // await PipeHelper.WriteAsync(_pipe, battleParameters, _cts.Token);
             }
-            catch (EndOfStreamException) { break; } // Excel closed the pipe
+            catch (EndOfStreamException) { QuitApp(); } // Excel closed the pipe
             catch (IOException ex)
             {
                 Debug.LogWarning($"Pipe IO error: {ex.Message}");
                 break;
             }
+            catch (TaskCanceledException)
+            {
+                QuitApp();
+            }
         }
 
         Debug.Log("[PipeBootstrap] Pipe closed — exiting bootstrap.");
+    }
+
+    void QuitApp()
+    {
+        Debug.Log("[PipeBootstrap] Task cancelled — quitting application.");
+        Application.Quit();
+
+        #if UNITY_EDITOR
+                // In the Editor, Application.Quit() does nothing, so stop Play Mode:
+                EditorApplication.ExitPlaymode();      // Unity 2021+ alternative
+        #endif
     }
 
     public async Task RunBattle(BattleParameters battleParameters)

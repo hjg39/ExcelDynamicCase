@@ -82,7 +82,7 @@ namespace Assets.Creator_Kit___RPG.Persistence
 
             for (int i = 0; i < 3; i++)
             {
-                selectedFunctions.Add(candidateUnlocks[UnityEngine.Random.Range((int)0, 3)]);
+                selectedFunctions.Add(candidateUnlocks[UnityEngine.Random.Range((int)0, candidateUnlocks.Length)]);
             }
 
             selectedFunctions = selectedFunctions.Distinct().ToList();
