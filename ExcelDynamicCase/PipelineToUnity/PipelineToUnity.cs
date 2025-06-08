@@ -27,11 +27,9 @@ namespace ExcelDynamicCase.PipelineToUnity
                     await PipeHelper.WriteAsync(pipe, battleResult);   // ➜ Unity
                     BattleParameters battleParameters = await PipeHelper.ReadAsync<BattleParameters>(pipe); // ⬅ Unity
 
-                    LevelManagement.CaseQuestion = (CaseQuestionEnum)battleParameters.QuestionId;
+                    CaseQuestionEnum questionCode = (CaseQuestionEnum)battleParameters.QuestionId;
+                    LevelManagement.CaseQuestionCode = questionCode;
 
-                    Trace.WriteLine(battleParameters.ToString());
-                    Trace.WriteLine(battleParameters.QuestionId);
-                    Trace.WriteLine(string.Join(",", battleParameters.AllowedFunctions));
                 }
                 catch (System.Exception ex)
                 {
@@ -40,7 +38,11 @@ namespace ExcelDynamicCase.PipelineToUnity
                 }
 
             }
+        }
 
+        public static void StartBattleMode()
+        {
+            LevelManagement.StartCaseQuestion();
         }
     }
 }

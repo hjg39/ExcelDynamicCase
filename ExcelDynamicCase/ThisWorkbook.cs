@@ -35,7 +35,7 @@ namespace ExcelDynamicCase
 
             try
             {
-                Task.Run(async () => await StartUnity()).ContinueWith(t => _excelCtx.Post(_ => LevelManagement.UpdateLevelInfo()));
+                Task.Run(async () => await StartUnity()).ContinueWith(t => _excelCtx.Post(_ => PipelineToUnity.PipelineToUnity.StartBattleMode(), null));
             }
             finally
             {
@@ -111,9 +111,9 @@ namespace ExcelDynamicCase
             SheetChangeValidator.DeleteAllNames();
             SheetChangeValidator.ValidateChanges(sheet, target);
 
-            if (Globals.L2_Battle.TimeDidElapse)
+            if (Globals.Battle.TimeDidElapse)
             {
-                Globals.L2_Battle.YouLose();
+                Globals.Battle.YouLose();
             }
         }
 

@@ -168,16 +168,15 @@
     <Compile Include="Domain\FunctionClass.cs" />
     <Compile Include="Domain\Functions.cs" />
     <Compile Include="Domain\CaseQuestions\CaseQuestionEnum.cs" />
-    <Compile Include="Domain\Rival.cs" />
     <Compile Include="ILevel.cs" />
     <Compile Include="LevelManagement.cs" />
     <Compile Include="PipelineToUnity\PipelineToUnity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="L2_Battle.cs">
+    <Compile Include="Battle.cs">
       <DependentUpon>ExcelDynamicCase.xlsx</DependentUpon>
     </Compile>
-    <Compile Include="L2_Battle.Designer.cs">
-      <DependentUpon>L2_Battle.Designer.xml</DependentUpon>
+    <Compile Include="Battle.Designer.cs">
+      <DependentUpon>Battle.Designer.xml</DependentUpon>
     </Compile>
     <Compile Include="Questions\AllowedQuestions.cs" />
     <Compile Include="Questions\EulerProblemParser.cs" />
@@ -248,8 +247,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="L2_Battle.Designer.xml">
-      <DependentUpon>L2_Battle.cs</DependentUpon>
+    <None Include="Battle.Designer.xml">
+      <DependentUpon>Battle.cs</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -284,7 +283,7 @@
         <ProjectProperties HostName="ExcelDynamicCase.xlsx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\root\Office16\excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]ExcelDynamicCase.xlsx&quot;" />
         <Host Name="Excel Document" Path=".\ExcelDynamicCase.xlsx" GeneratedCodeNamespace="ExcelDynamicCase" PublishedHash="9B56F85A8859AFBE59D7125046F9F35896C5737F">
           <HostItem Name="Sheet2" Code="Information.cs" CanonicalName="Sheet2" PublishedHash="8961866B9D6CF9D93078B68363C5AABEECEC7A1B" DisplayName="Information" Blueprint="Information.Designer.xml" GeneratedCode="Information.Designer.cs" />
-          <HostItem Name="Sheet5" Code="L2_Battle.cs" CanonicalName="Sheet5" PublishedHash="FE808C7619F55AC4B0F2045721C4F31627812EA9" DisplayName="L2_Battle" Blueprint="L2_Battle.Designer.xml" GeneratedCode="L2_Battle.Designer.cs" />
+          <HostItem Name="Sheet5" Code="Battle.cs" CanonicalName="Sheet5" PublishedHash="FE808C7619F55AC4B0F2045721C4F31627812EA9" DisplayName="L2_Battle" Blueprint="Battle.Designer.xml" GeneratedCode="Battle.Designer.cs" />
           <HostItem Name="ThisWorkbook" Code="ThisWorkbook.cs" CanonicalName="ThisWorkbook" PublishedHash="41E376371A3C2ABC8CACF0C8C8B658C9AB400789" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.cs" />
           <HostItem Name="Sheet3" Code="UnityIsActive.cs" CanonicalName="Sheet3" DisplayName="UnityIsActive" Blueprint="UnityIsActive.Designer.xml" GeneratedCode="UnityIsActive.Designer.cs" />
           <HostItem Name="Sheet1" Code="Workings.cs" CanonicalName="Sheet1" PublishedHash="91FFBA5F41E75E1FD08428E036AD7ABC82EC0C54" DisplayName="Workings" Blueprint="Workings.Designer.xml" GeneratedCode="Workings.Designer.cs" />

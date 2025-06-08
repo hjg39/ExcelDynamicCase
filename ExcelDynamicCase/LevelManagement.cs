@@ -10,45 +10,47 @@ namespace ExcelDynamicCase
 {
     public static class LevelManagement
     {
-        public static CaseQuestionEnum CaseQuestion { get; set; }
+        public static CaseQuestionEnum CaseQuestionCode { get; set; }
 
-        public static ILevel CurrentLevel = null;
+        public static CaseQuestion GetCaseQuestion(CaseQuestionEnum questionCode)
+            => CaseQuestionRepo.CaseQuestions[questionCode];
 
-        public static void UpdateLevelInfo(ILevel level)
+        public static void StartCaseQuestion()
         {
-            CurrentLevel = level;
-
-            Globals.Information.UpdateLevelInfo(level);
+            CaseQuestion caseQuestion = GetCaseQuestion(CaseQuestionCode);
+            StartBattle(caseQuestion);
         }
 
-        public static CaseQuestion GetCaseQuestion(CaseQuestionEnum level)
-            => CaseQuestionRepo.CaseQuestions[level];
-
-        public static void StartCaseQuestion(CaseQuestion caseQuestion)
-        {
-
-
-
-        }
-
-        public static void NextLevel(WorksheetBase worksheetFrom, WorksheetBase worksheetTo, ILevel levelTo)
+        public static void StartBattle(CaseQuestion caseQuestion)
         {
             Globals.ThisWorkbook.UnHookSheetChangeEvent();
 
-            worksheetFrom.Visible = Interop.XlSheetVisibility.xlSheetVeryHidden;
+            DisableUnityIsActiveSheet();
+            EnableWorkingsSheet();
+            EnableBattleSheet(caseQuestion);
 
-            worksheetTo.Unprotect(Storage.PASSWORD);
-            levelTo.RunSetup();
-            worksheetTo.Protect(Storage.PASSWORD);
-
-            UpdateLevelInfo(levelTo);
-
-            worksheetTo.Visible = Interop.XlSheetVisibility.xlSheetVisible;
-            worksheetTo.Activate();
-
-
-            Globals.Workings.Cells.Clear();
             Globals.ThisWorkbook.HookSheetChangeEvent();
+        }
+
+        private static void DisableUnityIsActiveSheet()
+        {
+            Globals.UnityIsActive.Visible = Interop.XlSheetVisibility.xlSheetVeryHidden;
+        }
+
+        private static void EnableWorkingsSheet()
+        {
+            Globals.Workings.Cells.Clear();
+            Globals.Workings.Visible = Interop.XlSheetVisibility.xlSheetVisible;
+        }
+
+        public static void EnableBattleSheet(CaseQuestion caseQuestion)
+        {
+            Globals.Battle.Unprotect(Storage.PASSWORD);
+            Globals.Battle.RunSetup(caseQuestion);
+            Globals.Battle.Protect(Storage.PASSWORD);
+
+            Globals.Battle.Visible = Interop.XlSheetVisibility.xlSheetVisible;
+            Globals.Battle.Activate();
         }
 
         public static void ReturnToUnity(BattleResult battleResult)
@@ -64,15 +66,6 @@ namespace ExcelDynamicCase
 
             foreach (Interop.Worksheet ws in wb.Worksheets)
             {
-                // if (ws.Name == Globals.Information.Name)
-                // {
-                //    ws.Protect(Storage.PASSWORD);
-
-                // }
-                // else if (ws.Name == Globals.Workings.Name)
-                // {
-                //    continue;
-                // }
                 if (ws.Name == Globals.UnityIsActive.Name)
                 {
                     ws.Protect(Storage.PASSWORD);

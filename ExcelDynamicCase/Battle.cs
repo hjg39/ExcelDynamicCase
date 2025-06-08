@@ -1,4 +1,5 @@
-﻿using ExcelDynamicCase.Questions;
+﻿using ExcelDynamicCase.Domain.CaseQuestions;
+using ExcelDynamicCase.Questions;
 using ExcelUnityPipeline;
 using System;
 using System.Diagnostics;
@@ -6,7 +7,7 @@ using System.Windows.Forms;
 
 namespace ExcelDynamicCase
 {
-    public partial class L2_Battle : ILevel
+    public partial class Battle
     {
         public static string Player { get; set; }
 
@@ -96,21 +97,11 @@ namespace ExcelDynamicCase
             stopwatch.Stop();
         }
 
-        public void RunSetup()
+        public void RunSetup(CaseQuestion caseQuestion)
         {
-            EulerProblemParser problemParser = new EulerProblemParser();
-            string problemText = problemParser.GetProblemText(QuestionNumber);
 
-            this.Cells[4, 2].Value = $"{Player} challenges you to a battle for the {ContestedFunction} function on problem {QuestionNumber}!";
 
-            this.Cells[6, 2].Value = $"Here is the question, you have {NumberOfMinutes} minutes - which you can follow on the 'Information' tab.";
-            this.Cells[7, 2].Value = $"Note the answer must be pasted as a value.  If you want to give up, write -1.";
 
-            this.Cells[9, 2].Value = problemText;
-
-            this.Cells[2, 3].Value = null;
-
-            stopwatch.Restart();
         }
 
         #region VSTO Designer generated code

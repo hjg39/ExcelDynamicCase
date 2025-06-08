@@ -22,5 +22,10 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
 
         public int[,] MapColours { get; set; } 
 
+        public string Answer { get; set; }
+
+        public object ExampleAnswer { get; set; }
+
+        public double Minutes { get; set; }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ExcelDynamicCase.Domain.CaseQuestions
 {
@@ -21,9 +17,11 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     Data = null,
                     Map = null,
                     MapColours = null,
+                    Answer = "233168",
+                    ExampleAnswer = 10000d,
+                    Minutes = 5,
                 }
             }
         };
-
     }
 }
