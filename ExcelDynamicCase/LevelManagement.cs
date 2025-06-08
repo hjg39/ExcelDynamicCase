@@ -3,11 +3,15 @@ using Microsoft.Office.Tools.Excel;
 using ExcelUnityPipeline;
 using System;
 using System.Threading.Tasks;
+using ExcelDynamicCase.Domain;
+using ExcelDynamicCase.Domain.CaseQuestions;
 
 namespace ExcelDynamicCase
 {
     public static class LevelManagement
     {
+        public static CaseQuestionEnum CaseQuestion { get; set; }
+
         public static ILevel CurrentLevel = null;
 
         public static void UpdateLevelInfo(ILevel level)
@@ -15,6 +19,16 @@ namespace ExcelDynamicCase
             CurrentLevel = level;
 
             Globals.Information.UpdateLevelInfo(level);
+        }
+
+        public static CaseQuestion GetCaseQuestion(CaseQuestionEnum level)
+            => CaseQuestionRepo.CaseQuestions[level];
+
+        public static void StartCaseQuestion(CaseQuestion caseQuestion)
+        {
+
+
+
         }
 
         public static void NextLevel(WorksheetBase worksheetFrom, WorksheetBase worksheetTo, ILevel levelTo)

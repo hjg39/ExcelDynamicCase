@@ -10,30 +10,9 @@ namespace ExcelDynamicCase.Questions
     {
         public static List<int> AllowedQuestionNumbers = new List<int>()
         {
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            11,
-            12,
-            13,
-            15,
-            16,
-            17,
-            24,
-            30,
-            31,
-            33,
-            34,
-            36,
-            40,
-            43,
-            76
+            1, 2, 3, 4, 5, 6, 7, 8,
+            9, 11, 12, 13, 15, 16, 17, 24,
+            30, 31, 33, 34, 36, 40, 43, 76
         };
 
         public readonly static IReadOnlyDictionary<int, int> MinutesAllowedPerQuestion = new Dictionary<int, int>()

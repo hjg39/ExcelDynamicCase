@@ -4,6 +4,7 @@ using Microsoft.Office.Interop.Excel;
 using System;
 using System.Diagnostics;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -16,21 +17,25 @@ namespace ExcelDynamicCase
 
         public static Stopwatch LevelStopwatch { get; set; } = Stopwatch.StartNew();
 
+        private static SynchronizationContext _excelCtx;
 
         private void ThisWorkbook_Startup(object sender, System.EventArgs e)
         {
+            _excelCtx = WindowsFormsSynchronizationContext.Current
+                ?? new WindowsFormsSynchronizationContext();
+
             LevelManagement.InitialiseLevels();
 
             this.SheetChange += ThisWorkbook_SheetChange;
             this.NewSheet += ThisWorkbook_NewSheet;
-
+        
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
             //Application.Interactive = false;
 
             try
             {
-                Task.Run(async () => await StartUnity());
+                Task.Run(async () => await StartUnity()).ContinueWith(t => _excelCtx.Post(_ => LevelManagement.UpdateLevelInfo()));
             }
             finally
             {

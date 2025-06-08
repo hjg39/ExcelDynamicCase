@@ -1,4 +1,5 @@
-﻿using ExcelUnityPipeline;
+﻿using ExcelDynamicCase.Domain;
+using ExcelUnityPipeline;
 using System.Diagnostics;
 using System.IO.Pipes;
 using System.Linq;
@@ -24,11 +25,13 @@ namespace ExcelDynamicCase.PipelineToUnity
                 {
 
                     await PipeHelper.WriteAsync(pipe, battleResult);   // ➜ Unity
-                    BattleParameters result = await PipeHelper.ReadAsync<BattleParameters>(pipe); // ⬅ Unity
+                    BattleParameters battleParameters = await PipeHelper.ReadAsync<BattleParameters>(pipe); // ⬅ Unity
 
-                    Trace.WriteLine(result.ToString());
-                    Trace.WriteLine(result.QuestionId);
-                    Trace.WriteLine(string.Join(",", result.AllowedFunctions));
+                    LevelManagement.CaseQuestion = (CaseQuestionEnum)battleParameters.QuestionId;
+
+                    Trace.WriteLine(battleParameters.ToString());
+                    Trace.WriteLine(battleParameters.QuestionId);
+                    Trace.WriteLine(string.Join(",", battleParameters.AllowedFunctions));
                 }
                 catch (System.Exception ex)
                 {
