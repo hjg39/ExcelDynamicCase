@@ -17,11 +17,11 @@ namespace ExcelDynamicCase
 
         public static Stopwatch LevelStopwatch { get; set; } = Stopwatch.StartNew();
 
-        private static SynchronizationContext _excelCtx;
+        public static SynchronizationContext ExcelCtx;
 
         private void ThisWorkbook_Startup(object sender, System.EventArgs e)
         {
-            _excelCtx = WindowsFormsSynchronizationContext.Current
+            ExcelCtx = WindowsFormsSynchronizationContext.Current
                 ?? new WindowsFormsSynchronizationContext();
 
             LevelManagement.InitialiseLevels();
@@ -35,7 +35,7 @@ namespace ExcelDynamicCase
 
             try
             {
-                Task.Run(async () => await StartUnity()).ContinueWith(t => _excelCtx.Post(_ => PipelineToUnity.PipelineToUnity.StartBattleMode(), null));
+                Task.Run(async () => await StartUnity());
             }
             finally
             {
@@ -55,15 +55,17 @@ namespace ExcelDynamicCase
                     UseShellExecute = true,
                     WindowStyle = ProcessWindowStyle.Normal,
                 };
-                _unity = Process.Start(psi);
-                WindowHelpers.ActivateWindow(_unity);
+                //_unity = Process.Start(psi);
+                //WindowHelpers.ActivateWindow(_unity);
             }
 
-            await PipelineToUnity.PipelineToUnity.SendOverworldStateAsync(new ExcelUnityPipeline.BattleResult()
-            {
-                BattleResultId = Guid.NewGuid(),
-                IsSuccess = true,
-            });
+            await PipelineToUnity.PipelineToUnity.InitPipeAsync();
+            await PipelineToUnity.PipelineToUnity.SendOverworldStateAsync(null);
+            //await PipelineToUnity.PipelineToUnity.SendOverworldStateAsync(new ExcelUnityPipeline.BattleResult()
+            //{
+            //    BattleResultId = Guid.NewGuid(),
+            //    IsSuccess = true,
+            //});
         }
 
         private void ThisWorkbook_NewSheet(object sh)

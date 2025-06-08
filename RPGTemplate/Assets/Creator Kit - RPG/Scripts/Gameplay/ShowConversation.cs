@@ -152,7 +152,7 @@ namespace RPGM.Events
         private IEnumerator ExecuteBattleRoutine(PipeBootstrap pipeBootstrap, BattleParameters battleParameters)
         {
             // 1.  Tell whatever system you use to stop processing input.
-            model.input.ChangeState(InputController.State.Battle);
+            model.input.ChangeNonBattleState(InputController.State.Battle);
 
             // 2.  Kick off the pipeline *without* blocking.
             var task = pipeBootstrap.RunBattle(battleParameters);
@@ -164,9 +164,6 @@ namespace RPGM.Events
             // 4.  Handle success / failure.
             if (task.IsFaulted)
                 Debug.LogException(task.Exception);   // make the error visible
-
-            // 5.  Always re-enable input.
-            model.input.ChangeState(InputController.State.CharacterControl);
         }
     }
 }

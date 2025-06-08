@@ -37,7 +37,7 @@ namespace RPGM.UI
             {
                 if (selectedButton >= 0)
                 {
-                    model.input.ChangeState(InputController.State.CharacterControl);
+                    model.input.ChangeNonBattleState(InputController.State.CharacterControl);
                     buttons[selectedButton].Click();
                     selectedButton = -1;
                 }
@@ -45,7 +45,7 @@ namespace RPGM.UI
             else
             {
                 //there are no buttons, just Hide when required.
-                model.input.ChangeState(InputController.State.CharacterControl);
+                model.input.ChangeNonBattleState(InputController.State.CharacterControl);
                 Hide();
             }
         }
@@ -72,7 +72,7 @@ namespace RPGM.UI
             d.gameObject.SetActive(true);
             d.SetText(text);
             SetPosition(position);
-            model.input.ChangeState(InputController.State.DialogControl);
+            model.input.ChangeNonBattleState(InputController.State.DialogControl);
             buttonCount = 0;
             selectedButton = -1;
         }
@@ -84,7 +84,7 @@ namespace RPGM.UI
             d.gameObject.SetActive(true);
             d.SetText(text, buttonA);
             SetPosition(position);
-            model.input.ChangeState(InputController.State.DialogControl);
+            model.input.ChangeNonBattleState(InputController.State.DialogControl);
             buttonCount = 1;
             selectedButton = -1;
         }
@@ -96,7 +96,7 @@ namespace RPGM.UI
             d.gameObject.SetActive(true);
             d.SetText(text, buttonA, buttonB);
             SetPosition(position);
-            model.input.ChangeState(InputController.State.DialogControl);
+            model.input.ChangeNonBattleState(InputController.State.DialogControl);
             buttonCount = 2;
             selectedButton = -1;
         }
@@ -115,7 +115,7 @@ namespace RPGM.UI
             d.gameObject.SetActive(true);
             d.SetText(text, buttonA, buttonB, buttonC);
             SetPosition(position);
-            model.input.ChangeState(InputController.State.DialogControl);
+            model.input.ChangeNonBattleState(InputController.State.DialogControl);
             buttonCount = 3;
             selectedButton = -1;
         }

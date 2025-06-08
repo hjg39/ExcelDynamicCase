@@ -89,7 +89,7 @@ namespace ExcelDynamicCase
             {
                 string functionPart = match.Value.Replace("(", "").Trim();
 
-                if ((Storage.AllowedFormulae ?? new List<string>()).Contains(functionPart))
+                if ((Storage.AllowedFunctions ?? new List<string>()).Contains(functionPart))
                 {
                     continue;
                 }

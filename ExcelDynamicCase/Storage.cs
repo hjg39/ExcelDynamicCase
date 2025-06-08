@@ -9,7 +9,7 @@ namespace ExcelDynamicCase
     {
         public static Random Random = new Random();
 
-        public static List<string> AllowedFormulae { get; set; }
+        public static List<string> AllowedFunctions { get; set; }
 
         public const string PASSWORD = "fdfbgiskfhdspaoojoFODBSVFIUS";
 

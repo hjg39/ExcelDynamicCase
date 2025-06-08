@@ -23,7 +23,15 @@ namespace RPGM.UI
 
         State state;
 
-        public void ChangeState(State state) => this.state = state;
+        public void ChangeNonBattleState(State state)
+        {
+            if (this.state == State.Battle)
+            {
+                return;
+            }
+
+            this.state = state;
+        }
 
         void Update()
         {
@@ -86,7 +94,7 @@ namespace RPGM.UI
             if (Input.GetKeyDown(KeyCode.M))
             {
                 model.functionInventory.Hide();
-                ChangeState(State.CharacterControl);
+                ChangeNonBattleState(State.CharacterControl);
             }
         }
     }
