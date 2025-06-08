@@ -71,7 +71,7 @@ namespace ExcelDynamicCase
             ((Excel.Range)this.Cells[6, 2]).Value = $"{challenger} has challenged you to a battle";
             ((Excel.Range)this.Cells[8, 2]).Value = $"You have {caseQuestion.Minutes} minutes (which you can follow in the overworld window).";
 
-            ((Excel.Range)this.Cells[15, 2]).Value = caseQuestion.QuestionText;
+            ((Excel.Range)this.Cells[17, 2]).Value = caseQuestion.QuestionText;
 
             Excel.Range data = null;
 
@@ -84,7 +84,7 @@ namespace ExcelDynamicCase
                 return;
             }
 
-            int startingRow = 20;
+            int startingRow = 22;
 
             foreach (KeyValuePair<string, object[,]> item in caseQuestion.Data)
             {
@@ -97,6 +97,8 @@ namespace ExcelDynamicCase
                 {
                     r.Interior.Color = colours;
                 }
+
+                startingRow += item.Value.GetLength(0) + 1;
             }
         }
 
