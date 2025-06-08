@@ -23,23 +23,17 @@ namespace ExcelDynamicCase
 
         public int BaseDeadline => NumberOfMinutes;
 
-        private static readonly Stopwatch stopwatch = new Stopwatch();
-
-        public bool TimeDidElapse = stopwatch.Elapsed > new TimeSpan(0, NumberOfMinutes, 0);
-
         private void Sheet5_Startup(object sender, System.EventArgs e)
         {
-            this.Change += L2_Battle_Change;
+            this.Change += Battle_Change;
         }
 
-        private void L2_Battle_Change(Microsoft.Office.Interop.Excel.Range target)
+        private void Sheet5_Shutdown(object sender, System.EventArgs e)
         {
-            if (TimeDidElapse)
-            {
-                YouLose();
-                return;
-            }
+        }
 
+        private void Battle_Change(Microsoft.Office.Interop.Excel.Range target)
+        {
             if (target.Row != 2 || target.Column != 3)
             {
                 return;
@@ -75,28 +69,7 @@ namespace ExcelDynamicCase
                 LevelManagement.ReturnToUnity(lossResult);
             }
 
-            stopwatch.Stop();
-
             return;
-        }
-
-        public void YouLose()
-        {
-            MessageBox.Show("You were defeated :(");
-
-            BattleResult loseResult = new BattleResult()
-            {
-                BattleResultId = Guid.NewGuid(),
-                IsSuccess = false,
-            };
-
-            LevelManagement.ReturnToUnity(loseResult);
-            stopwatch.Stop();
-        }
-
-        private void Sheet5_Shutdown(object sender, System.EventArgs e)
-        {
-            stopwatch.Stop();
         }
 
         public void RunSetup(CaseQuestion caseQuestion, string challenger)
