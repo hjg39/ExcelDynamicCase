@@ -2,8 +2,10 @@
 using ExcelDynamicCase.Questions;
 using ExcelUnityPipeline;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ExcelDynamicCase
 {
@@ -97,11 +99,42 @@ namespace ExcelDynamicCase
             stopwatch.Stop();
         }
 
-        public void RunSetup(CaseQuestion caseQuestion)
+        public void RunSetup(CaseQuestion caseQuestion, string challenger)
         {
+            ((Excel.Range)this.Cells[3, 15]).Formula = caseQuestion.QuestionLink is null ? "None" : string.Format("=HYPERLINK({0},{0})", caseQuestion.QuestionLink);
+            ((Excel.Range)this.Cells[6, 15]).Value = caseQuestion.Id.ToString();
 
+            ((Excel.Range)this.Cells[4, 5]).Value = caseQuestion.ExampleAnswer;
+            ((Excel.Range)this.Cells[6, 2]).Value = $"{challenger} has challenged you to a battle";
+            ((Excel.Range)this.Cells[8, 2]).Value = $"You have {caseQuestion.Minutes} minutes (which you can follow in the overworld window).";
 
+            ((Excel.Range)this.Cells[15, 2]).Value = caseQuestion.QuestionText;
 
+            Excel.Range data = null;
+
+            try { data = Globals.ThisWorkbook.Application.Intersect(this.UsedRange, this.Range[this.Cells[20, 1], this.Cells[1000, 1000]]); } catch (Exception) { }
+
+            data?.Clear();
+
+            if (caseQuestion.Data is null)
+            {
+                return;
+            }
+
+            int startingRow = 20;
+
+            foreach (KeyValuePair<string, object[,]> item in caseQuestion.Data)
+            {
+                ((Excel.Range)this.Cells[startingRow, 2]).Value = item.Key;
+                startingRow += 2;
+                Excel.Range r = ((Excel.Range)this.Cells[startingRow + 2, 2]).Resize[item.Value.GetLength(0), item.Value.GetLength(1)];
+                r.Value = caseQuestion.Data;
+
+                if (caseQuestion.Colours.TryGetValue(item.Key, out int[,] colours))
+                {
+                    r.Interior.Color = colours;
+                }
+            }
         }
 
         #region VSTO Designer generated code

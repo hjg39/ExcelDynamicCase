@@ -28,6 +28,7 @@ namespace ExcelDynamicCase.PipelineToUnity
                     BattleParameters battleParameters = await PipeHelper.ReadAsync<BattleParameters>(pipe); // ⬅ Unity
 
                     CaseQuestionEnum questionCode = (CaseQuestionEnum)battleParameters.QuestionId;
+                    LevelManagement.Challenger = battleParameters.Challenger;
                     LevelManagement.CaseQuestionCode = questionCode;
 
                 }

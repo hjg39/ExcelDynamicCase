@@ -11,7 +11,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.EulerOneMultiplesThreeFive,
-                    QuestionTitle = "Project Euler - Multiples of 3 or 5",
+                    QuestionText = "Project Euler - Multiples of 3 or 5",
                     HasLink = true,
                     QuestionLink = "https://projecteuler.net/problem=1",
                     Data = null,

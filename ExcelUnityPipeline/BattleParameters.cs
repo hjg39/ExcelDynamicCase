@@ -7,5 +7,7 @@ namespace ExcelUnityPipeline
         public List<string> AllowedFunctions { get; set; }
 
         public int QuestionId { get; set; }
+
+        public string Challenger { get; set; }
     }
 }

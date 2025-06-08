@@ -11,6 +11,7 @@ namespace ExcelDynamicCase
     public static class LevelManagement
     {
         public static CaseQuestionEnum CaseQuestionCode { get; set; }
+        public static string Challenger { get; set; }
 
         public static CaseQuestion GetCaseQuestion(CaseQuestionEnum questionCode)
             => CaseQuestionRepo.CaseQuestions[questionCode];
@@ -46,7 +47,7 @@ namespace ExcelDynamicCase
         public static void EnableBattleSheet(CaseQuestion caseQuestion)
         {
             Globals.Battle.Unprotect(Storage.PASSWORD);
-            Globals.Battle.RunSetup(caseQuestion);
+            Globals.Battle.RunSetup(caseQuestion, Challenger);
             Globals.Battle.Protect(Storage.PASSWORD);
 
             Globals.Battle.Visible = Interop.XlSheetVisibility.xlSheetVisible;

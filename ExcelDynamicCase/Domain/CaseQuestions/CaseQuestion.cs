@@ -14,13 +14,11 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
 
         public bool HasLink { get; set; }
 
-        public string QuestionTitle { get; set; }
+        public string QuestionText { get; set; }
 
-        public object[,] Data { get; set; }
+        public Dictionary<string, object[,]> Data { get; set; }
 
-        public object[,] Map { get; set; }
-
-        public int[,] MapColours { get; set; } 
+        public Dictionary<string, int[,]> Colours { get; set; }
 
         public string Answer { get; set; }
 
