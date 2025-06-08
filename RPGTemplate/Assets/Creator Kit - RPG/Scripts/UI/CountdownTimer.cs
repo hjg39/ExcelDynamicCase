@@ -1,4 +1,5 @@
-﻿using RPGM.UI;
+﻿using Assets.Creator_Kit___RPG.Persistence;
+using RPGM.UI;
 using System.Xml;
 using TMPro;
 using Unity.VisualScripting;
@@ -10,6 +11,7 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
     {
         public float timeRemaining;
         public TMP_Text tmpText;
+        public TMP_Text functions;
         public bool isRunning;
         public Camera mainCamera;
         public SpriteUIElement spriteUIElement;
@@ -46,6 +48,9 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
         public void Show(Vector3 position, float minutes)
         {
             timeRemaining = minutes * 60;
+            SaveManager.LoadGameData(out SaveData saveData);
+            functions.text = string.Join(", ", saveData.UnlockedFunctions);
+
             this.gameObject.SetActive(true);
             //SetPosition(position);
             SetPosition();
