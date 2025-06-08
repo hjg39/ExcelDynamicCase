@@ -1,3 +1,4 @@
+using Assets.Creator_Kit___RPG.Scripts.Gameplay;
 using ExcelUnityPipeline;
 using RPGM.Core;
 using RPGM.Gameplay;
@@ -39,22 +40,27 @@ namespace RPGM.UI
         {
             NPCController npcController = Events.ShowConversation.LastNpc;
             Events.ShowConversation ev = Schedule.Add<Events.ShowConversation>();
-            ev.conversation = new ConversationScript()
+
+            // Grab (or auto-create) the reusable ConversationScript
+            var convo = ConversationHost.Instance;
+
+            // Overwrite its data for this one-off dialogue
+            convo.items = new List<ConversationPiece>
             {
-                items = new List<ConversationPiece>()
+                new ConversationPiece
                 {
-                    new ConversationPiece()
-                    {
-                        id = "None",
-                        text = battleResult.IsSuccess ? "You won!" : "You lost, no unlocks this time!",
-                        options = new List<ConversationOption>(),
-                    }
+                    id = "None",
+                    text = battleResult.IsSuccess
+                           ? "You won!"
+                           : "You lost, no unlocks this time!",
+                    options = new List<ConversationOption>()
                 }
             };
+
+            ev.conversation = convo;
             ev.npc = npcController;
             ev.gameObject = npcController.gameObject;
             ev.conversationItemKey = string.Empty;
-
 
             this.state = State.CharacterControl;
         }
