@@ -11,17 +11,7 @@ namespace ExcelDynamicCase
 {
     public partial class Battle
     {
-        public static string Player { get; set; }
-
-        public static string ContestedFunction { get; set; }
-
-        public static int NumberOfMinutes { get; set; }
-
         public static int QuestionNumber { get; set; }
-
-        public string LevelName => "Battle";
-
-        public int BaseDeadline => NumberOfMinutes;
 
         private void Sheet5_Startup(object sender, System.EventArgs e)
         {
