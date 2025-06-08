@@ -19,6 +19,8 @@ namespace RPGM.Events
     /// <typeparam name="ShowConversation"></typeparam>
     public class ShowConversation : Event<ShowConversation>
     {
+        public static NPCController LastNpc;
+
         public NPCController npc;
         public GameObject gameObject;
         public ConversationScript conversation;
@@ -26,6 +28,7 @@ namespace RPGM.Events
 
         public override void Execute()
         {
+            LastNpc = npc;
             ConversationPiece ci;
             //default to first conversation item if no key is specified, else find the right conversation item.
             if (string.IsNullOrEmpty(conversationItemKey))

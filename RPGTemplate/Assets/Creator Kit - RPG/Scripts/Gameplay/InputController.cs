@@ -1,6 +1,7 @@
 using ExcelUnityPipeline;
 using RPGM.Core;
 using RPGM.Gameplay;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace RPGM.UI
@@ -36,6 +37,23 @@ namespace RPGM.UI
 
         public void EndBattleState(BattleResult battleResult)
         {
+            NPCController npcController = Events.ShowConversation.LastNpc;
+            Events.ShowConversation ev = Schedule.Add<Events.ShowConversation>();
+            ev.conversation = new ConversationScript()
+            {
+                items = new List<ConversationPiece>()
+                {
+                    new ConversationPiece()
+                    {
+                        id = "None",
+                        text = battleResult.IsSuccess ? "You won!" : "You lost, no unlocks this time!",
+                        options = new List<ConversationOption>(),
+                    }
+                }
+            };
+            ev.npc = npcController;
+            ev.gameObject = npcController.gameObject;
+            ev.conversationItemKey = string.Empty;
 
 
             this.state = State.CharacterControl;
