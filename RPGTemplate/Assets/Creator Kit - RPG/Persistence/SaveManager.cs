@@ -11,6 +11,8 @@ namespace Assets.Creator_Kit___RPG.Persistence
 {
     public static class SaveManager
     {
+        public const string NOFUNCTIONAVAILABLE = "NOTHING";
+
         private static string SaveFilePath => Path.Combine(Application.persistentDataPath, "SaveData.json");
 
         public static bool SaveGame(SaveData data)
@@ -53,6 +55,47 @@ namespace Assets.Creator_Kit___RPG.Persistence
             SaveGame(saveData);
         }
 
+        public static void SaveUnlockedFunctions(string[] functions)
+        {
+            if (!functions.Any())
+            {
+                return;
+            }
+
+            LoadGameData(out SaveData saveData);
+
+            List<string> unlockedFunctions = saveData.UnlockedFunctions;
+            unlockedFunctions.AddRange(functions);
+            unlockedFunctions = unlockedFunctions.Distinct().OrderBy(x => x).ToList();
+            unlockedFunctions.Sort();
+
+            saveData.UnlockedFunctions = unlockedFunctions;
+
+            SaveGame(saveData);
+        }
+
+        public static string[] UnlockRandomFunctions(QuestionRewardClassification questionRewardClassification)
+        {
+            string[] candidateUnlocks = QuestionsDatabase.FunctionRewardsByClassification[questionRewardClassification];
+
+            List<string> selectedFunctions = new();
+
+            for (int i = 0; i < 3; i++)
+            {
+                selectedFunctions.Add(candidateUnlocks[UnityEngine.Random.Range((int)0, 3)]);
+            }
+
+            selectedFunctions = selectedFunctions.Distinct().ToList();
+
+            string[] validFunctionsForUnlock = GetFunctionsToUnlock(questionRewardClassification);
+
+            string[] winners = selectedFunctions.Where(x => validFunctionsForUnlock.Contains(x)).ToArray();
+
+            SaveUnlockedFunctions(winners);
+
+            return winners;
+        }
+
         public static string[] GetFunctionsToUnlock(QuestionRewardClassification questionRewardClassification)
         {
             LoadGameData(out SaveData data);
@@ -66,7 +109,7 @@ namespace Assets.Creator_Kit___RPG.Persistence
                 return unlockableRewards;
             }
 
-            return new string[1] { "Nothing" };
+            return new string[1] { NOFUNCTIONAVAILABLE };
         }
 
         public static void LoadGameData(out SaveData data)

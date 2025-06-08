@@ -1,8 +1,10 @@
+using Assets.Creator_Kit___RPG.Persistence;
 using Assets.Creator_Kit___RPG.Scripts.Gameplay;
 using ExcelUnityPipeline;
 using RPGM.Core;
 using RPGM.Gameplay;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace RPGM.UI
@@ -39,6 +41,9 @@ namespace RPGM.UI
         public void EndBattleState(BattleResult battleResult)
         {
             NPCController npcController = Events.ShowConversation.LastNpc;
+
+            string[] unlockedFunctions = SaveManager.UnlockRandomFunctions(npcController.rewardClassification);            
+
             Events.ShowConversation ev = Schedule.Add<Events.ShowConversation>();
 
             // Grab (or auto-create) the reusable ConversationScript
@@ -51,7 +56,7 @@ namespace RPGM.UI
                 {
                     id = "None",
                     text = battleResult.IsSuccess
-                           ? "You won!"
+                           ? (unlockedFunctions.Any() ? $"You won and unlocked the following functions!\r\n{string.Join(", ", unlockedFunctions)}" : "You won, but no new unlocks this time!")
                            : "You lost, no unlocks this time!",
                     options = new List<ConversationOption>()
                 }
