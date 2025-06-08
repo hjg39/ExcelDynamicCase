@@ -26,20 +26,23 @@ namespace ExcelDynamicCase
         {
             Globals.ThisWorkbook.UnHookSheetChangeEvent();
 
-            DisableUnityIsActiveSheet();
             EnableWorkingsSheet();
             EnableBattleSheet(caseQuestion);
-
+            DisableUnityIsActiveSheet();
+            
             Globals.ThisWorkbook.HookSheetChangeEvent();
         }
 
         private static void DisableUnityIsActiveSheet()
         {
+            Globals.UnityIsActive.Unprotect(Storage.PASSWORD);
             Globals.UnityIsActive.Visible = Interop.XlSheetVisibility.xlSheetVeryHidden;
+            Globals.UnityIsActive.Protect(Storage.PASSWORD);
         }
 
         private static void EnableWorkingsSheet()
         {
+            Globals.Workings.Unprotect(Storage.PASSWORD);
             Globals.Workings.Cells.Clear();
             Globals.Workings.Visible = Interop.XlSheetVisibility.xlSheetVisible;
         }
@@ -48,9 +51,9 @@ namespace ExcelDynamicCase
         {
             Globals.Battle.Unprotect(Storage.PASSWORD);
             Globals.Battle.RunSetup(caseQuestion, Challenger);
+            Globals.Battle.Visible = Interop.XlSheetVisibility.xlSheetVisible;
             Globals.Battle.Protect(Storage.PASSWORD);
 
-            Globals.Battle.Visible = Interop.XlSheetVisibility.xlSheetVisible;
             Globals.Battle.Activate();
         }
 

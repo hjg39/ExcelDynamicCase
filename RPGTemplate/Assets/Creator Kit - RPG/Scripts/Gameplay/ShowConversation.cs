@@ -55,7 +55,7 @@ namespace RPGM.Events
                 GameObject gameObject = GameObject.Find("PipeBootstrap");
                 PipeBootstrap pipeBootstrap = gameObject.GetComponent<PipeBootstrap>();
 
-                BattleParameters battleParameters = BattleManager.GetBattleParameters(npc.rewardClassification);
+                BattleParameters battleParameters = BattleManager.GetBattleParameters(npc.gameObject.name, npc.rewardClassification);
 
                 pipeBootstrap.RunBattle(battleParameters).RunSynchronously();
             }

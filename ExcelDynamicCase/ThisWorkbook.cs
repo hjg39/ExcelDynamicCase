@@ -26,7 +26,7 @@ namespace ExcelDynamicCase
 
             LevelManagement.InitialiseLevels();
 
-            this.SheetChange += ThisWorkbook_SheetChange;
+            HookSheetChangeEvent();
             this.NewSheet += ThisWorkbook_NewSheet;
         
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
@@ -51,8 +51,9 @@ namespace ExcelDynamicCase
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
                     FileName = @"C:\Users\harry\source\repos\ExcelDynamicCase\ExcelDynamicCase\overworld\Excelopolis.exe",
-                    Arguments = "-screen-fullscreen 0 -popupwindow",
-                    UseShellExecute = true
+                    Arguments = "-screen-fullscreen 0 -screen-width 1280 -screen-height 720\"",
+                    UseShellExecute = true,
+                    WindowStyle = ProcessWindowStyle.Normal,
                 };
                 _unity = Process.Start(psi);
                 WindowHelpers.ActivateWindow(_unity);
@@ -90,6 +91,7 @@ namespace ExcelDynamicCase
         public void UnHookSheetChangeEvent()
         {
             this.SheetChange -= ThisWorkbook_SheetChange;
+            Thread.Sleep(1);
         }
 
         private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)

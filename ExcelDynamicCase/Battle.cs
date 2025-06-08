@@ -64,7 +64,7 @@ namespace ExcelDynamicCase
 
         public void RunSetup(CaseQuestion caseQuestion, string challenger)
         {
-            ((Excel.Range)this.Cells[3, 15]).Formula = caseQuestion.QuestionLink is null ? "None" : string.Format("=HYPERLINK({0},{0})", caseQuestion.QuestionLink);
+            ((Excel.Range)this.Cells[3, 15]).Formula = caseQuestion.QuestionLink is null ? "None" : string.Format("=HYPERLINK(\"{0}\",\"{0}\")", caseQuestion.QuestionLink);
             ((Excel.Range)this.Cells[6, 15]).Value = caseQuestion.Id.ToString();
 
             ((Excel.Range)this.Cells[4, 5]).Value = caseQuestion.ExampleAnswer;
@@ -75,7 +75,7 @@ namespace ExcelDynamicCase
 
             Excel.Range data = null;
 
-            try { data = Globals.ThisWorkbook.Application.Intersect(this.UsedRange, this.Range[this.Cells[20, 1], this.Cells[1000, 1000]]); } catch (Exception) { }
+            try { data = Globals.ThisWorkbook.Application.Intersect(this.UsedRange, this.Range[this.Cells[22, 1], this.Cells[1000, 1000]]); } catch (Exception) { }
 
             data?.Clear();
 
