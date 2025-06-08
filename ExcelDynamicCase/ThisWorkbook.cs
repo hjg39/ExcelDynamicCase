@@ -102,19 +102,14 @@ namespace ExcelDynamicCase
             MessageBox.Show(sb.ToString());
         }
 
-        private void ThisWorkbook_Shutdown(object sender, System.EventArgs e)
+        private void ThisWorkbook_Shutdown(object sender, EventArgs e)
         {
         }
 
-        private void ThisWorkbook_SheetChange(object sheet, Excel.Range target)
+        private void ThisWorkbook_SheetChange(object sheet, Range target)
         {
             SheetChangeValidator.DeleteAllNames();
             SheetChangeValidator.ValidateChanges(sheet, target);
-
-            if (Globals.Battle.TimeDidElapse)
-            {
-                Globals.Battle.YouLose();
-            }
         }
 
         #region VSTO Designer generated code

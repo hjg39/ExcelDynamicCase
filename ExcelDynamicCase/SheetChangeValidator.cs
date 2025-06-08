@@ -31,12 +31,7 @@ namespace ExcelDynamicCase
                 return;
             }
 
-            if (!(sheet is Worksheet ws))
-            {
-                return;
-            }
-
-            if (ws.Name == Globals.Information.Name)
+            if (!(sheet is Worksheet))
             {
                 return;
             }

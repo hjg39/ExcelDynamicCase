@@ -15,8 +15,6 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     HasLink = true,
                     QuestionLink = "https://projecteuler.net/problem=1",
                     Data = null,
-                    Map = null,
-                    MapColours = null,
                     Answer = "233168",
                     ExampleAnswer = 10000d,
                     Minutes = 5,
