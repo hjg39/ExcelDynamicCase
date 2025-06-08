@@ -90,9 +90,9 @@ namespace ExcelDynamicCase
                 ((Excel.Range)this.Cells[startingRow, 2]).Value = item.Key;
                 startingRow += 2;
                 Excel.Range r = ((Excel.Range)this.Cells[startingRow + 2, 2]).Resize[item.Value.GetLength(0), item.Value.GetLength(1)];
-                r.Value = caseQuestion.Data;
+                r.Value = item.Value;
 
-                if (caseQuestion.Colours.TryGetValue(item.Key, out int[,] colours))
+                if (caseQuestion.Colours is Dictionary<string, int[,]> colourDict && colourDict.TryGetValue(item.Key, out int[,] colours))
                 {
                     r.Interior.Color = colours;
                 }

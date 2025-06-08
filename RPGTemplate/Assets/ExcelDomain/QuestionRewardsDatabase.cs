@@ -8,12 +8,6 @@ namespace Assets.ExcelDomain
 {
     public static class QuestionRewardsDatabase
     {
-        public static Dictionary<QuestionRewardClassification, int[]> CaseNumbersByRewardClassification =
-        new()
-        {
-            {  QuestionRewardClassification.BasicMaths, new int[] { 1 } }
-        };
-
         public static Dictionary<QuestionRewardClassification, string[]> FunctionRewardsByClassification = new()
         {
             { QuestionRewardClassification.None, new string[] { }  },

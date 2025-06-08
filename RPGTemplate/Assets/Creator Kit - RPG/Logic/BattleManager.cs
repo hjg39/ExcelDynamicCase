@@ -42,19 +42,19 @@ namespace Assets.Creator_Kit___RPG.Logic
         private static int[] GetQuestionsByRewardClassification(QuestionRewardClassification questionRewardClassification)
         => questionRewardClassification switch
         {
-            QuestionRewardClassification.BasicAggregates => new int[] { },
-            QuestionRewardClassification.AdvancedAggregates => new int[] { },
+            QuestionRewardClassification.BasicAggregates => new int[] { 3, },
+            QuestionRewardClassification.AdvancedAggregates => new int[] { 7, },
             QuestionRewardClassification.ExpertAggregates => new int[] { },
             QuestionRewardClassification.DivineAggregates => new int[] { },
-            QuestionRewardClassification.AdvancedComplex => new int[] { },
+            QuestionRewardClassification.AdvancedComplex => new int[] { 8, },
             QuestionRewardClassification.ExpertBases => new int[] { },
-            QuestionRewardClassification.BasicLookup => new int[] { },
-            QuestionRewardClassification.AdvancedLookup => new int[] { },
-            QuestionRewardClassification.BasicMaths => new int[] { 1 },
+            QuestionRewardClassification.BasicLookup => new int[] { 5, },
+            QuestionRewardClassification.AdvancedLookup => new int[] { 9 },
+            QuestionRewardClassification.BasicMaths => new int[] { 1, 6, },
             QuestionRewardClassification.ExpertMaths => new int[] { },
-            QuestionRewardClassification.BasicText => new int[] { },
+            QuestionRewardClassification.BasicText => new int[] { 2, 11 },
             QuestionRewardClassification.AdvancedText => new int[] { },
-            QuestionRewardClassification.BasicManipulation => new int[] { },
+            QuestionRewardClassification.BasicManipulation => new int[] { 4 },
             QuestionRewardClassification.AdvancedManipulation => new int[] { },
             QuestionRewardClassification.AdvancedDates => new int[] { },
             QuestionRewardClassification.ExpertDates => new int[] { },
@@ -64,7 +64,16 @@ namespace Assets.Creator_Kit___RPG.Logic
         public static float GetTimeAllowedByQuestionNumber(int i)
         => i switch
         {
-            1 => 0.3f,
+            1 => 5f,
+            2 => 5f,
+            3 => 3f,
+            4 => 3f,
+            5 => 3f,
+            6 => 3f,
+            7 => 10f,
+            8 => 5f,
+            9 => 5f,
+            11 => 5f,
             _ => throw new NotImplementedException(),
         };
     }
