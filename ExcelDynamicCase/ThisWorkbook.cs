@@ -13,7 +13,7 @@ namespace ExcelDynamicCase
 {
     public partial class ThisWorkbook
     {
-        private static readonly Process _unity;
+        private static Process _unity;
 
         public static Stopwatch LevelStopwatch { get; set; } = Stopwatch.StartNew();
 
@@ -55,8 +55,8 @@ namespace ExcelDynamicCase
                     UseShellExecute = true,
                     WindowStyle = ProcessWindowStyle.Normal,
                 };
-                //_unity = Process.Start(psi);
-                //WindowHelpers.ActivateWindow(_unity);
+                _unity = Process.Start(psi);
+                WindowHelpers.ActivateWindow(_unity);
             }
 
             await PipelineToUnity.PipelineToUnity.InitPipeAsync();
