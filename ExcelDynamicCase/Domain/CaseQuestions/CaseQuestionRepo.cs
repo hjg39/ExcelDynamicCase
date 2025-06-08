@@ -16,7 +16,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     Data = null,
                     Answer = "233168",
                     ExampleAnswer = 10000d,
-                    Minutes = 5,
+                    Minutes = 0.3,
                 }
             }
         };

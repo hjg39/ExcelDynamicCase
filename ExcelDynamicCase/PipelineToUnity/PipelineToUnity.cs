@@ -106,15 +106,15 @@ namespace ExcelDynamicCase.PipelineToUnity
                 ThisWorkbook.ExcelCtx.Post(_ => QuitCore(), null);
         }
 
-    /// somewhere in your shutdown/cleanup path
-    public static void ClosePipe()
-    {
-        _pipe?.Dispose();
-    }
+        /// somewhere in your shutdown/cleanup path
+        public static void ClosePipe()
+        {
+            _pipe?.Dispose();
+        }
 
-    public static void StartBattleMode()
-    {
-        LevelManagement.StartCaseQuestion();
-    }
+        public static void StartBattleMode()
+        {
+            LevelManagement.StartCaseQuestion();
+        }
     }
 }

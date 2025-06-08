@@ -5,6 +5,7 @@ using System;
 using System.Threading.Tasks;
 using ExcelDynamicCase.Domain;
 using ExcelDynamicCase.Domain.CaseQuestions;
+using System.Threading;
 
 namespace ExcelDynamicCase
 {
@@ -16,15 +17,28 @@ namespace ExcelDynamicCase
         public static CaseQuestion GetCaseQuestion(CaseQuestionEnum questionCode)
             => CaseQuestionRepo.CaseQuestions[questionCode];
 
+        private static CancellationTokenSource cts { get; set; }
+
         public static void StartCaseQuestion()
         {
+            CancellationTokenSource cts = new CancellationTokenSource();
+
+
             CaseQuestion caseQuestion = GetCaseQuestion(CaseQuestionCode);
             Battle.CaseQuestion = caseQuestion;
-            StartBattle(caseQuestion);
+            StartBattle(caseQuestion, cts);
+
+            Task.Delay(TimeSpan.FromMinutes(caseQuestion.Minutes), cts.Token).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => StopBattle(
+                new BattleResult()
+                {
+                    BattleResultId = Guid.NewGuid(),
+                    IsSuccess = false,
+                }), null), cts.Token);
         }
 
         public static void StopBattle(BattleResult battleResult)
         {
+            cts.Cancel();
             Globals.ThisWorkbook.UnHookSheetChangeEvent();
 
             EnableUnityIsActiveSheet();
@@ -36,8 +50,9 @@ namespace ExcelDynamicCase
             Task.Run(async () => await PipelineToUnity.PipelineToUnity.SendOverworldStateAsync(battleResult));
         }
 
-        public static void StartBattle(CaseQuestion caseQuestion)
+        public static void StartBattle(CaseQuestion caseQuestion, CancellationTokenSource cts)
         {
+            LevelManagement.cts = cts;
             Globals.ThisWorkbook.UnHookSheetChangeEvent();
 
             EnableWorkingsSheet();

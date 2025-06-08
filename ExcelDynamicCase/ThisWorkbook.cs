@@ -108,6 +108,7 @@ namespace ExcelDynamicCase
 
         private void ThisWorkbook_Shutdown(object sender, EventArgs e)
         {
+            PipelineToUnity.PipelineToUnity.ClosePipe();
         }
 
         private void ThisWorkbook_SheetChange(object sheet, Range target)
