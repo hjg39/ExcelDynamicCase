@@ -22,9 +22,9 @@ namespace ExcelDynamicCase
         {
         }
 
-        private void Battle_Change(Microsoft.Office.Interop.Excel.Range target)
+        private void Battle_Change(Excel.Range target)
         {
-            if (target.Row != 2 || target.Column != 3)
+            if (target.Row != 2 || target.Column != 5)
             {
                 return;
             }
