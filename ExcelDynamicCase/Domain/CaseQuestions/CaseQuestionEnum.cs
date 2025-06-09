@@ -38,5 +38,13 @@
         DailyProgrammerNumberOfOnes = 30390,
         DailyProgrammerMatrixSum = 30398,
         DailyProgrammerLetterValueSum = 30399,
+        MEWC2021CardGameLevel1 = 40000,
+        MEWC2021DominateTheDominoesLevel1 = 40001,
+        MEWC2021LumberjackLevel1A = 40002,
+        MEWC2021LumberjackLevel1B = 40003,
+        MEWC2021LumberjackLevel2 = 40004,
+        MEWC2021ItIsASnakeLevel1 = 40005,
+        MEWC2021ItIsASnakeLevel2 = 40006,
+        MEWC2021ItIsASnakeLevel3 = 40007,
     }
 }
