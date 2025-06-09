@@ -46,5 +46,13 @@
         MEWC2021ItIsASnakeLevel1 = 40005,
         MEWC2021ItIsASnakeLevel2 = 40006,
         MEWC2021ItIsASnakeLevel3 = 40007,
+        MEWC2022TheSocialNetworkL1 = 40008,
+        MEWC2022TheSocialNetworkL2 = 40009,
+        MEWC2022TheSocialNetworkL3 = 40010,
+        MEWC2022TheSocialNetworkL4 = 40011,
+        MEWC2022TheSocialNetworkL5 = 40012,
+        MEWC2022TheSocialNetworkB1 = 40013,
+        MEWC2022TheSocialNetworkB2 = 40014,
+        MEWC2022TheSocialNetworkB3 = 40015,
     }
 }
