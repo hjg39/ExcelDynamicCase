@@ -177,7 +177,6 @@
     <Compile Include="Battle.Designer.cs">
       <DependentUpon>Battle.Designer.xml</DependentUpon>
     </Compile>
-    <Compile Include="Questions\AllowedQuestions.cs" />
     <Compile Include="UnityIsActive.cs">
       <DependentUpon>ExcelDynamicCase.xlsx</DependentUpon>
     </Compile>
@@ -246,6 +245,9 @@
     <None Include="UnityIsActive.Designer.xml">
       <DependentUpon>UnityIsActive.cs</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Questions\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
