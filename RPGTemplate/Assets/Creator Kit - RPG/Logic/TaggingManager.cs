@@ -54,6 +54,7 @@ namespace Assets.Creator_Kit___RPG.Persistence
                     SetConversationNumber("JulienLacaze", 2);
                     break;
                 case "UnlockExpert":
+                    GameObject.FindGameObjectWithTag("Roadblock")?.SetActive(false);
                     SetConversationNumber("JulienLacaze", 3);
                     SetConversationNumber("AndrewGrigolyunovich", 3);
                     break;
