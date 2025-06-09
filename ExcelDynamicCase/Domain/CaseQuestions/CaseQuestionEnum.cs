@@ -54,5 +54,12 @@
         MEWC2022TheSocialNetworkB1 = 40013,
         MEWC2022TheSocialNetworkB2 = 40014,
         MEWC2022TheSocialNetworkB3 = 40015,
+        MEWC2023LanaBananaL1 = 40016,
+        MEWC2023LanaBananaL2 = 40017,
+        MEWC2023LanaBananaL3 = 40018,
+        MEWC2023LanaBananaL4 = 40019,
+        MEWC2023LanaBananaL5 = 40020,
+        MEWC2023LanaBananaB1 = 40021,
+        MEWC2023LanaBananaB2 = 40022,
     }
 }

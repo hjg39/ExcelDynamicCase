@@ -40,26 +40,53 @@ namespace Assets.Creator_Kit___RPG.Logic
         }
 
         private static int[] GetQuestionsByRewardClassification(QuestionRewardClassification questionRewardClassification)
-        => questionRewardClassification switch
         {
-            QuestionRewardClassification.BasicAggregates => new int[] { 3, 20001, 30399, 40003 },
-            QuestionRewardClassification.AdvancedAggregates => new int[] { 7, 10015, 40011, },
-            QuestionRewardClassification.ExpertAggregates => new int[] { 13, 33, 30348, },
-            QuestionRewardClassification.DivineAggregates => new int[] { 16, 31, 43, 76, 20000, 30378, 30354 },
-            QuestionRewardClassification.AdvancedComplex => new int[] { 8, 30369, },
-            QuestionRewardClassification.ExpertBases => new int[] { 15, 40, 40007 },
-            QuestionRewardClassification.BasicLookup => new int[] { 5, 20002, 30379, 40008 },
-            QuestionRewardClassification.AdvancedLookup => new int[] { 9, 40004 },
-            QuestionRewardClassification.BasicMaths => new int[] { 1, 6, 40000, 40009 },
-            QuestionRewardClassification.ExpertMaths => new int[] { 17, 30398, 40012, },
-            QuestionRewardClassification.BasicText => new int[] { 2, 11, 40001, 40013, },
-            QuestionRewardClassification.AdvancedText => new int[] { 12, 40005, 40014, },
-            QuestionRewardClassification.BasicManipulation => new int[] { 4, 30, 40002, },
-            QuestionRewardClassification.AdvancedManipulation => new int[] { 34, 40006, },
-            QuestionRewardClassification.AdvancedDates => new int[] { 36, 40010, },
-            QuestionRewardClassification.ExpertDates => new int[] { 24, 30390, 40015, },
-            _ => throw new NotImplementedException(),
-        };
+            switch (questionRewardClassification)
+            {
+                case QuestionRewardClassification.BasicAggregates:
+                case QuestionRewardClassification.BasicLookup:
+                case QuestionRewardClassification.BasicMaths:
+                case QuestionRewardClassification.BasicText:
+                case QuestionRewardClassification.BasicManipulation:
+                    return new int[] { 3, 20001, 30399, 40003, 40022, 5, 20002, 30379, 40008, 1, 6, 40000, 40009, 2, 11, 40001, 40013, 4, 30, 40002, 40021 };
+                case QuestionRewardClassification.AdvancedAggregates:
+                case QuestionRewardClassification.AdvancedComplex:
+                case QuestionRewardClassification.AdvancedLookup:
+                case QuestionRewardClassification.AdvancedText:
+                case QuestionRewardClassification.AdvancedManipulation:
+                case QuestionRewardClassification.AdvancedDates:
+                    return new int[] { 7, 10015, 40011, 8, 30369, 40016, 9, 40004, 40017, 12, 40005, 40014, 34, 40006, 40018, 36, 40010, 40019, };
+                case QuestionRewardClassification.ExpertAggregates:
+                case QuestionRewardClassification.ExpertBases:
+                case QuestionRewardClassification.ExpertMaths:
+                case QuestionRewardClassification.ExpertDates:
+                    return new int[] { 13, 33, 30348, 15, 40, 40007, 17, 30398, 40012, 24, 30390, 40015, };
+                case QuestionRewardClassification.DivineAggregates:
+                    return new int[] { 16, 31, 43, 76, 20000, 30378, 30354 };
+                default:
+                    throw new NotImplementedException();
+            }
+        }
+        //=> questionRewardClassification switch
+        //{
+        //    //QuestionRewardClassification.BasicAggregates => new int[] { 3, 20001, 30399, 40003, 40022 },
+        //    //QuestionRewardClassification.AdvancedAggregates => new int[] { 7, 10015, 40011, },
+        //    //QuestionRewardClassification.ExpertAggregates => new int[] { 13, 33, 30348, },
+        //    //QuestionRewardClassification.DivineAggregates => new int[] { 16, 31, 43, 76, 20000, 30378, 30354 },
+        //    //QuestionRewardClassification.AdvancedComplex => new int[] { 8, 30369, 40016, },
+        //    //QuestionRewardClassification.ExpertBases => new int[] { 15, 40, 40007 },
+        //    //QuestionRewardClassification.BasicLookup => new int[] { 5, 20002, 30379, 40008 },
+        //    //QuestionRewardClassification.AdvancedLookup => new int[] { 9, 40004, 40017 },
+        //    //QuestionRewardClassification.BasicMaths => new int[] { 1, 6, 40000, 40009 },
+        //    //QuestionRewardClassification.ExpertMaths => new int[] { 17, 30398, 40012, },
+        //    //QuestionRewardClassification.BasicText => new int[] { 2, 11, 40001, 40013, },
+        //    //QuestionRewardClassification.AdvancedText => new int[] { 12, 40005, 40014, },
+        //    //QuestionRewardClassification.BasicManipulation => new int[] { 4, 30, 40002, 40021 },
+        //    //QuestionRewardClassification.AdvancedManipulation => new int[] { 34, 40006, 40018, },
+        //    //QuestionRewardClassification.AdvancedDates => new int[] { 36, 40010, 40019, },
+        //    //QuestionRewardClassification.ExpertDates => new int[] { 24, 30390, 40015, },
+        //    //_ => throw new NotImplementedException(),
+        //};
 
         public static float GetTimeAllowedByQuestionNumber(int i)
         => i switch
@@ -116,6 +143,13 @@ namespace Assets.Creator_Kit___RPG.Logic
             40013 => 3f,
             40014 => 5f,
             40015 => 15f,
+            40016 => 7f,
+            40017 => 12f,
+            40018 => 8f,
+            40019 => 8f,
+            40020 => 10f,
+            40021 => 3f,
+            40022 => 3f,
             _ => throw new NotImplementedException(),
         };
     }

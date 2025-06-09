@@ -77,6 +77,50 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
             {"50","Zoey","","","","","","","","","","","","","","","","★","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",},
         };
 
+        public static readonly object[,] _lanaBanana = new object[,]
+        {
+            {null,"B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","AA","AB","AC","AD","AE","AF","AG","AH","AI","AJ","AK","AL","AM","AN",},
+            {2d,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,"🍌",null,null,null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,null,},
+            {3d,null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,null,"🍌","🍌",null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,"🍌",null,},
+            {4d,"🍌",null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,"🍌",null,null,null,"🍌",null,"🍌",null,null,null,null,null,null,null,null,null,null,null,null,null,"🍌","🍌",},
+            {5d,null,null,"🍌",null,"🍌",null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,"🍌","🍌",null,null,null,null,"🍌",null,null,null,null,null,null,"🍌","🍌",null,null,null,null,"🍌",},
+            {6d,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,"🍌","🍌",null,null,null,null,null,},
+            {7d,"🍌",null,null,"🍌",null,null,null,null,null,null,null,null,"🍌","🍌","🍌","🍌","🍌",null,null,null,"🍌",null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,null,null,"🍌",null,null,null,},
+            {8d,null,"🍌","🍌","🍌",null,null,"🍌",null,"🍌",null,null,null,"🍌",null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,},
+            {9d,"🍌",null,"🍌",null,"🍌",null,"🍌",null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,"🍌",null,null,"🍌",null,null,null,"🍌",null,null,null,null,null,null,"🍌",null,null,},
+            {10d,null,null,null,null,null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"🍌","🍌",null,"🍌",null,null,null,null,"🍌",},
+            {11d,null,null,null,null,null,"🍌",null,null,null,"🍌",null,null,null,"🍌",null,null,null,"🍌",null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,},
+            {12d,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,null,"🍌",},
+            {13d,null,null,null,null,null,"🍌",null,"🍌",null,null,null,null,null,null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,"🍌",null,null,null,},
+            {14d,null,null,"🍌","🍌",null,null,"🍌",null,null,null,null,"🍌",null,"🍌",null,null,null,"🍌","🍌",null,"🍌","🍌",null,null,null,null,null,null,null,"🍌",null,null,null,null,"🍌",null,null,null,null,},
+            {15d,null,null,null,"🍌",null,null,null,"🍌",null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,"🍌",null,null,null,"🍌",null,null,},
+            {16d,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,null,"🍌",null,null,null,"🍌","🍌",null,"🍌",null,null,null,null,null,null,},
+            {17d,null,null,null,"🍌",null,"🍌",null,null,null,null,null,null,"🍌","🍌",null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,"🍌","🍌",null,null,null,"🍌","🍌",null,null,},
+            {18d,null,null,null,null,"🍌",null,null,"🍌",null,"🍌",null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,"🍌","🍌",null,null,},
+            {19d,null,null,null,null,null,null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,null,null,null,null,null,null,"🍌",null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,"🍌",null,null,},
+            {20d,"🍌",null,"🍌","🍌",null,null,null,null,null,"🍌","🍌","🍌",null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,null,null,"🍌",null,null,"🍌",null,null,},
+            {21d,null,null,null,null,null,null,null,null,null,"🍌",null,null,"🍌",null,"🍌",null,"🍌",null,"🍌",null,null,null,null,null,null,null,"🍌",null,"🍌","🍌",null,null,null,null,null,null,null,null,null,},
+            {22d,null,"🍌","🍌",null,"🍌","🍌","🍌",null,null,"🍌","🍌",null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,},
+            {23d,null,null,null,null,null,"🍌","🍌","🍌",null,null,null,null,null,null,"🍌",null,null,null,null,null,"🍌",null,null,null,"🍌",null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,null,null,},
+            {24d,null,null,null,"🍌",null,null,null,"🍌",null,null,null,null,null,null,null,null,null,null,null,null,"🍌","🍌","🍌",null,null,null,null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,null,},
+            {25d,null,null,null,null,null,null,null,"🍌",null,"🍌",null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,"🍌","🍌",null,null,null,null,null,null,null,null,null,"🍌",null,},
+            {26d,null,null,null,null,null,null,null,null,null,"🍌",null,"🍌",null,null,"🍌",null,null,null,null,"🍌",null,null,null,null,null,null,null,"🍌","🍌",null,null,null,null,null,null,null,null,null,null,},
+            {27d,null,"🍌",null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,"🍌",null,"🍌",null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,"🍌",null,null,null,},
+            {28d,null,null,null,null,null,null,"🍌",null,null,null,"🍌",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,null,"🍌",null,"🍌",},
+            {29d,"🍌",null,null,null,null,null,"🍌",null,null,null,null,"🍌",null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,"🍌",null,null,null,"🍌",null,null,null,null,"🍌",null,null,},
+            {30d,null,null,null,null,"🍌",null,null,"🍌",null,null,null,null,"🍌","🍌",null,null,null,null,null,"🍌",null,"🍌",null,null,null,null,"🍌","🍌",null,null,"🍌",null,null,null,null,null,null,null,null,},
+            {31d,null,null,null,"🍌","🍌","🍌",null,null,"🍌",null,null,null,null,"🍌",null,null,null,null,null,null,null,null,"🍌","🍌",null,null,null,null,null,null,"🍌",null,null,null,null,"🍌",null,"🍌",null,},
+            {32d,null,null,null,null,null,null,null,null,null,null,"🍌","🍌",null,"🍌",null,null,null,null,"🍌",null,null,null,null,"🍌",null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,},
+            {33d,null,null,null,"🍌",null,"🍌",null,null,null,"🍌",null,null,null,null,null,"🍌",null,null,"🍌",null,null,null,null,"🍌",null,null,"🍌",null,null,null,"🍌",null,null,null,null,null,null,"🍌",null,},
+            {34d,"🍌","🍌",null,null,null,"🍌",null,null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,"🍌","🍌",null,null,"🍌",null,null,"🍌",null,null,null,"🍌",null,null,},
+            {35d,null,null,null,"🍌",null,"🍌",null,null,null,null,"🍌","🍌","🍌",null,null,null,"🍌",null,"🍌",null,null,null,null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,null,null,null,null,null,},
+            {36d,null,null,null,null,null,null,null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,},
+            {37d,null,null,"🍌","🍌",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,null,null,},
+            {38d,null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,"🍌","🍌",null,null,null,null,null,null,"🍌",null,null,null,null,"🍌",null,null,},
+            {39d,"🍌",null,null,null,"🍌",null,null,null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,"🍌",null,null,"🍌",null,null,null,null,null,null,null,null,"🍌",null,null,null,null,null,null,"🍌",},
+            {40d,null,"🍌",null,null,"🍌",null,null,null,"🍌","🍌",null,null,null,null,null,null,"🍌",null,null,null,null,"🍌",null,null,"🍌",null,null,null,null,"🍌",null,null,null,"🍌",null,null,null,null,null,},
+        }
+
         public static Dictionary<CaseQuestionEnum, CaseQuestion> CaseQuestions = new Dictionary<CaseQuestionEnum, CaseQuestion>()
         {
             {
@@ -1426,6 +1470,274 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     Answer = "107",
                     ExampleAnswer = 100d,
                     Minutes = 15f,
+                }
+            },
+            {
+                CaseQuestionEnum.MEWC2023LanaBananaL1,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.MEWC2023LanaBananaL1,
+                    QuestionText = "If Lana starts in these cells and moves straight down without using diagonals, how many bananas will she collect?  (Use the key rather than the actual Excel cell addresses.)\r\n\r\nIf she starts on a cell with a banana, she can grab it immediately.\r\n\r\nWrite the sum of the answers for the different starting cells.",
+                    QuestionLink = "https://fmworldcup.com/product/lana-banana-mewc-2023/",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Starting cells",
+                            new object[,]
+                            {
+                                {"D31"},
+                                {"AE36"},
+                                {"J25"},
+                                {"AG19"},
+                                {"AI10"},
+                                {"D24"},
+                                {"Y18"},
+                                {"X24"},
+                                {"Z29"},
+                                {"AH27"},
+                                {"C18"},
+                            }
+                        },
+                        {
+                            "Lana Banana", 
+                            _lanaBanana
+                        },
+                    },
+                    Answer = "32",
+                    ExampleAnswer = 30,
+                    Minutes = 7f,
+                }
+            },
+            {
+                CaseQuestionEnum.MEWC2023LanaBananaL2,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.MEWC2023LanaBananaL2,
+                    QuestionText = "If Lana starts in these cells and moves in these directions, how many bananas will she collect?  (Use the key rather than the actual Excel cell addresses.)\r\n\r\nIf she starts on a cell with a banana, she can grab it immediately.\r\n\r\nWrite the sum of the answers for the different starting cells.",
+                    QuestionLink = "https://fmworldcup.com/product/lana-banana-mewc-2023/",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Starting cells and directions",
+                            new object[,]
+                            {
+                                {"D31","↙",},
+                                {"AE36","↘",},
+                                {"J25","↘",},
+                                {"AG19","↙",},
+                                {"AI10","↙",},
+                                {"D24","↘",},
+                                {"Y18","↘",},
+                                {"X24","↙",},
+                                {"Z29","↘",},
+                                {"AH27","↘",},
+                                {"C18","↙",},
+                                {"AN25","↙",},
+                                {"H2","↙",},
+                                {"AN40","↙",},
+                                {"B30","↙",},
+                                {"Q30","↘",},
+                                {"K29","↘",},
+                                {"M10","↙",},
+                                {"V38","↙",},
+                                {"AI6","↘",},
+                                {"N16","↘",},
+                            }
+                        },
+                        {
+                            "Lana Banana",
+                            _lanaBanana
+                        },
+                    },
+                    Answer = "61",
+                    ExampleAnswer = 30,
+                    Minutes = 12f,
+                }
+            },
+            {
+                CaseQuestionEnum.MEWC2023LanaBananaL3,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.MEWC2023LanaBananaL3,
+                    QuestionText = "Lana can move down, down-left or down-right on each move.  If she starts on these cells on the map, what is the highest number of bananas she can collect?  (Use the key rather than the actual Excel cell addresses.)\r\n\r\nIf she starts on a cell with a banana, she can grab it immediately.\r\n\r\nWrite the sum of the answers for the different starting cells.",
+                    QuestionLink = "https://fmworldcup.com/product/lana-banana-mewc-2023/",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Starting cells",
+                            new object[,]
+                            {
+                                {"AD38",},
+                                {"E38",},
+                                {"F38",},
+                                {"AG38",},
+                                {"V38",},
+                                {"P38",},
+                                {"O38",},
+                                {"X38",},
+                                {"AB38",},
+                                {"AH38",},
+                                {"I38",},
+                                {"AA38",},
+                                {"R38",},
+                                {"AN38",},
+                                {"G38",},
+                                {"Q38",},
+                                {"M38",},
+                                {"J38",},
+                                {"AE38",},
+                                {"Z38",},
+                                {"L38",},
+                            }
+                        },
+                        {
+                            "Lana Banana",
+                            _lanaBanana
+                        },
+                    },
+                    Answer = "29",
+                    ExampleAnswer = 30,
+                    Minutes = 8f,
+                }
+            },
+            {
+                CaseQuestionEnum.MEWC2023LanaBananaL4,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.MEWC2023LanaBananaL4,
+                    QuestionText = "Lana can move down, down-left or down-right on each move.  If she starts on these cells on the map, what is the highest number of bananas she can collect?  (Use the key rather than the actual Excel cell addresses.)\r\n\r\nIf she starts on a cell with a banana, she can grab it immediately.\r\n\r\nWrite the sum of the answers for the different starting cells.",
+                    QuestionLink = "https://fmworldcup.com/product/lana-banana-mewc-2023/",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Starting cells",
+                            new object[,]
+                            {
+                                {"AF4",},
+                                {"J35",},
+                                {"AH33",},
+                                {"N2",},
+                                {"V34",},
+                                {"AE25",},
+                                {"J5",},
+                                {"C8",},
+                                {"D7",},
+                                {"AF7",},
+                                {"P21",},
+                                {"X7",},
+                                {"P30",},
+                                {"AJ14",},
+                                {"AG23",},
+                                {"AC24",},
+                                {"O39",},
+                                {"Y36",},
+                                {"D8",},
+                                {"AN9",},
+                                {"S2",},
+                            }
+                        },
+                        {
+                            "Lana Banana",
+                            _lanaBanana
+                        },
+                    },
+                    Answer = "332",
+                    ExampleAnswer = 310,
+                    Minutes = 8f,
+                }
+            },
+            {
+                CaseQuestionEnum.MEWC2023LanaBananaL5,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.MEWC2023LanaBananaL5,
+                    QuestionText = "Lana can move down, down-left or down-right on each move.  She cannot eat bananas on consecutive turns.  If she starts on these cells on the map, what is the highest number of bananas she can collect?  (Use the key rather than the actual Excel cell addresses.)\r\n\r\nIf she starts on a cell with a banana, she can grab it immediately.\r\n\r\nWrite the sum of the answers for the different starting cells.",
+                    QuestionLink = "https://fmworldcup.com/product/lana-banana-mewc-2023/",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Starting cells",
+                            new object[,]
+                            {
+                                {"AM28",},
+                                {"AK10",},
+                                {"AD4",},
+                                {"AN10",},
+                                {"G16",},
+                                {"AF9",},
+                                {"O35",},
+                                {"S16",},
+                                {"AM4",},
+                                {"G27",},
+                                {"K29",},
+                                {"R4",},
+                                {"W16",},
+                                {"AC23",},
+                                {"AH20",},
+                                {"H21",},
+                                {"S26",},
+                                {"F31",},
+                                {"AK8",},
+                                {"AE22",},
+                                {"M34",},
+                                {"X25",},
+                                {"W16",},
+                                {"Z17",},
+                                {"Z11",},
+                                {"Y19",},
+                                {"H5",},
+                                {"AM27",},
+                                {"B16",},
+                                {"AB21",},
+                                {"AB6",},
+                            }
+                        },
+                        {
+                            "Lana Banana",
+                            _lanaBanana
+                        },
+                    },
+                    Answer = "303",
+                    ExampleAnswer = 310,
+                    Minutes = 10f,
+                }
+            },
+            {
+                CaseQuestionEnum.MEWC2023LanaBananaB1,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.MEWC2023LanaBananaB1,
+                    QuestionText = "How many 2x2 grids which contain at least 3 bananas are on the map?",
+                    QuestionLink = "https://fmworldcup.com/product/lana-banana-mewc-2023/",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Lana Banana",
+                            _lanaBanana
+                        },
+                    },
+                    Answer = "37",
+                    ExampleAnswer = 35,
+                    Minutes = 3f,
+                }
+            },
+            {
+                CaseQuestionEnum.MEWC2023LanaBananaB2,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.MEWC2023LanaBananaB2,
+                    QuestionText = "How many distinct pairs of neighbouring bananas are there?  Two bananas are neighbouring if they are in adjacent cells horizontally, vertically or diagonally.",
+                    QuestionLink = "https://fmworldcup.com/product/lana-banana-mewc-2023/",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Lana Banana",
+                            _lanaBanana
+                        },
+                    },
+                    Answer = "204",
+                    ExampleAnswer = 200,
+                    Minutes = 3f,
                 }
             },
         };
