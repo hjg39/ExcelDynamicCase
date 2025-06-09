@@ -66,7 +66,7 @@ namespace ExcelDynamicCase
             ((Excel.Range)this.Cells[6, 15]).Value = caseQuestion.Id.ToString();
 
             ((Excel.Range)this.Cells[2, 5]).Value = null;
-            ((Excel.Range)this.Cells[4, 5]).Value = caseQuestion.ExampleAnswer;
+            ((Excel.Range)this.Cells[4, 5]).Formula = caseQuestion.ExampleAnswer;
             ((Excel.Range)this.Cells[6, 2]).Value = $"{challenger} has challenged you to a battle";
             ((Excel.Range)this.Cells[8, 2]).Value = $"You have {caseQuestion.Minutes} minutes (which you can follow in the overworld window).";
 
@@ -90,7 +90,7 @@ namespace ExcelDynamicCase
                 ((Excel.Range)this.Cells[startingRow, 2]).Value = item.Key;
                 startingRow += 2;
                 Excel.Range r = ((Excel.Range)this.Cells[startingRow + 2, 2]).Resize[item.Value.GetLength(0), item.Value.GetLength(1)];
-                r.Value = item.Value;
+                r.Formula = item.Value;
 
                 if (caseQuestion.Colours is Dictionary<string, int[,]> colourDict && colourDict.TryGetValue(item.Key, out int[,] colours))
                 {
