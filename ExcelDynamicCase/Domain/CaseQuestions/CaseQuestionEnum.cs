@@ -26,5 +26,17 @@
         EulerChampernownesConstant = 40,
         EulerSubStringDivisibility = 43,
         EulerCountingSummations = 76,
+        DPMMSNumbersSetsEx1Q15 = 10015,
+        CodeGolf9x9Queens = 20000,
+        CodeGolfReverseNATOPhoneticSpelling = 20001,
+        CodeGolfAlbuquerque = 20002,
+        DailyProgrammerIntegerComplexity = 30354,
+        DailyProgrammerHexConversion = 30369,
+        DailyProgrammerHavelHakimi = 30378,
+        DailyProgrammerEasyProgressiveTaxation = 30379,
+        DailyProgrammerSmooshedMorseCode1 = 30380,
+        DailyProgrammerNumberOfOnes = 30390,
+        DailyProgrammerMatrixSum = 30398,
+        DailyProgrammerLetterValueSum = 30399,
     }
 }

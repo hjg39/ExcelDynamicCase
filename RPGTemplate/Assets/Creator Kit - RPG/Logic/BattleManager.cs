@@ -42,22 +42,22 @@ namespace Assets.Creator_Kit___RPG.Logic
         private static int[] GetQuestionsByRewardClassification(QuestionRewardClassification questionRewardClassification)
         => questionRewardClassification switch
         {
-            QuestionRewardClassification.BasicAggregates => new int[] { 3, },
-            QuestionRewardClassification.AdvancedAggregates => new int[] { 7, },
-            QuestionRewardClassification.ExpertAggregates => new int[] { 13, 33 },
-            QuestionRewardClassification.DivineAggregates => new int[] { 16, 31, 43, 76 },
-            QuestionRewardClassification.AdvancedComplex => new int[] { 8, },
+            QuestionRewardClassification.BasicAggregates => new int[] { 3, 20001, 30399, },
+            QuestionRewardClassification.AdvancedAggregates => new int[] { 7, 10015, },
+            QuestionRewardClassification.ExpertAggregates => new int[] { 13, 33, 30348, },
+            QuestionRewardClassification.DivineAggregates => new int[] { 16, 31, 43, 76, 20000, 30378, 30354 },
+            QuestionRewardClassification.AdvancedComplex => new int[] { 8, 30369, },
             QuestionRewardClassification.ExpertBases => new int[] { 15, 40 },
-            QuestionRewardClassification.BasicLookup => new int[] { 5, },
+            QuestionRewardClassification.BasicLookup => new int[] { 5, 20002, 30379, },
             QuestionRewardClassification.AdvancedLookup => new int[] { 9 },
             QuestionRewardClassification.BasicMaths => new int[] { 1, 6, },
-            QuestionRewardClassification.ExpertMaths => new int[] { 17, },
+            QuestionRewardClassification.ExpertMaths => new int[] { 17, 30398, },
             QuestionRewardClassification.BasicText => new int[] { 2, 11 },
             QuestionRewardClassification.AdvancedText => new int[] { 12 },
             QuestionRewardClassification.BasicManipulation => new int[] { 4, 30 },
             QuestionRewardClassification.AdvancedManipulation => new int[] { 34, },
             QuestionRewardClassification.AdvancedDates => new int[] { 36, },
-            QuestionRewardClassification.ExpertDates => new int[] { 24, },
+            QuestionRewardClassification.ExpertDates => new int[] { 24, 30390, },
             _ => throw new NotImplementedException(),
         };
 
@@ -88,7 +88,18 @@ namespace Assets.Creator_Kit___RPG.Logic
             40 => 15f,
             43 => 20f,
             76 => 20f,
-
+            10015 => 10f,
+            20000 => 20f,
+            20001 => 5f,
+            20002 => 8f,
+            30354 => 30f,
+            30369 => 8f,
+            30378 => 20f,
+            30379 => 3f,
+            30380 => 3f,
+            30390 => 20f,
+            30398 => 10f,
+            30399 => 3f,
             _ => throw new NotImplementedException(),
         };
     }

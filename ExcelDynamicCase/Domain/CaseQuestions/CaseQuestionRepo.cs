@@ -324,7 +324,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
             },
             {
                 CaseQuestionEnum.EulerNumberLetterCounts,
-                new CaseQuestion() 
+                new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.EulerNumberLetterCounts,
                     QuestionText = "If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3+3+5+4+4=19 letters used in total.\r\n\r\nIf all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?\r\n\r\nNote: Do not count spaces or hyphens.  For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters.  The use of 'and' when writing out numbers is in compliance with British usage.",
@@ -441,7 +441,210 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     ExampleAnswer = 3213290d,
                     Minutes = 20f,
                 }
-            }
+            },
+            {
+                CaseQuestionEnum.DPMMSNumbersSetsEx1Q15,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.DPMMSNumbersSetsEx1Q15,
+                    QuestionText = "All integers greater than one but less than 100 are put into a hat and two are drawn.\r\n\r\nKylie is given their sum and Tim their product.\r\n\r\nKylie says, “I can tell you don’t know the numbers.” Tim replies, “Now I do.”\r\n\r\nKylie exclaims, “Now I do too!” What is the sum of the numbers?",
+                    QuestionLink = "http://www.dpmms.cam.ac.uk/study/IA/Numbers%2BSets/2024-2025/NS_1.pdf",
+                    Answer = "17",
+                    ExampleAnswer = 13d,
+                    Minutes = 10d,
+                }
+            },
+            {
+                CaseQuestionEnum.CodeGolf9x9Queens,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.CodeGolf9x9Queens,
+                    QuestionText = "This a puzzle involving a 9x9 grid.  Your goal is to exactly one queen (Q) in each row, column, diagonal and region [regions represented by the numbers in the grid below].\r\n\r\nAnswer in a format where you concatenate the positions in the grid, with '.' representing no queen and Q representing a Queen.",
+                    QuestionLink = "https://codegolf.stackexchange.com/questions/282183/solve-queens-puzzle",
+                    Data = new Dictionary<string, object[,]>
+                    {
+                        {
+                            "Regions",
+                            new object[,]
+                            {
+                                {1d,1d,2d,2d,2d,2d,2d,2d,2d},
+                                {1d,3d,3d,4d,4d,4d,5d,5d,2d},
+                                {3d,3d,4d,4d,6d,4d,4d,5d,5d},
+                                {3d,4d,4d,4d,6d,4d,4d,4d,5d},
+                                {3d,4d,7d,7d,7d,4d,4d,4d,5d},
+                                {3d,4d,4d,4d,4d,4d,4d,4d,5d},
+                                {3d,8d,4d,4d,4d,4d,4d,9d,5d},
+                                {3d,8d,8d,4d,4d,4d,9d,9d,5d},
+                                {3d,3d,8d,8d,8d,8d,5d,5d,5d},
+                            }
+                        }
+                    },
+                    Answer = ".Q...............Q....Q....Q...........Q..........Q..........Q...Q............Q..",
+                    ExampleAnswer = "..Q.............Q......Q........Q.......Q...........Q.Q..............Q...Q.......",
+                    Minutes = 20d,
+                }
+            },
+            {
+                CaseQuestionEnum.CodeGolfReverseNATOPhoneticSpelling,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.CodeGolfReverseNATOPhoneticSpelling,
+                    QuestionText = "NATO Phonetic Spelling is a way to spell out letters so that they're distinguishable over a noisy connection. The mapping of letters is as follows:\r\n\r\nA -> ALFA\r\nB -> BRAVO\r\nC -> CHARLIE\r\nD -> DELTA\r\nE -> ECHO\r\nF -> FOXTROT\r\nG -> GOLF\r\nH -> HOTEL\r\nI -> INDIA\r\nJ -> JULIETT\r\nK -> KILO\r\nL -> LIMA\r\nM -> MIKE\r\nN -> NOVEMBER\r\nO -> OSCAR\r\nP -> PAPA\r\nQ -> QUEBEC\r\nR -> ROMEO\r\nS -> SIERRA\r\nT -> TANGO\r\nU -> UNIFORM\r\nV -> VICTOR\r\nW -> WHISKEY\r\nX -> XRAY\r\nY -> YANKEE\r\nZ -> ZULU\r\n\r\nFor example, CAT would map to CHARLIEALFATANGO.\r\n\r\nYour challenge is to do the reverse.\r\n\r\nTranslate this string into the corresponding sequence of (capital) letters:\r\n\r\nLIMAUNIFORMHOTELWHISKEYCHARLIEOSCARJULIETTGOLFROMEOBRAVOPAPAECHOSIERRAINDIADELTAZULUNOVEMBERKILOALFAXRAYMIKEQUEBECTANGOVICTORFOXTROTYANKEE",
+                    QuestionLink = "https://codegolf.stackexchange.com/questions/282191/reverse-nato-phonetic-spelling",
+                    Data = null,
+                    Answer = "LUHWCOJGRBPESIDZNKAXMQTVFY",
+                    ExampleAnswer = "DSOIJPJAOPAD",
+                    Minutes = 5f,
+                }
+            },
+            {
+                CaseQuestionEnum.CodeGolfAlbuquerque,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.CodeGolfAlbuquerque,
+                    QuestionText = "The goal is to create an output string from 'albuquerque' that follows these rules.\r\n\r\nAs you read the string, each time a character is repeated, you repeat the substring from where that character was last used back to itself (in the original string).\r\n\r\nFor example, here is a step-by-step on 'success' which becomes 'succcesuccesss'.\r\n\r\ns\r\nsu\r\nsuc\r\nsuccc (loop cc)\r\nsuccce\r\nsucccesucces (loop succes)\r\nsucccesuccesss (loop ss).\r\n\r\nWhat would the final result be if the input was 'albuquerque'?",
+                    QuestionLink = "https://codegolf.stackexchange.com/questions/279619/albuququerquerquerquerque-challlengenge",
+                    Data = null,
+                    Answer = "albuququerquerquerquerque",
+                    ExampleAnswer = "dosiahdoa",
+                    Minutes = 8f,
+                }
+            },
+            {
+                CaseQuestionEnum.DailyProgrammerMatrixSum,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.DailyProgrammerMatrixSum,
+                    QuestionText = "What is the smallest possible sum you can select from this 5x5 grid such that no two elements come from the same row or column?",
+                    QuestionLink = "https://www.reddit.com/r/dailyprogrammer/comments/oirb5v/20210712_challenge_398_difficult_matrix_sum/",
+                    Data = null,
+                    Answer = "1099762961",
+                    ExampleAnswer = 2319013d,
+                    Minutes = 10f,
+                }
+            },
+            {
+                CaseQuestionEnum.DailyProgrammerLetterValueSum,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.DailyProgrammerLetterValueSum,
+                    QuestionText = "Assign every lowercase letter a value, from 1 for 'a' to 26 for 'z'.\r\nWhat is the sum of the values for \"microspectrophotometries\"?",
+                    QuestionLink = "https://www.reddit.com/r/dailyprogrammer/comments/onfehl/20210719_challenge_399_easy_letter_value_sum/",
+                    Data = null,
+                    Answer = "317",
+                    ExampleAnswer = 317d,
+                    Minutes = 3f,
+                }
+            },
+            {
+                CaseQuestionEnum.DailyProgrammerNumberOfOnes,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.DailyProgrammerNumberOfOnes,
+                    QuestionText = "If you write out the numbers 1, 2, ... up to 123321, how many 1s are there in total?",
+                    QuestionLink = "https://www.reddit.com/r/dailyprogrammer/comments/neg49j/20210517_challenge_390_difficult_number_of_1s/",
+                    Data = null,
+                    Answer = "93395",
+                    ExampleAnswer = 21791d,
+                    Minutes = 20f,
+                }
+            },
+            {
+                CaseQuestionEnum.DailyProgrammerSmooshedMorseCode1,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.DailyProgrammerNumberOfOnes,
+                    QuestionText = "The morse code for the letters a-z in order are given below.  Give the full concatenated morse code of the word 'programmer'.",
+                    QuestionLink = "https://www.reddit.com/r/dailyprogrammer/comments/cmd1hb/20190805_challenge_380_easy_smooshed_morse_code_1/",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Conversions",
+                            new object[,]
+                            {
+                                {"a",".-"},
+                                {"b","-..."},
+                                {"c","-.-."},
+                                {"d","-.."},
+                                {"e","."},
+                                {"f","..-."},
+                                {"g","--."},
+                                {"h","...."},
+                                {"i",".."},
+                                {"j",".---"},
+                                {"k","-.-"},
+                                {"l",".-.."},
+                                {"m","--"},
+                                {"n","-."},
+                                {"o","---"},
+                                {"p",".--."},
+                                {"q","--.-"},
+                                {"r",".-."},
+                                {"s","..."},
+                                {"t","-"},
+                                {"u","..-"},
+                                {"v","...-"},
+                                {"w",".--"},
+                                {"x","-..-"},
+                                {"y","-.--"},
+                                {"z","--.."},
+                            }
+                        }
+                    },
+                    Answer = ".--..-.-----..-..-----..-.",
+                    ExampleAnswer = "-.....-...",
+                    Minutes = 3f,
+                }
+            },
+            {
+                CaseQuestionEnum.DailyProgrammerEasyProgressiveTaxation,
+                new CaseQuestion
+                {
+                    Id = CaseQuestionEnum.DailyProgrammerEasyProgressiveTaxation,
+                    QuestionText = "In Excelopolis, income up to 10,000 is taxed at 0, from 10,000 to 30,000 taxed at 10%, from 30,000 to 100,000 taxed at 25% and over 100,000 taxed at 40%.\r\n\r\nHow much tax would someone who earns 1234567 pay?"
+                    QuestionLink = "https://www.reddit.com/r/dailyprogrammer/comments/cdieag/20190715_challenge_379_easy_progressive_taxation/",
+                    Answer = "473326",
+                    ExampleAnswer = 321739d,
+                    Minutes = 3f,
+                }
+            },
+            {
+                CaseQuestionEnum.DailyProgrammerHavelHakimi,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.DailyProgrammerHavelHakimi,
+                    QuestionText = "It was a dark and stormy night. Detective Havel and Detective Hakimi arrived at the scene of the crime.\r\n\r\nOther than the detectives, there were 10 people present. They asked the first person, \"out of the 9 other people here, how many had you already met before tonight?\" The person answered \"5\". They asked the same question of the second person, who answered \"3\". And so on. The 10 answers they got from the 10 people were:\r\n\r\n5 3 0 2 6 2 0 7 2 5\r\n\r\nThe detectives deduced that someone must have been lying.\r\n\r\nIf a group of people had instead resulted in '16, 9, 9, 15, 9, 7, 9, 11, 17, 11, 4, 9, 12, 14, 14, 12, 17, 0, 3, 16', answer 1 if the answers are consistent, and 0 otherwise.",
+                    QuestionLink = "https://www.reddit.com/r/dailyprogrammer/comments/bqy1cf/20190520_challenge_378_easy_the_havelhakimi/",
+                    Answer = "1",
+                    ExampleAnswer = 1,
+                    Minutes = 20f,
+                }
+            },
+            {
+                CaseQuestionEnum.DailyProgrammerHexConversion,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.DailyProgrammerHexConversion,
+                    QuestionText = "Convert the 'r;g;b' colour '189;183;107' into its hex code (base 16) - use A to represent 10, B to represent 11, ..., F to represent 15.\r\n\r\nFor example, '184;134;11' would convert into '#BDB76B'.\r\nDon't forget to add a hash (#) at the start.",
+                    QuestionLink = "https://www.reddit.com/r/dailyprogrammer/comments/a0lhxx/20181126_challenge_369_easy_hex_colors/",
+                    Answer = "#BDB76B",
+                    ExampleAnswer = "#B8860B",
+                    Minutes =  8f,
+
+                }
+            },
+            {
+                CaseQuestionEnum.DailyProgrammerIntegerComplexity,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.DailyProgrammerIntegerComplexity,
+                    QuestionText = "Consider all the different ways of representing a positive integer using nothing but positive integers, addition, multiplication, and parentheses. For 5678, a few such ways are:\r\n\r\n5678 = 2*17*167\r\n5678 = 5678\r\n5678 = 23*59+29*149\r\n5678 = (1+4*4)*(1+3*3*(1+3*3*4))\r\n5678 = 2*(1+2*(1+2*(1+2*2*(1+2*2*2*2*(1+2*(1+2*2))))))\r\nFor each such representation, consider the sum of the integers involved:\r\n\r\n2*17*167 => 2+17+167 = 186\r\n5678 => 5678 = 5678\r\n23*59+29*149 => 23+59+29+149 = 260\r\n(1+4*4)*(1+3*3*(1+3*3*4)) => 1+4+4+1+3+3+1+3+3+4 = 27\r\n2*(1+2*(1+2*(1+2*2*(1+2*2*2*2*(1+2*(1+2*2)))))) =>\r\n    2+1+2+1+2+1+2+2+1+2+2+2+2+1+2+1+2+2 = 30\r\nFor 5678, the minimum possible sum for any such representation is 27. The minimum possible sum for a given integer is known as its integer complexity, so the integer complexity of 5678 is 27. The integer complexity of the numbers 1, 2, 3, ... is:\r\n\r\n1 2 3 4 5 5 6 6 6 7 8 7 8 8 8 8 9 8 9 9 ...\r\nThe sum of the integer complexities for all numbers from 1 to 100 inclusive is 1113.\r\n\r\nFind the sum of the integer complexities for all numbers from 1 to 1000 inclusive.",
+                    QuestionLink = "https://www.reddit.com/r/dailyprogrammer/comments/84f35x/20180314_challenge_354_intermediate_integer/",
+                    Answer = "18274",
+                    ExampleAnswer = "43214",
+                    Minutes = 30f,
+                }
+            },
         };
     }
 }
