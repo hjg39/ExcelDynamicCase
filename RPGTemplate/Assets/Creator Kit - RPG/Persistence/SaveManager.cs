@@ -36,22 +36,22 @@ namespace Assets.Creator_Kit___RPG.Persistence
             }
         }
 
-        public static void SaveTag(string tag, int number)
+        public static void SaveTag(string tag)
         {
             LoadGameData(out SaveData saveData);
             saveData.Tags.Add(tag);
             SaveGame(saveData);
         }
 
-        public static void SaveUnlockedFunction(string functionName)
+        public static void SaveUnlockedFunction(string functionNames)
         {
-            LoadGameData(out SaveData saveData);
-            if (saveData.UnlockedFunctions.Contains(functionName))
-            {
-                return;
-            }
+            string[] functions = functionNames.Split(' ');
 
-            saveData.UnlockedFunctions.Add(functionName);
+
+            LoadGameData(out SaveData saveData);
+            saveData.UnlockedFunctions.AddRange(functions);
+            saveData.UnlockedFunctions = saveData.UnlockedFunctions.Distinct().OrderBy(x => x).ToList();
+
             SaveGame(saveData);
         }
 
