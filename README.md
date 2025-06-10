@@ -1,6 +1,6 @@
 # Excel Dynamic Case
 
-This is a C#.NET Framework VSTO Excel Workbook that is a basic demo for an Excel battle case with an overworld that you can navigate in, and where you can unlock the use of new functions as you go.
+This is a C#.NET Framework VSTO Excel Workbook and Unity project that is a basic demo for an Excel battle case with an overworld that you can navigate in, and where you can unlock the use of new functions as you go.
 
 ## 🚀 Quick Start (Run the App)
 
