@@ -12,7 +12,7 @@ If you just want to run the pre-built version of this tool without building the 
 3. Unzip the zip file to a folder (to a non-cloud location, cloud locations like places automatically backup up to onedrive will not work)
 4. Open a blank instance of Excel
 5. File > Options > Trust Centre > Trust Centre Settings > Trusted Locations
-6. Add the 'publish' subfolder to your trusted locations
+6. Add the 'publish' subfolder (ExcelDynamicCase/publish) to your trusted locations
 7. Close all your Excel instances
 8. Go to the publish subfolder and open the xlsx
 9. Click 'Install'
