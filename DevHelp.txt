@@ -4,37 +4,3 @@ The DLL appears in bin\Release\netstandard2.0\GameContracts.dll.
 
 Copy that DLL (and its GameContracts.pdb if you want step-through debugging) into your Unity project:
 YourUnityProject/Assets/Plugins/.
-
-Unity detects the new file, imports it, and you can immediately:
-
-csharp
-Copy
-Edit
-using GameContracts;   // in any Unity script
-Whenever you make changes, rebuild the DLL and copy it over again.
-
-Tip: If Unity shows “Assembly has reference to missing package XYZ”, copy any dependency DLLs the same way (e.g., System.Text.Json if you’re on a very old Unity build).
-
-
-
-
-
-
-
-
-4 Stay Excel-safe
-Excel COM objects are STA-bound. Touch them only on the add-in’s main thread; when the pipe callback finishes, marshal results back with Globals.ThisAddIn.Application.Run or SynchronizationContext.Post.
-
-If you want a true modal flow (block Excel until the battle ends) wait on the async pipe task; otherwise just store the Task and let Excel remain editable while Unity runs.
-
-5 Closing or re-using the Unity window
-csharp
-Copy
-Edit
-void BtnEndBattle_Click(...)  // ribbon
-{
-    _unity?.CloseMainWindow(); // polite quit
-    _unity?.WaitForExit(3000);
-    _unity?.Dispose();
-}
-You can also keep Unity resident between battles and merely send new BattleState messages; that avoids cold-starting the engine every time and keeps the pipe connected.
