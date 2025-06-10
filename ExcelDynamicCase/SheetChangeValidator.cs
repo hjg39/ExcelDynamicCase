@@ -26,15 +26,13 @@ namespace ExcelDynamicCase
         {
             bool clearRange = false;
 
-            if (target is null)
-            {
-                return;
-            }
+            if (target is null) { return; }
 
-            if (!(sheet is Worksheet))
-            {
-                return;
-            }
+            if (!(sheet is Worksheet ws)) { return; }
+
+            target = Globals.ThisWorkbook.Application.Intersect(target, ws.UsedRange);
+
+            if (target is null) { return; }
 
             if (target.Formula is object[,] formulae)
             {
@@ -72,7 +70,9 @@ namespace ExcelDynamicCase
 
             if (clearRange)
             {
-                target.Formula = null;
+                Globals.ThisWorkbook.UnHookSheetChangeEvent();
+                target.Clear();
+                Globals.ThisWorkbook.HookSheetChangeEvent();
             }
         }
 
