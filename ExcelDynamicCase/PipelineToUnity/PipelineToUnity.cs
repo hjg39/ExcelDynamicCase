@@ -76,16 +76,11 @@ namespace ExcelDynamicCase.PipelineToUnity
 
                 try
                 {
-
-
-                    bool justThisWorkbook = app.Workbooks.Count == 1;
-
                     app.DisplayAlerts = false;   // no “Save changes?” dialogs
-                    //Globals.ThisWorkbook.Saved = true;   // mark as saved
-                    //Globals.ThisWorkbook.Close(false);   // close the workbook
+                                                 //Globals.ThisWorkbook.Saved = true;   // mark as saved
+                                                 //Globals.ThisWorkbook.Close(false);   // close the workbook
 
-                    if (justThisWorkbook)              // only if we own the Excel instance
-                        app.Quit();
+                    app.Quit();
                 }
                 catch (ThreadAbortException)
                 {
