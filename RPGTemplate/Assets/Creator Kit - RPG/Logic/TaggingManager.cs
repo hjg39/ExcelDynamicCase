@@ -1,4 +1,5 @@
-﻿using RPGM.Gameplay;
+﻿using Assets.Creator_Kit___RPG.Scripts.Gameplay;
+using RPGM.Gameplay;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,7 +55,7 @@ namespace Assets.Creator_Kit___RPG.Persistence
                     SetConversationNumber("JulienLacaze", 2);
                     break;
                 case "UnlockExpert":
-                    GameObject.FindGameObjectWithTag("Roadblock")?.SetActive(false);
+                    GameObject.FindObjectOfType<Roadblock>()?.gameObject?.SetActive(false);
                     SetConversationNumber("JulienLacaze", 3);
                     SetConversationNumber("AndrewGrigolyunovich", 3);
                     break;

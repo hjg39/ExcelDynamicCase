@@ -55,12 +55,12 @@ namespace Assets.Creator_Kit___RPG.Logic
                 case QuestionRewardClassification.AdvancedText:
                 case QuestionRewardClassification.AdvancedManipulation:
                 case QuestionRewardClassification.AdvancedDates:
-                    return new int[] { 7, 10015, 40011, 8, 30369, 40016, 9, 40004, 40017, 12, 40005, 40014, 34, 40006, 40018, 36, 40010, 40019, };
+                    return new int[] { 7, 10015, 40011, 8, 30369, 30380, 40016, 9, 40004, 40017, 12, 40005, 40014, 34, 40006, 40018, 36, 40010, 40019, };
                 case QuestionRewardClassification.ExpertAggregates:
                 case QuestionRewardClassification.ExpertBases:
                 case QuestionRewardClassification.ExpertMaths:
                 case QuestionRewardClassification.ExpertDates:
-                    return new int[] { 13, 33, 30348, 15, 40, 40007, 17, 30398, 40012, 24, 30390, 40015, };
+                    return new int[] { 13, 33, 40020, 15, 40, 40007, 17, 30398, 40012, 24, 30390, 40015, };
                 case QuestionRewardClassification.DivineAggregates:
                     return new int[] { 16, 31, 43, 76, 20000, 30378, 30354 };
                 default:
