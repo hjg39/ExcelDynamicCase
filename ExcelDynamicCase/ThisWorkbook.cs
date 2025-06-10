@@ -3,11 +3,11 @@ using ExcelDynamicCase.Utility;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ExcelDynamicCase
 {
@@ -52,15 +52,35 @@ namespace ExcelDynamicCase
         {
             if (_unity is null || _unity.HasExited)
             {
-                ProcessStartInfo psi = new ProcessStartInfo
+                if (Debugger.IsAttached)
                 {
-                    FileName = @"C:\Users\harry\source\repos\ExcelDynamicCase\ExcelDynamicCase\overworld\Excelopolis.exe",
-                    Arguments = "-screen-fullscreen 0 -screen-width 1280 -screen-height 720\"",
-                    UseShellExecute = true,
-                    WindowStyle = ProcessWindowStyle.Normal,
-                };
-                //_unity = Process.Start(psi);
-                //WindowHelpers.ActivateWindow(_unity);
+                    ProcessStartInfo psi = new ProcessStartInfo
+                    {
+                        FileName = @"C:\Users\harry\source\repos\ExcelDynamicCase\ExcelDynamicCase\overworld\Excelopolis.exe",
+                        Arguments = "-screen-fullscreen 0 -screen-width 1280 -screen-height 720",
+                        UseShellExecute = true,
+                        WindowStyle = ProcessWindowStyle.Normal,
+                    };
+                    _unity = Process.Start(psi);
+                    WindowHelpers.ActivateWindow(_unity);
+                }
+                else
+                {
+                    string wbFolder = System.IO.Path.GetDirectoryName(Globals.ThisWorkbook.FullName);
+                    string exePath = System.IO.Path.Combine(wbFolder, "overworld", "Excelopolis.exe");   // adjust filename
+                    string workingDir = System.IO.Path.GetDirectoryName(exePath);
+
+                    var psi = new ProcessStartInfo
+                    {
+                        FileName = exePath,
+                        Arguments = "-screen-fullscreen 0 -screen-width 1280 -screen-height 720",
+                        WorkingDirectory = workingDir,
+                        UseShellExecute = true,
+                        WindowStyle = ProcessWindowStyle.Normal,
+                    };
+
+                    Process.Start(psi);
+                }
             }
 
             await PipelineToUnity.PipelineToUnity.InitPipeAsync();
