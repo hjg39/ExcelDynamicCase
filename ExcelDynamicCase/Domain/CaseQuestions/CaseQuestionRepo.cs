@@ -838,6 +838,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 CaseQuestionEnum.MEWC2021DominateTheDominoesLevel1,
                 new CaseQuestion()
                 {
+                    Id = CaseQuestionEnum.MEWC2021DominateTheDominoesLevel1,
                     QuestionText = "How many pips in total will there be on the first 14 tiles?",
                     QuestionLink = "https://fmworldcup.com/product/fmwc-open-dec-4-2021-dominate-the-dominoes/",
                     Data = new Dictionary<string, object[,]>()
@@ -1457,10 +1458,10 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 }
             },
             {
-                CaseQuestionEnum.MEWC2022TheSocialNetworkB2,
+                CaseQuestionEnum.MEWC2022TheSocialNetworkB3,
                 new CaseQuestion()
                 {
-                    Id = CaseQuestionEnum.MEWC2022TheSocialNetworkB2,
+                    Id = CaseQuestionEnum.MEWC2022TheSocialNetworkB3,
                     QuestionText = "In the grid the 👥 icon indicates a friendship and the ★ a close friendship.\r\n\r\nHow many triangles of friends (including close friends) are there in the network?\r\n3 different friends are in a triangle if they are all friends with each other.",
                     QuestionLink = "https://fmworldcup.com/product/the-social-network-microsoft-excel-world-championship-2022",
                     Data = new Dictionary<string, object[,]>()

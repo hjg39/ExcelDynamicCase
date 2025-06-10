@@ -40,6 +40,7 @@ namespace Assets.Creator_Kit___RPG.Persistence
         {
             LoadGameData(out SaveData saveData);
             saveData.Tags.Add(tag);
+            saveData.Tags = saveData.Tags.Distinct().ToList();
             SaveGame(saveData);
         }
 
