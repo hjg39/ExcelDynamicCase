@@ -9,5 +9,7 @@ namespace ExcelUnityPipeline
         public Guid BattleResultId { get; set; }
 
         public bool IsSuccess { get; set; }
+
+        public bool IsPure { get; set; }
     }
 }

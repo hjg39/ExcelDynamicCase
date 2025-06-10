@@ -9,6 +9,8 @@ namespace Assets.Creator_Kit___RPG.Logic
 {
     public static class BattleManager
     {
+        public static int LastQuestionId = 0;
+
         public static BattleParameters GetBattleParameters(string character, QuestionRewardClassification questionRewardClassification, out float timeRemaining)
         {
             SaveManager.LoadGameData(out SaveData saveData);
@@ -29,6 +31,7 @@ namespace Assets.Creator_Kit___RPG.Logic
                 questionId = allPossibleQuestions[UnityEngine.Random.Range(0, allPossibleQuestions.Length)];
             }
 
+            LastQuestionId = questionId;
             timeRemaining = GetTimeAllowedByQuestionNumber(questionId);
 
             return new BattleParameters()

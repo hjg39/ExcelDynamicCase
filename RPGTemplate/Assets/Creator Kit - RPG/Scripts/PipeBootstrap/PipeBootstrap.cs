@@ -9,8 +9,10 @@ using System.IO;
 using RPGM.UI;
 using RPGM.Gameplay;
 using RPGM.Core;
-using UnityEditor;                 // DTOs
-                                   // PipeHelper lives in the same assembly
+using UnityEditor;
+using Assets.Creator_Kit___RPG.Logic;
+using Assets.Creator_Kit___RPG.Persistence;                 // DTOs
+                                                            // PipeHelper lives in the same assembly
 public class PipeBootstrap : MonoBehaviour
 {
     private const string PIPE = "BattlePipe";
@@ -46,6 +48,12 @@ public class PipeBootstrap : MonoBehaviour
             try
             {
                 BattleResult battleResult = await PipeHelper.ReadAsync<BattleResult>(_pipe, _cts.Token);
+
+                if (battleResult.IsSuccess)
+                {
+                    SaveManager.SaveCompletedBattle(BattleManager.LastQuestionId, battleResult.IsPure);
+                }
+                
                 model.input.EndBattleState(battleResult);
 
                 // await PipeHelper.WriteAsync(_pipe, battleParameters, _cts.Token);

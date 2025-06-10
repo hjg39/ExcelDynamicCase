@@ -56,6 +56,23 @@ namespace Assets.Creator_Kit___RPG.Persistence
             SaveGame(saveData);
         }
 
+        public static void SaveCompletedBattle(int questionId, bool pureAttempt)
+        {
+            LoadGameData(out SaveData saveData);
+
+            saveData.CompletedQuestions.Add(questionId);
+            saveData.CompletedQuestions = saveData.CompletedQuestions.Distinct().OrderBy(x => x).ToList();
+
+
+            if (pureAttempt)
+            {
+                saveData.PureCompletedQuestions.Add(questionId);
+                saveData.PureCompletedQuestions = saveData.PureCompletedQuestions.Distinct().OrderBy(x => x).ToList();
+            }
+
+            SaveGame(saveData);
+        }
+
         public static void SaveUnlockedFunctions(string[] functions)
         {
             if (!functions.Any())
