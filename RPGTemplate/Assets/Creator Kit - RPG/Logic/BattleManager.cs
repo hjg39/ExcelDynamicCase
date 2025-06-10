@@ -42,7 +42,7 @@ namespace Assets.Creator_Kit___RPG.Logic
             };
         }
 
-        private static int[] GetQuestionsByRewardClassification(QuestionRewardClassification questionRewardClassification)
+        public static int[] GetQuestionsByRewardClassification(QuestionRewardClassification questionRewardClassification)
         {
             switch (questionRewardClassification)
             {

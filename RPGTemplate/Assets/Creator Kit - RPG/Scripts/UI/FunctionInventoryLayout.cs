@@ -1,4 +1,5 @@
-﻿using Assets.Creator_Kit___RPG.Persistence;
+﻿using Assets.Creator_Kit___RPG.Logic;
+using Assets.Creator_Kit___RPG.Persistence;
 using Assets.ExcelDomain;
 using RPGM.UI;
 using System;
@@ -22,6 +23,7 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
         public TMP_Text itemTextMeshPro;
         public ScrollRect unlockedFunctions;
         public ScrollRect lockedFunctions;
+        public ScrollRect completedLevels;
 
         Vector2 minSize;
 
@@ -41,8 +43,26 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
 
             string[] savedLockedFunctions = ExcelFunctions.AllFunctions.Where(x => !unlockedFunctionsByHash.Contains(x)).ToArray();
 
+            int[] basic = BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.BasicAggregates);
+            int[] advanced = BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.AdvancedAggregates);
+            int[] expert = BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.ExpertAggregates);
+            int[] divine = BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.DivineAggregates);
+
+            List<int> pureCompletedQuestions = saveData.PureCompletedQuestions;
+            List<int> completedQuestions = saveData.CompletedQuestions;
+
+            string[] completedLevelFill = new string[4]
+            {
+                $"Easy: {completedQuestions.Where(x => basic.Contains(x)).Count()}/{basic.Length}, {pureCompletedQuestions.Where(x => basic.Contains(x)).Count()}/{basic.Length}",
+                $"Advanced: {completedQuestions.Where(x => advanced.Contains(x)).Count()}/{advanced.Length}, {pureCompletedQuestions.Where(x => advanced.Contains(x)).Count()}/{advanced.Length}",
+                $"Expert: {completedQuestions.Where(x => expert.Contains(x)).Count()}/{expert.Length}, {pureCompletedQuestions.Where(x => expert.Contains(x)).Count()}/{expert.Length}",
+                $"Divine: {completedQuestions.Where(x => divine.Contains(x)).Count()}/{divine.Length}, {pureCompletedQuestions.Where(x => divine.Contains(x)).Count()}/{divine.Length}",
+            };
+
+
             Fill(unlockedFunctions.content, savedUnlockedFunctions, 0, savedUnlockedFunctions.Count);
             Fill(lockedFunctions.content, savedLockedFunctions, 0, savedLockedFunctions.Length);
+            Fill(completedLevels.content, completedLevelFill, 0, 4);
         }
 
         void Fill(RectTransform parent, IReadOnlyList<string> src, int start, int end)

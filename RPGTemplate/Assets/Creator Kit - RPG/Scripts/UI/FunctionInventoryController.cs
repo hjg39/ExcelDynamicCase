@@ -21,7 +21,7 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
         public void Show(Vector3 position, string text)
         {
             var d = layout;
-            d.gameObject.SetActive(true);
+            gameObject.SetActive(true);
             d.SetText(text);
             SetPosition(position);
             model.input.ChangeNonBattleState(InputController.State.FunctionInventoryControl);
@@ -36,13 +36,13 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
 
         public void Hide()
         {
-            layout.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
 
         void Awake()
         {
-            layout.gameObject.SetActive(false);
-            layout.spriteRenderer.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+            //layout.spriteRenderer.gameObject.SetActive(false);
             spriteUIElement = GetComponent<SpriteUIElement>();
             mainCamera = Camera.main;
         }
