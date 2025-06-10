@@ -2,6 +2,7 @@
 using ExcelUnityPipeline;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ExcelDynamicCase
@@ -41,6 +42,7 @@ namespace ExcelDynamicCase
                 {
                     BattleResultId = Guid.NewGuid(),
                     IsSuccess = true,
+                    IsPure = GetExcelStats() == (1, 1),
                 };
 
                 LevelManagement.StopBattle(winResult);
@@ -57,6 +59,25 @@ namespace ExcelDynamicCase
             }
 
             return;
+        }
+
+        public static (int WorkbookCount, int ExcelProcessCount) GetExcelStats()
+        {
+            // 1. How many workbooks are open in THIS Excel instance?
+            int workbookCount;
+            try
+            {
+                workbookCount = Globals.ThisWorkbook.Application.Workbooks?.Count ?? 0;
+            }
+            catch
+            {
+                workbookCount = 0;          // In case the COM proxy is momentarily unavailable.
+            }
+
+            // 2. How many Excel processes are alive on the machine?
+            int excelProcessCount = Process.GetProcessesByName("EXCEL").Length;
+
+            return (workbookCount, excelProcessCount);
         }
 
         public void RunSetup(CaseQuestion caseQuestion, string challenger)
