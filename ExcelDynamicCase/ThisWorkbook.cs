@@ -19,6 +19,8 @@ namespace ExcelDynamicCase
 
         public static SynchronizationContext ExcelCtx;
 
+        public static CancellationTokenSource StartUnityCts { get; set; }
+
         private void ThisWorkbook_Startup(object sender, System.EventArgs e)
         {
             ExcelCtx = WindowsFormsSynchronizationContext.Current
@@ -35,7 +37,9 @@ namespace ExcelDynamicCase
 
             try
             {
-                Task.Run(async () => await StartUnity());
+                StartUnityCts = new CancellationTokenSource();
+
+                Task.Run(async () => await StartUnity(), StartUnityCts.Token);
             }
             finally
             {

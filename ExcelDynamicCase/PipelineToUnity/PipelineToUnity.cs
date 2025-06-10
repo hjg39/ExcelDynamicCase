@@ -51,7 +51,6 @@ namespace ExcelDynamicCase.PipelineToUnity
             catch (Exception)
             {
                 QuitExcelGracefully();
-                ThisWorkbook.ExcelCtx.Post(_ => Globals.ThisWorkbook.Close(false), null);
             }
             finally
             {
@@ -65,8 +64,14 @@ namespace ExcelDynamicCase.PipelineToUnity
             try { _pipe?.Dispose(); } catch { /**/ }
 
             // Everything below MUST run on Excel's main thread.
-            void QuitCore()
+            async void QuitCore()
             {
+                ThisWorkbook.StartUnityCts?.Cancel();
+                LevelManagement.BattleTimerCts?.Cancel();
+                LevelManagement.WaitForNextBattleCts?.Cancel();
+
+                await Task.Delay(50);
+
                 var app = Globals.ThisWorkbook.Application;
 
                 try
@@ -76,13 +81,11 @@ namespace ExcelDynamicCase.PipelineToUnity
                     bool justThisWorkbook = app.Workbooks.Count == 1;
 
                     app.DisplayAlerts = false;   // no “Save changes?” dialogs
-                    Globals.ThisWorkbook.Saved = true;   // mark as saved
-                    Globals.ThisWorkbook.Close(false);   // close the workbook
+                    //Globals.ThisWorkbook.Saved = true;   // mark as saved
+                    //Globals.ThisWorkbook.Close(false);   // close the workbook
 
-                    if (justThisWorkbook)
-                    {
-                        app.Quit();                          // quit Excel
-                    }
+                    if (justThisWorkbook)              // only if we own the Excel instance
+                        app.Quit();
                 }
                 catch (ThreadAbortException)
                 {
@@ -91,12 +94,17 @@ namespace ExcelDynamicCase.PipelineToUnity
                 catch (Exception quitEx)
                 {
                     Debug.Fail($"Excel refused to quit: {quitEx}");
-                    Environment.Exit(0);                 // last-resort hard exit
+                    Environment.FailFast("Unrecoverable Excel error", quitEx);                 // last-resort hard exit
                 }
                 finally
                 {
-                    // Release COM objects so the process can really terminate
-                    Marshal.FinalReleaseComObject(app);
+                    while (Marshal.FinalReleaseComObject(app) > 0)
+                    {
+
+                    }
+
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
                 }
             }
 

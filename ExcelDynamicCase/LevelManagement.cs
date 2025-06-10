@@ -17,7 +17,10 @@ namespace ExcelDynamicCase
         public static CaseQuestion GetCaseQuestion(CaseQuestionEnum questionCode)
             => CaseQuestionRepo.CaseQuestions[questionCode];
 
-        private static CancellationTokenSource cts { get; set; }
+        public static CancellationTokenSource BattleTimerCts { get; set; }
+
+        public static CancellationTokenSource WaitForNextBattleCts { get; set; }
+
 
         public static void StartCaseQuestion()
         {
@@ -38,7 +41,7 @@ namespace ExcelDynamicCase
 
         public static void StopBattle(BattleResult battleResult)
         {
-            cts.Cancel();
+            BattleTimerCts.Cancel();
             Globals.ThisWorkbook.UnHookSheetChangeEvent();
 
             EnableUnityIsActiveSheet();
@@ -52,7 +55,7 @@ namespace ExcelDynamicCase
 
         public static void StartBattle(CaseQuestion caseQuestion, CancellationTokenSource cts)
         {
-            LevelManagement.cts = cts;
+            LevelManagement.BattleTimerCts = cts;
             Globals.ThisWorkbook.UnHookSheetChangeEvent();
 
             EnableWorkingsSheet();
