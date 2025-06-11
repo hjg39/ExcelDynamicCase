@@ -117,7 +117,7 @@ namespace ExcelDynamicCase
                     r.Interior.Color = colours;
                 }
 
-                startingRow += item.Value.GetLength(0) + 1;
+                startingRow += item.Value.GetLength(0) + 3;
             }
         }
 

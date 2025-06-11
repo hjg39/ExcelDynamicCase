@@ -718,7 +718,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion
                 {
                     Id = CaseQuestionEnum.DailyProgrammerEasyProgressiveTaxation,
-                    QuestionText = "In Excelopolis, income up to 10,000 is taxed at 0, from 10,000 to 30,000 taxed at 10%, from 30,000 to 100,000 taxed at 25% and over 100,000 taxed at 40%.\r\n\r\nHow much tax would someone who earns 1234567 pay?",
+                    QuestionText = "In Excelopolis, income up to 10,000 is taxed at 0, from 10,000 to 30,000 taxed at 10%, from 30,000 to 100,000 taxed at 25% and over 100,000 taxed at 40%.\r\n\r\nHow much tax would someone who earns 1234567 pay?  Round your answer down.",
                     QuestionLink = "https://www.reddit.com/r/dailyprogrammer/comments/cdieag/20190715_challenge_379_easy_progressive_taxation/",
                     Answer = "473326",
                     ExampleAnswer = 321739d,

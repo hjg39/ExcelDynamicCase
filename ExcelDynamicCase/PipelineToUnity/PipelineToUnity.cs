@@ -42,7 +42,7 @@ namespace ExcelDynamicCase.PipelineToUnity
 
                 LevelManagement.CaseQuestionCode = (CaseQuestionEnum)battleParameters.QuestionId;
                 LevelManagement.Challenger = battleParameters.Challenger;
-                //Storage.AllowedFunctions = battleParameters.AllowedFunctions;
+                Storage.AllowedFunctions = battleParameters.AllowedFunctions;
 
                 ThisWorkbook.ExcelCtx.Post(_ => StartBattleMode(), null);
 
