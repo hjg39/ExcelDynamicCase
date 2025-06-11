@@ -634,7 +634,20 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     Id = CaseQuestionEnum.DailyProgrammerMatrixSum,
                     QuestionText = "What is the smallest possible sum you can select from this 5x5 grid such that no two elements come from the same row or column?",
                     QuestionLink = "https://www.reddit.com/r/dailyprogrammer/comments/oirb5v/20210712_challenge_398_difficult_matrix_sum/",
-                    Data = null,
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Grid",
+                            new object[,]
+                            {
+                                { 123456789d, 752880530d, 826085747d, 576968456d, 721429729d, },
+                                { 173957326d, 1031077599d, 407299684d, 67656429d, 96549194d, },
+                                { 1048156299d, 663035648d, 604085049d, 1017819398d, 325233271d, },
+                                { 942914780d,  664359365d,   770319362d, 52838563d, 720059384d, },
+                                { 472459921d,   662187582d,   163882767d,  987977812d, 394465693d, },
+                            }
+                        }
+                    },
                     Answer = "1099762961",
                     ExampleAnswer = 2319013d,
                     Minutes = 10f,
