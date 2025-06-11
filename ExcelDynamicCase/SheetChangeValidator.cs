@@ -1,5 +1,6 @@
 ﻿using Microsoft.Office.Interop.Excel;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
 
 namespace ExcelDynamicCase
@@ -79,6 +80,11 @@ namespace ExcelDynamicCase
         public static bool ValidateFormula(string formula)
         {
             if (formula is null)
+            {
+                return true;
+            }
+
+            if (formula.Length > 0 && formula[0] != '=')
             {
                 return true;
             }
