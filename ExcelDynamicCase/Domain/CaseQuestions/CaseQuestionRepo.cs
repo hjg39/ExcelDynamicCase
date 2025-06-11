@@ -969,7 +969,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.MEWC2021LumberjackLevel1B,
-                    QuestionText = "How is the total available volume of the 🌳 tree in the forest?",
+                    QuestionText = "What is the total available volume of the 🌳 tree in the forest?",
                     QuestionLink = "https://fmworldcup.com/product/fmwc-open-dec-4-2021-lumberjack/",
                     Data = new Dictionary<string, object[,]>()
                     {
