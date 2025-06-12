@@ -796,7 +796,8 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                                 {"10",10d},
                                 {"J",12d},
                                 {"Q",15d},
-                                {"K",25d}
+                                {"K",25d},
+                                {"A",50d}
                             }
                         },
                         {

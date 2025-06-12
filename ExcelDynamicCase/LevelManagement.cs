@@ -119,13 +119,45 @@ namespace ExcelDynamicCase
             {
                 if (ws.Name == Globals.UnityIsActive.Name)
                 {
-                    ws.Protect(Storage.PASSWORD);
+                    if (ws.Visible != Interop.XlSheetVisibility.xlSheetVisible)
+                    {
+                        if (ws.ProtectContents)
+                        {
+                            ws.Unprotect(Storage.PASSWORD);
+                        }
+
+                        ws.Visible = Interop.XlSheetVisibility.xlSheetVisible;
+                    }
+
+                    if (!ws.ProtectContents)
+                    {
+                        ws.Protect(Storage.PASSWORD);
+                    }
+
                     Globals.UnityIsActive.Activate();
                 }
                 else
                 {
-                    ws.Visible = Interop.XlSheetVisibility.xlSheetVeryHidden;
-                    ws.Protect(Storage.PASSWORD);
+                    try
+                    {
+                        ws.Visible = Interop.XlSheetVisibility.xlSheetVeryHidden;
+                    }
+                    catch (Exception)
+                    {
+                        // Just get the game set up with everything in the right place, this can happen in a bad crash out if the main sheet is hidden and is unavoidable
+                    }
+
+                    try
+                    {
+                        if (!ws.ProtectContents)
+                        {
+                            ws.Protect(Storage.PASSWORD);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                    }
+
                 }
             }
 
