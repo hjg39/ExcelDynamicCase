@@ -19,6 +19,11 @@ If you just want to run the pre-built version of this tool without building the 
 10. Enjoy!
 11. (Optionally when you are done, you can remove the installation from 'add or remove programs > ExcelDynamicCase' remove
 
+## 🔧⚙ Troubleshoot Installation
+'Deployment and application do not have matching security zones.' - This occurs if the zip was not unblocked correctly in step 2.
+'This document contains custom code that cannot be loaded because the location is not in your trusted locations list.' - If you did add it to your trusted locations, this may be because it is a cloud folder (see step 3).
+'This document might not function as expected because the following control is missing.' - Close Excel instances, run 'setup.exe' in the publish folder and reopen the xlsx. 
+
 ---
 
 ## 🛠️ Developer Setup (Build from Source)
