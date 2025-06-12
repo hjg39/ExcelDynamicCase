@@ -46,7 +46,12 @@ namespace RPGM.UI
 
             NPCController npcController = Events.ShowConversation.LastNpc;
 
-            string[] unlockedFunctions = SaveManager.UnlockRandomFunctions(npcController.rewardClassification);            
+            string[] unlockedFunctions = null;
+
+            if (battleResult.IsSuccess)
+            {
+                SaveManager.UnlockRandomFunctions(npcController.rewardClassification);
+            }
 
             Events.ShowConversation ev = Schedule.Add<Events.ShowConversation>();
 
@@ -60,7 +65,7 @@ namespace RPGM.UI
                 {
                     id = "None",
                     text = battleResult.IsSuccess
-                           ? (unlockedFunctions.Any() ? $"You won and unlocked the following functions!\r\n{string.Join(", ", unlockedFunctions)}" : "You won, but no new unlocks this time!")
+                           ? (unlockedFunctions?.Any() is true ? $"You won and unlocked the following functions!\r\n{string.Join(", ", unlockedFunctions)}" : "You won, but no new unlocks this time!")
                            : "You lost, no unlocks this time!",
                     options = new List<ConversationOption>()
                 }

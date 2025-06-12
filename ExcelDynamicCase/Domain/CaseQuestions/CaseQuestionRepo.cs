@@ -755,7 +755,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.DailyProgrammerHexConversion,
-                    QuestionText = "Convert the 'r;g;b' colour '189;183;107' into its hex code (base 16) - use A to represent 10, B to represent 11, ..., F to represent 15.\r\n\r\nFor example, '184;134;11' would convert into '#BDB76B'.\r\nDon't forget to add a hash (#) at the start.",
+                    QuestionText = "Convert the 'r;g;b' colour '189;183;107' into its hex code (base 16) - use A to represent 10, B to represent 11, ..., F to represent 15.\r\n\r\nFor example, '184;134;11' would convert into '#B8860B'.\r\nDon't forget to add a hash (#) at the start.",
                     QuestionLink = "https://www.reddit.com/r/dailyprogrammer/comments/a0lhxx/20181126_challenge_369_easy_hex_colors/",
                     Answer = "#BDB76B",
                     ExampleAnswer = "#B8860B",
