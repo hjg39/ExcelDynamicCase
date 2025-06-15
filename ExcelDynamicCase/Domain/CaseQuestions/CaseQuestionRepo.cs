@@ -1119,7 +1119,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                         }
                     },
                     Answer = "L17;L12;D6;F11;E9;H5;C6;B7;B2;H1;I15;A4;D4;I15;C12;J4",
-                    ExampleAnswer = "A1,A2,A3,A4,A5,A6,A7",
+                    ExampleAnswer = "A1;A2;A3;A4;A5;A6;A7",
                     Minutes = 10f,
                 }
             },

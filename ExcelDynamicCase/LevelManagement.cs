@@ -39,18 +39,32 @@ namespace ExcelDynamicCase
                 }), null), cts.Token);
         }
 
-        public static void StopBattle(BattleResult battleResult)
+        public static void StopBattle(BattleResult battleResult, int attemptCount = 0)
         {
-            BattleTimerCts.Cancel();
-            Globals.ThisWorkbook.UnHookSheetChangeEvent();
+            try
+            {
+                BattleTimerCts.Cancel();
+                Globals.ThisWorkbook.UnHookSheetChangeEvent();
 
-            EnableUnityIsActiveSheet();
-            DisableWorkingsSheet();
-            DisableBattleSheet();
+                EnableUnityIsActiveSheet();
+                DisableWorkingsSheet();
+                DisableBattleSheet();
 
-            Globals.UnityIsActive.Activate();
+                Globals.UnityIsActive.Activate();
 
-            Task.Run(async () => await PipelineToUnity.PipelineToUnity.SendOverworldStateAsync(battleResult));
+                Task.Run(async () => await PipelineToUnity.PipelineToUnity.SendOverworldStateAsync(battleResult));
+            }
+            catch (Exception)
+            {
+                if (attemptCount < 20)
+                {
+                    Task.Delay(3000).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => StopBattle(battleResult, attemptCount + 1), null));
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         public static void StartBattle(CaseQuestion caseQuestion, CancellationTokenSource cts)
