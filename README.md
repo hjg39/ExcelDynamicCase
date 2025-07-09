@@ -27,7 +27,8 @@ If you want to run the pre-built version of this tool without building the solut
 
 1. 'Deployment and application do not have matching security zones.' - This occurs if the zip was not unblocked correctly in step 2.  If you fix this and it still fails, restarting and/or extracting to an already Trusted location has been known to work although I'm not sure why.
 2. 'This document contains custom code that cannot be loaded because the location is not in your trusted locations list.' - If you did add it to your trusted locations, this may be because it is a cloud folder (see step 3).
-3. 'This document might not function as expected because the following control is missing.' - Close Excel instances, run 'setup.exe' in the publish folder and reopen the xlsx. 
+3. 'This document might not function as expected because the following control is missing.' - Close Excel instances, run 'setup.exe' in the publish folder and reopen the xlsx.
+4. In some cases, if you host the application in a location with a long directory/folder path, the unzipping may drop some files when extraction is happening.  If this happens, try moving the application to a shorter folder location.  If you  need to you can also move just the 'publish' folder out to a higher level with a shorter folder path also.
 
 ## ⟳ Starting A New Game/Save File 
 
