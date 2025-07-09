@@ -2341,7 +2341,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                             }
                         }
                     },
-                    Answer = "103",
+                    Answer = "93",
                     ExampleAnswer = 70d,
                     Minutes = 10f,
                 }
