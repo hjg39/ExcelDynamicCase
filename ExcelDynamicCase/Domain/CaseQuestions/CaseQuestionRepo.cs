@@ -1952,7 +1952,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                                 {"3E","3E","3S","2W","2S",},
                                 {"1E","1S","Star","3W","2W",},
                                 {"2N","1W","3N","1N","2W",},
-                                {"4E","1W","1E","1E","4N",},
+                                {"4E","1W","1E","1N","4N",},
                             }
                         }
                     },
