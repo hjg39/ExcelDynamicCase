@@ -51,21 +51,21 @@ namespace Assets.Creator_Kit___RPG.Logic
                 case QuestionRewardClassification.BasicMaths:
                 case QuestionRewardClassification.BasicText:
                 case QuestionRewardClassification.BasicManipulation:
-                    return new int[] { 3, 20001, 30399, 40003, 40022, 5, 20002, 30379, 40008, 1, 6, 40000, 40009, 2, 11, 40001, 40013, 4, 30, 40002, 40021, 51142, 51145, 51152, 52120, 60000, 60002, 60004, 60005, 60006, 60008 };
+                    return new int[] { 3, 20001, 30399, 40003, 40022, 5, 20002, 30379, 40008, 1, 6, 40000, 40009, 2, 11, 40001, 40013, 4, 30, 40002, 40021, 51142, 51145, 51152, 52120, 60000, 60002, 60004, 60005, 60006, 60008, 80000 };
                 case QuestionRewardClassification.AdvancedAggregates:
                 case QuestionRewardClassification.AdvancedComplex:
                 case QuestionRewardClassification.AdvancedLookup:
                 case QuestionRewardClassification.AdvancedText:
                 case QuestionRewardClassification.AdvancedManipulation:
                 case QuestionRewardClassification.AdvancedDates:
-                    return new int[] { 7, 10015, 40011, 8, 30369, 30380, 40016, 9, 40004, 40017, 12, 40005, 40014, 34, 40006, 40018, 36, 40010, 40019, 40026, 53168, 60001, 60007, 60009, 70001 };
+                    return new int[] { 7, 10015, 40011, 8, 30369, 30380, 40016, 9, 40004, 40017, 12, 40005, 40014, 34, 40006, 40018, 36, 40010, 40019, 40026, 53168, 60001, 60007, 60009, 70001, 80003 };
                 case QuestionRewardClassification.ExpertAggregates:
                 case QuestionRewardClassification.ExpertBases:
                 case QuestionRewardClassification.ExpertMaths:
                 case QuestionRewardClassification.ExpertDates:
-                    return new int[] { 13, 33, 40020, 15, 40, 40007, 17, 30398, 40012, 24, 30390, 40015, 40023, 40024, 40025, 51088, 52111, 60003, 70000 };
+                    return new int[] { 13, 33, 40020, 15, 40, 40007, 17, 30398, 40012, 24, 30390, 40015, 40023, 40024, 40025, 51088, 52111, 60003, 70000, 10017, 80001, 80002 };
                 case QuestionRewardClassification.DivineAggregates:
-                    return new int[] { 16, 31, 43, 76, 10016, 20000, 30378, 30354, 50104 };
+                    return new int[] { 16, 31, 43, 76, 10016, 10018, 20000, 30378, 30354, 50104 };
                 default:
                     throw new NotImplementedException();
             }
@@ -100,6 +100,8 @@ namespace Assets.Creator_Kit___RPG.Logic
             76 => 20f,
             10015 => 10f,
             10016 => 22f,
+            10017 => 14f,
+            10018 => 40f,
             20000 => 20f,
             20001 => 5f,
             20002 => 8f,
@@ -158,6 +160,10 @@ namespace Assets.Creator_Kit___RPG.Logic
             60009 => 10f,
             70000 => 15f,
             70001 => 11f,
+            80000 => 4f,
+            80001 => 15f,
+            80002 => 15f,
+            80003 => 10f,
             _ => throw new NotImplementedException(),
         };
     }

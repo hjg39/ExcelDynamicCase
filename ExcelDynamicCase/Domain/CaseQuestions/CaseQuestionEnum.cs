@@ -28,6 +28,8 @@
         EulerCountingSummations = 76,
         DPMMSNumbersSetsEx1Q15 = 10015,
         DPMMSNumbersSetsDonCalls = 10016,
+        OEISLookAndSay = 10017,
+        IMOImomiArchipelago = 10018,
         CodeGolf9x9Rooks = 20000,
         CodeGolfReverseNATOPhoneticSpelling = 20001,
         CodeGolfAlbuquerque = 20002,
@@ -86,5 +88,9 @@
         KodCodeNonAdjacentSum = 60009,
         WikiGaleShapley = 70000,
         WikiJosephusProblem = 70001,
+        MadeUpWeekdayDays = 80000,
+        GeneralBadgerHedgehog = 80001,
+        GeneralShapleyShubik = 80002,
+        GeneralPiratePuzzle = 80003,
     }
 }
