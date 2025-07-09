@@ -1,5 +1,5 @@
 # ----  ClickOnce / VSTO  ---------------------------------
-*.manifest     binary     # *.exe.manifest, *.dll.manifest, etc.
-*.application  binary     # the root ClickOnce application manifest
-*.vsto         binary     # VSTO deployment manifest
-*.deploy       binary     # any files that ClickOnce renames *.deploy
+*.manifest     binary
+*.application  binary
+*.vsto         binary
+*.deploy       binary
