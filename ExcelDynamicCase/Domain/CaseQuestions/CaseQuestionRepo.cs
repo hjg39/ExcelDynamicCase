@@ -1536,7 +1536,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.MEWC2023LanaBananaL2,
-                    QuestionText = "If Lana starts in these cells and moves in these directions, how many bananas will she collect?  (Use the key rather than the actual Excel cell addresses.)\r\n\r\nIf she starts on a cell with a banana, she can grab it immediately.\r\n\r\nWrite the sum of the answers for the different starting cells.",
+                    QuestionText = "If Lana starts in these cells and moves in these directions, how many bananas will she collect?  (Use the key rather than the actual Excel cell addresses.)\r\nIf she hits a wall (on column B or column AN) she will start moving down instead.\r\n\r\nIf she starts on a cell with a banana, she can grab it immediately.\r\n\r\nWrite the sum of the answers for the different starting cells.",
                     QuestionLink = "https://fmworldcup.com/product/lana-banana-mewc-2023/",
                     Data = new Dictionary<string, object[,]>()
                     {
@@ -1582,7 +1582,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.MEWC2023LanaBananaL3,
-                    QuestionText = "Lana can move down, down-left or down-right on each move.\r\nIf she hits a wall (on column B or column AN) she will start moving down instead.\r\nIf she starts on these cells on the map, what is the highest number of bananas she can collect?  (Use the key rather than the actual Excel cell addresses.)\r\n\r\nIf she starts on a cell with a banana, she can grab it immediately.\r\n\r\nWrite the sum of the answers for the different starting cells.",
+                    QuestionText = "Lana can move down, down-left or down-right on each move.\r\nIf she starts on these cells on the map, what is the highest number of bananas she can collect?  (Use the key rather than the actual Excel cell addresses.)\r\n\r\nIf she starts on a cell with a banana, she can grab it immediately.\r\n\r\nWrite the sum of the answers for the different starting cells.",
                     QuestionLink = "https://fmworldcup.com/product/lana-banana-mewc-2023/",
                     Data = new Dictionary<string, object[,]>()
                     {
