@@ -92,6 +92,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - TwinTown
+  - m_GUID: 7c8db64b27a61ac44866b49a7827cbf9
+    m_Address: Assets/Audio/ExcelMan.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ExcelMan
+  - m_GUID: c7090eaa76024fb4cbcdac1514ecc82e
+    m_Address: Assets/Audio/BenniWeber.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BenniWeber
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a7938880f27d61e4f8e2da6f1f73863d, type: 2}
   m_SchemaSet:
