@@ -180,7 +180,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.EulerEvenlyDivisibleByManyNumbers,
-                    QuestionText = "2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.\r\n\r\nWhat is the smallest positive number that is dividible by all numbers from 1 to 20 with no remainder?",
+                    QuestionText = "2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.\r\n\r\nWhat is the smallest positive number that is divisible by all numbers from 1 to 20 with no remainder?",
                     QuestionLink = "https://projecteuler.net/problem=5",
                     Data = null,
                     Answer = "232792560",
