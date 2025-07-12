@@ -75,10 +75,10 @@ namespace RPGM.Gameplay
             if (introCutscenePrefab != null)
             {
                 var cs = Instantiate(introCutscenePrefab);
-                if (cs.audioClip != null)
-                {
-                    cs.OnFinish += (i) => model.musicController.CrossFade(model.musicController.audioClip);
-                }
+                //if (cs.audioClip != null)
+                //{
+                //    cs.OnFinish += (i) => model.musicController.CrossFade(model.musicController.audioClip);
+                //}
             }
             if (enableOnQuestStart != null)
                 foreach (var i in enableOnQuestStart)
@@ -128,10 +128,10 @@ namespace RPGM.Gameplay
             if (outroCutscenePrefab != null)
             {
                 var cs = Instantiate(outroCutscenePrefab);
-                if (cs.audioClip != null)
-                {
-                    cs.OnFinish += (i) => model.musicController.CrossFade(model.musicController.audioClip);
-                }
+                //if (cs.audioClip != null)
+                //{
+                //    cs.OnFinish += (i) => model.musicController.CrossFade(model.musicController.audioClip);
+                //}
             }
 
         }

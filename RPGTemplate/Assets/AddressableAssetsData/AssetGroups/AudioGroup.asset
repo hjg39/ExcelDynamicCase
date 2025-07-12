@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: AudioGroup
+  m_EditorClassIdentifier: 
+  m_GroupName: AudioGroup
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 2b4968d575e3ee14da9df480089df11d
+  m_SerializeEntries:
+  - m_GUID: fe36f67e180d61c41a96f7fbb0f85db6
+    m_Address: Assets/Audio/Amber.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmberJohnson
+  - m_GUID: 637c1137ade01b6428542deb046d9f66
+    m_Address: Assets/Audio/AndrewNgai.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AndrewNgai
+  - m_GUID: 11d90b9575e38234380969fe206bfdb3
+    m_Address: Assets/Audio/Ashleigh.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AshleighRoberts
+  - m_GUID: b614e956bc244b34bb5b4c3ee82ca2d6
+    m_Address: Assets/Audio/Champion.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MichaelJarman
+  - m_GUID: 80d2581d4c611c8438ef778e884e843f
+    m_Address: Assets/Audio/default.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ExcelWizard
+  - m_GUID: b80bdb472ed3b134aa12d1107c420416
+    m_Address: Assets/Audio/Elliott.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ElliottPaterson
+  - m_GUID: 51e5a8e4ec1afac4589c3bbb5a975347
+    m_Address: Assets/Audio/Giles.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TheHumbleMVP
+  - m_GUID: 93a8d2f219043f14b938238d833ada44
+    m_Address: Assets/Audio/HarryS.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HarrySeiders
+  - m_GUID: dfb3cdf17a940e84baca25c58a503096
+    m_Address: Assets/Audio/HarryW.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HarryWatson
+  - m_GUID: e40b8dd5fb4e54f408105a629266132d
+    m_Address: Assets/Audio/Jaq.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JaqKennedy
+  - m_GUID: 7e031c1d04914574f899536b3a9ffbe2
+    m_Address: Assets/Audio/JulienLacaze.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JulienLacaze
+  - m_GUID: 0a478b633dd49534ba420a9e1b319e1c
+    m_Address: Assets/Audio/Katrina.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - "Katr\u0129na"
+  - m_GUID: 6fa8370aa3e26994d875e29345d64a76
+    m_Address: Assets/Audio/Lianna.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LiannaGerrish
+  - m_GUID: 07e94aeac3de9c24b9a6fa962c1ef4fb
+    m_Address: Assets/Audio/Lorenzo.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LorenzoFoti
+  - m_GUID: 293f93e87f15a854587ff4f3255219e4
+    m_Address: Assets/Audio/twinTown.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TwinTown
+  - m_GUID: 7c8db64b27a61ac44866b49a7827cbf9
+    m_Address: Assets/Audio/ExcelMan.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ExcelMan
+  - m_GUID: c7090eaa76024fb4cbcdac1514ecc82e
+    m_Address: Assets/Audio/BenniWeber.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BenniWeber
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a7938880f27d61e4f8e2da6f1f73863d, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 804474a921d8b31498d7e99eef88bbe3, type: 2}
