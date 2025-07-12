@@ -124,6 +124,7 @@ ExportedObj/
 
 obj
 /obj/*
+*DoNotShip*
 YuGiOh/locBuild/*
 YuGiOh/Library/*
 YuGiOh/Temp/*
