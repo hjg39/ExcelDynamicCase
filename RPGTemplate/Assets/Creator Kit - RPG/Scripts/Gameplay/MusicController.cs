@@ -13,6 +13,8 @@ public class MusicController : MonoBehaviour
     int active;             // index of the currently audible source
     AsyncOperationHandle<AudioClip> lastHandle;
 
+    private string lastUsedKey = "TwinTown";
+
     async void Start()
     {
         // create pooled sources
@@ -25,17 +27,25 @@ public class MusicController : MonoBehaviour
 
     public async void CrossFadeTo(string key)
     {
+        if (lastUsedKey == key)
+        {
+            return;
+        }
+
         await PlayAsync(key, immediate: false);
+        lastUsedKey = key;
     }
 
     public void CrossFadeIntoBattle(string addressableLabel)       // called when combat ends
     {
         CrossFadeTo(addressableLabel);             // fade back to the main/ambient theme
+        lastUsedKey = addressableLabel;
     }
 
     public void CrossFadeOutOfBattle()       // called when combat ends
     {
         CrossFadeTo(defaultKey);             // fade back to the main/ambient theme
+        lastUsedKey = defaultKey;
     }
 
     async Task PlayAsync(string key, bool immediate)

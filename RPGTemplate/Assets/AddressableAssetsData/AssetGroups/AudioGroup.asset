@@ -102,6 +102,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - BenniWeber
+  - m_GUID: a9663f2b617a5ec48b8d0db03cd256a7
+    m_Address: Assets/Audio/WinterVillage.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WinterVillage
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a7938880f27d61e4f8e2da6f1f73863d, type: 2}
   m_SchemaSet:
