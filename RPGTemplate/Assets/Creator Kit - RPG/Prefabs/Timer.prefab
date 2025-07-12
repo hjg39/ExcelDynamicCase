@@ -128,7 +128,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1057964450494933676}
   - component: {fileID: 1057964450494933673}
-  - component: {fileID: 1057964450494933678}
   - component: {fileID: 1057964450494933672}
   m_Layer: 5
   m_Name: TimerText
@@ -199,14 +198,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &1057964450494933678
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057964450494933675}
-  m_CullTransparentMesh: 0
 --- !u!114 &1057964450494933672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +407,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4501065412704861779}
   - component: {fileID: 3855950743025610177}
-  - component: {fileID: 7815919763496902950}
   - component: {fileID: 7325144217680725322}
   m_Layer: 5
   m_Name: Functions
@@ -487,14 +477,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &7815919763496902950
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4342676295647827835}
-  m_CullTransparentMesh: 0
 --- !u!114 &7325144217680725322
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -137,7 +137,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1057964448854514701}
   - component: {fileID: 1057964448854514702}
-  - component: {fileID: 1057964448854514703}
   - component: {fileID: 1057964448854514697}
   m_Layer: 5
   m_Name: TextMeshPro (1)
@@ -208,14 +207,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &1057964448854514703
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057964448854514696}
-  m_CullTransparentMesh: 0
 --- !u!114 &1057964448854514697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,7 +503,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1057964449276369588}
   - component: {fileID: 1057964449276369585}
-  - component: {fileID: 1057964449276369590}
   - component: {fileID: 1057964449276369584}
   m_Layer: 5
   m_Name: TextMeshPro (1)
@@ -583,14 +573,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &1057964449276369590
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057964449276369587}
-  m_CullTransparentMesh: 0
 --- !u!114 &1057964449276369584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,7 +676,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1057964449414330151}
   - component: {fileID: 1057964449414330144}
-  - component: {fileID: 1057964449414330145}
   - component: {fileID: 1057964449414330147}
   m_Layer: 5
   m_Name: TextMeshPro (1)
@@ -765,14 +746,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &1057964449414330145
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057964449414330146}
-  m_CullTransparentMesh: 0
 --- !u!114 &1057964449414330147
 MonoBehaviour:
   m_ObjectHideFlags: 0
