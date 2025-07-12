@@ -1,73 +1,79 @@
+using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Audio;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace RPGM.Gameplay
+public class MusicController : MonoBehaviour
 {
-    public class MusicController : MonoBehaviour
+    [SerializeField] string defaultKey = "TwinTown";
+    [SerializeField] float crossFade = 3f;
+
+    readonly AudioSource[] sources = new AudioSource[2];
+    int active;             // index of the currently audible source
+    AsyncOperationHandle<AudioClip> lastHandle;
+
+    async void Start()
     {
-        static MusicController instance;
+        // create pooled sources
+        sources[0] = gameObject.AddComponent<AudioSource>();
+        sources[1] = gameObject.AddComponent<AudioSource>();
+        sources[0].loop = sources[1].loop = true;
 
-        public AudioMixerGroup audioMixerGroup;
-        public AudioClip audioClip;
+        await PlayAsync(defaultKey, immediate: true);
+    }
 
-        public AudioClip battleAudio;
-        public AudioClip championAudio;
+    public async void CrossFadeTo(string key)
+    {
+        await PlayAsync(key, immediate: false);
+    }
 
-        public float crossFadeTime = 3;
+    public void CrossFadeIntoBattle(string addressableLabel)       // called when combat ends
+    {
+        CrossFadeTo(addressableLabel);             // fade back to the main/ambient theme
+    }
 
-        AudioSource audioSourceA, audioSourceB;
-        float audioSourceAVolumeVelocity, audioSourceBVolumeVelocity;
+    public void CrossFadeOutOfBattle()       // called when combat ends
+    {
+        CrossFadeTo(defaultKey);             // fade back to the main/ambient theme
+    }
 
-        public void CrossFade(AudioClip audioClip)
+    async Task PlayAsync(string key, bool immediate)
+    {
+        // Asynchronously fetch clip
+        var handle = Addressables.LoadAssetAsync<AudioClip>(key);
+        await handle.Task;                       // await without freezing the main thread
+
+        var next = 1 - active;                   // pick the silent source
+        sources[next].clip = handle.Result;
+        sources[next].Play();
+
+        if (immediate)           // startup: no fade, just swap
         {
-            var t = audioSourceA;
-            audioSourceA = audioSourceB;
-            audioSourceB = t;
-            audioSourceA.clip = audioClip;
-            audioSourceA.Play();
-            audioSourceB.Stop();
+            sources[active].Stop();
+            active = next;
+        }
+        else                     // runtime: smooth cross-fade
+        {
+            StartCoroutine(Fade(sources[active], sources[next], crossFade));
+            active = next;
         }
 
-        public void CrossFadeIntoBattle(AudioClip audioClip)
-        {
-            CrossFade(audioClip ?? battleAudio);
-        }
+        // release previously loaded clip once the fade is done
+        if (lastHandle.IsValid())
+            Addressables.Release(lastHandle);
+        lastHandle = handle;
+    }
 
-        public void CrossFadeOutOfBattle()
+    IEnumerator Fade(AudioSource from, AudioSource to, float time)
+    {
+        for (float t = 0; t < time; t += Time.deltaTime)
         {
-            CrossFade(audioClip);
+            float k = t / time;
+            from.volume = Mathf.Lerp(0.2f, 0f, k);
+            to.volume = Mathf.Lerp(0f, 0.2f, k);
+            yield return null;
         }
-
-        void Awake()
-        {
-            //var musicController = GetComponent<MusicController>();
-            if (instance != null)
-                Destroy(instance);
-            else
-                instance = this;
-        }
-
-        void Update()
-        {
-            audioSourceA.volume = Mathf.SmoothDamp(audioSourceA.volume, 0.2f, ref audioSourceAVolumeVelocity, crossFadeTime, 1);
-            audioSourceB.volume = Mathf.SmoothDamp(audioSourceB.volume, 0f, ref audioSourceBVolumeVelocity, crossFadeTime, 1);
-        }
-
-        void OnEnable()
-        {
-            audioSourceA = gameObject.AddComponent<AudioSource>();
-            audioSourceA.spatialBlend = 0;
-            audioSourceA.clip = audioClip;
-            audioSourceA.loop = true;
-            audioSourceA.outputAudioMixerGroup = audioMixerGroup;
-            audioSourceA.volume = 0.2f;
-            audioSourceA.Play();
-
-            audioSourceB = gameObject.AddComponent<AudioSource>();
-            audioSourceB.spatialBlend = 0;
-            audioSourceB.loop = true;
-            audioSourceA.volume = 0f;
-            audioSourceB.outputAudioMixerGroup = audioMixerGroup;
-        }
+        from.Stop();
     }
 }

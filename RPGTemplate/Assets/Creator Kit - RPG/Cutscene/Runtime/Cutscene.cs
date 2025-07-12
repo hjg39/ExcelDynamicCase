@@ -93,8 +93,8 @@ namespace RPGM.Gameplay
         IEnumerator _Play()
         {
 
-            if (audioClip != null)
-                model.musicController.CrossFade(audioClip);
+            //if (audioClip != null)
+            //    model.musicController.CrossFade(audioClip);
 
             material.SetTexture("_ScreenTex", game);
 

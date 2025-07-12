@@ -77,11 +77,11 @@ namespace RPGM.Gameplay
             if (disableWhenDiscovered) gameObject.SetActive(false);
             if (cutscenePrefab != null)
             {
-                var cs = Instantiate(cutscenePrefab);
-                if (cs.audioClip != null)
-                {
-                    cs.OnFinish += (i) => model.musicController.CrossFade(model.musicController.audioClip);
-                }
+                //var cs = Instantiate(cutscenePrefab);
+                //if (cs.audioClip != null)
+                //{
+                //    cs.OnFinish += (i) => model.musicController.CrossFade(model.musicController.audioClip);
+                //}
             }
         }
 
