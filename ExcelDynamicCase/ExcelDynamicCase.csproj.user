@@ -4,5 +4,6 @@
     <PublishUrlHistory>..\ExcelDynamicCase\publish\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
 </Project>

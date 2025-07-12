@@ -90,7 +90,9 @@ namespace ExcelDynamicCase
             ((Excel.Range)this.Cells[6, 2]).Value = $"{challenger} has challenged you to a battle";
             ((Excel.Range)this.Cells[8, 2]).Value = $"You have {caseQuestion.Minutes} minutes (which you can follow in the overworld window).";
 
-            ((Excel.Range)this.Cells[17, 2]).Value = caseQuestion.QuestionText;
+            Excel.Range questionBox = ((Excel.Range)this.Cells[17, 2]);
+            questionBox.Value = caseQuestion.QuestionText;
+            questionBox.Rows.AutoFit();
 
             Excel.Range data = null;
 
