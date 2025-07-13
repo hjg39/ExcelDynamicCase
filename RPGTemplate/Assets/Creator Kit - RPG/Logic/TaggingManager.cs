@@ -37,6 +37,7 @@ namespace Assets.Creator_Kit___RPG.Persistence
                     SetConversationNumber("LiannaGerrish", 1);
                     SetConversationNumber("ExcelMan", 1);
                     SetConversationNumber("LorenzoFoti", 1);
+                    GameObject.Find("WinterVillageRoadblock")?.SetActive(false);
                     break;
                 case "UpdateGilesConversation":
                     SetConversationNumber("TheHumbleMVP", 2);
@@ -55,9 +56,9 @@ namespace Assets.Creator_Kit___RPG.Persistence
                     SetConversationNumber("JulienLacaze", 2);
                     break;
                 case "UnlockExpert":
-                    GameObject.FindObjectOfType<Roadblock>()?.gameObject?.SetActive(false);
                     SetConversationNumber("JulienLacaze", 3);
                     SetConversationNumber("AndrewGrigolyunovich", 3);
+                    GameObject.Find("Roadblock")?.SetActive(false);
                     break;
                 default:
                     throw new NotImplementedException();

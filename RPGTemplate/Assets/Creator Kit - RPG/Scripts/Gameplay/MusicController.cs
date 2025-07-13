@@ -60,6 +60,7 @@ public class MusicController : MonoBehaviour
 
         if (immediate)           // startup: no fade, just swap
         {
+            sources[next].volume = 0.2f;
             sources[active].Stop();
             active = next;
         }
