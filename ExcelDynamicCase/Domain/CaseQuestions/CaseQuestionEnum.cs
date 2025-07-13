@@ -95,5 +95,6 @@
         RestrictedMod = 100_000,
         RestrictedConsecutiveSum = 100_001,
         RestrictedFindStringLength = 100_002,
+        RestrictedKodCodeMaxRectangle = 100_003,
     }
 }

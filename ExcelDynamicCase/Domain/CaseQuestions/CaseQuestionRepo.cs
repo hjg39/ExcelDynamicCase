@@ -2603,7 +2603,38 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     Minutes = 1f,
 
                 }
-            }
+            },
+            {
+                CaseQuestionEnum.RestrictedKodCodeMaxRectangle,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.RestrictedKodCodeMaxRectangle,
+                    QuestionText = "A very similar question is in the main set too, but might be easier with this explicit list of functions to use.\r\n\r\nIn this grid of numbers, find the rectangle subset with the smallest (most negative) sum.  Answer with the absolute value of that sum?\r\nYou have access to IMSUM\r\nLAMBDA\r\nMAP\r\nMAXA",
+                    QuestionLink = "https://github.com/KodCode-AI/kodcode",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Grid of Numbers",
+                            new object[,]
+                            {
+                                {18d,-16d,-20d,-19d,-15d,-8d,},
+                                {4d,-18d,-10d,2d,-7d,-3d,},
+                                {9d,13d,4d,-5d,-16d,-8d,},
+                                {-12d,2d,7d,0d,3d,1d,},
+                                {2d,8d,13d,17d,9d,4d,},
+                                {16d,6d,-10d,13d,-12d,6d,},
+                                {-5d,-8d,8d,2d,-7d,3d,},
+                                {2d,2d,-14d,5d,3d,-4d,},
+                                {-8d,-20d,-16d,-5d,11d,-17d,},
+                            }
+                        }
+                    },
+                    AllowedFunctions = new[] { "IMSUM", "LAMBDA", "MAP", "MAXA"  },
+                    Answer = "126",
+                    ExampleAnswer = 100d,
+                    Minutes = 8f,
+                }
+            },
         };
     }
 }
