@@ -67,7 +67,7 @@ namespace Assets.Creator_Kit___RPG.Logic
                 case QuestionRewardClassification.DivineAggregates:
                     return new int[] { 16, 31, 43, 76, 10016, 10018, 20000, 30378, 30354, 50104 };
                 case QuestionRewardClassification.BasicCurated:
-                    return new int[] { 100_000, 100_001 };
+                    return new int[] { 100_000, 100_001, 100_002 };
                 default:
                     throw new NotImplementedException();
             }
@@ -168,6 +168,7 @@ namespace Assets.Creator_Kit___RPG.Logic
             80003 => 10f,
             100_000 => 4f,
             100_001 => 4f,
+            100_002 => 1f,
             _ => throw new NotImplementedException(),
         };
     }

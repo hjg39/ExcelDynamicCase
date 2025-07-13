@@ -2587,6 +2587,22 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     Minutes = 4f,
 
                 }
+            },
+            {
+                CaseQuestionEnum.RestrictedFindStringLength,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.RestrictedFindStringLength,
+                    QuestionText = "Find the length of this string.\r\n\r\nOMBRKYLLVRKNCPDJRSLUNVLFGAQVHVTCAXZIFFDAPKZSZGMTWQJITZJCIZNRZWCZEYTDMKAXDQEGMMKMSRMBGYHOGNCJJEHUMQEUUEZKZDMHGLCKWKZTMJYMKELDOGNEDJKMSBGIIJQYVAJNUVWXTKCKCF\r\n\r\n\r\nYou have 60 seconds, no access to arithmetic operators and can only use the BESSELJ function.\r\n\r\nGo.",
+                    QuestionLink = null,
+                    Data = null,
+                    AllowArithmetic = false,
+                    AllowedFunctions = new[] { "BESSELJ" },
+                    Answer = "154",
+                    ExampleAnswer = 100d,
+                    Minutes = 1f,
+
+                }
             }
         };
     }
