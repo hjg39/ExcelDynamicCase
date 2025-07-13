@@ -115,10 +115,10 @@ namespace ExcelDynamicCase
                         r.ClearFormats();
                     }
 
-                    if (_random.NextDouble() < 0.4)
-                    {
-                        r.HorizontalAlignment = _random.NextDouble() < 0.5 ? HorizontalAlignment.Left : HorizontalAlignment.Right;
-                    }
+                    // if (_random.NextDouble() < 0.4)
+                    // {
+                    //     r.HorizontalAlignment = _random.NextDouble() < 0.5 ? HorizontalAlignment.Left : HorizontalAlignment.Right;
+                    // }
                     if (_random.NextDouble() < 0.2)
                     {
                         r.Orientation = _random.NextDouble() < 0.5 ? 90 : -90;

@@ -2532,7 +2532,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.RestrictedMod,
-                    QuestionText = "For each pair of numbers below, find the value of the number MOD the mod number.\r\nAnswer with the sum of the results.\r\n\r\nFor this challenge, arithmetic operators: *+/-^ are not permitted.\r\nThe following functions are permitted:\r\nACOS\r\nCEILING.PRECISE\r\nCSC\r\nDB\r\nDCOUNT\r\nIMSUB\r\nNUMBERVALUE\r\nQUOTIENT\r\n\r\nThere are multiple ways to go about this, you do not necessarily need to know trigonometry.",
+                    QuestionText = "For each pair of numbers below, find the value of the number MOD the mod number.\r\nAnswer with the sum of the results.\r\n\r\nFor this challenge, arithmetic operators:  (*+-/^<>) are not permitted.\r\nThe following functions are permitted:\r\nACOS\r\nCEILING.PRECISE\r\nCSC\r\nDB\r\nDCOUNT\r\nIMSUB\r\nNUMBERVALUE\r\nQUOTIENT\r\n\r\nThere are multiple ways to go about this, you do not necessarily need to know trigonometry.",
                     QuestionLink = null,
                     Data = new Dictionary<string, object[,]>()
                     {
@@ -2577,7 +2577,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.RestrictedConsecutiveSum,
-                    QuestionText = "In the number, 483290483209478209438249032849029483948348589358499054394732049732905267534254365427045208430242034593249589954739543973543231547328946328946329453294562389429191919914343943814381, find the largest product of 5 consecutive digits.\r\n\r\nFor this challenge, arithmetic operators are not permitted and you have access to:\r\nFIXED\r\nLEFTB\r\nLET\r\nINDEX\r\nMMULT\r\nRADIANS\r\nREPLACE\r\nTEXTBEFORE\r\nXOR",
+                    QuestionText = "In the number, 483290483209478209438249032849029483948348589358499054394732049732905267534254365427045208430242034593249589954739543973543231547328946328946329453294562389429191919914343943814381, find the largest product of 5 consecutive digits.\r\n\r\nFor this challenge, arithmetic operators (*+-/^<>) are not permitted and you have access to:\r\nFIXED\r\nLEFTB\r\nLET\r\nINDEX\r\nMMULT\r\nRADIANS\r\nREPLACE\r\nTEXTBEFORE\r\nXOR",
                     QuestionLink = null,
                     Data = null,
                     AllowArithmetic = false,
@@ -2593,7 +2593,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.RestrictedFindStringLength,
-                    QuestionText = "Find the length of this string.\r\n\r\nOMBRKYLLVRKNCPDJRSLUNVLFGAQVHVTCAXZIFFDAPKZSZGMTWQJITZJCIZNRZWCZEYTDMKAXDQEGMMKMSRMBGYHOGNCJJEHUMQEUUEZKZDMHGLCKWKZTMJYMKELDOGNEDJKMSBGIIJQYVAJNUVWXTKCKCF\r\n\r\n\r\nYou have 60 seconds, no access to arithmetic operators and can only use the BESSELJ function.\r\n\r\nGo.",
+                    QuestionText = "Find the length of this string.\r\n\r\nOMBRKYLLVRKNCPDJRSLUNVLFGAQVHVTCAXZIFFDAPKZSZGMTWQJITZJCIZNRZWCZEYTDMKAXDQEGMMKMSRMBGYHOGNCJJEHUMQEUUEZKZDMHGLCKWKZTMJYMKELDOGNEDJKMSBGIIJQYVAJNUVWXTKCKCF\r\n\r\n\r\nYou have 60 seconds, no access to arithmetic operators (*+-/^<>) and can only use the BESSELJ function.\r\n\r\nGo.",
                     QuestionLink = null,
                     Data = null,
                     AllowArithmetic = false,
@@ -2640,7 +2640,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.RestrictedIncreasingPermutations,
-                    QuestionText = "How many ways are there to order the numbers 1 to 6 such that if you read the order left to right, the number goes up 3 times (and down 2 times) overall?\r\n\r\nYou do not have access to arithmetic operators, but you do have access to these functions:\r\nADDRESS\r\nAGGREGATE\r\nCHAR\r\nCOLUMNS\r\nGCD\r\nGESTEP\r\nIMREAL\r\nRAND\r\nRANDARRAY\r\nRANDBETWEEN\r\nROWS\r\nSORTBY\r\nUNIQUE\r\nWEEKDAY\r\nXLOOKUP",
+                    QuestionText = "How many ways are there to order the numbers 1 to 6 such that if you read the order left to right, the number goes up 3 times (and down 2 times) overall?\r\n\r\nYou do not have access to arithmetic operators (*+-/^<>), but you do have access to these functions:\r\nADDRESS\r\nAGGREGATE\r\nCHAR\r\nCOLUMNS\r\nGCD\r\nGESTEP\r\nIMREAL\r\nRAND\r\nRANDARRAY\r\nRANDBETWEEN\r\nROWS\r\nSORTBY\r\nUNIQUE\r\nWEEKDAY\r\nXLOOKUP",
                     QuestionLink = null,
                     AllowArithmetic = false,
                     AllowedFunctions = new[] { "ADDRESS","AGGREGATE","CHAR","COLUMNS","GCD","GESTEP","IMREAL","RAND","RANDARRAY","RANDBETWEEN","ROWS","SORTBY","UNIQUE","WEEKDAY","XLOOKUP", },
@@ -2654,7 +2654,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.AliceIcePuzzle,
-                    QuestionText = "Alice has fallen into her mirror (looking-glass), and has found herself in an ice cavern where every single surface is reflective.\r\n\r\nIt is an extremely confusing place, and hard to keep track of what is where and which way is up.\r\n\r\nThe floor of the cavern is made out of ice (I), and there are patches of snow (S) and rocks (R) all over.\r\n\r\nAlice starts on one of the 'X' cells of your choice and her goal is to reach the exit marked 'Y'.\r\nIf alice steps on ice, she has to keep heading in that direction until colliding with a rock or hitting snow.\r\nIf she hits snow, from the snow tile she can then pick any direction (up/down/left/right) to move in and progress.\r\nIf she collides with a rock, she stops on the ice cell before the rock, not the rock itself, and can do the same, although she can never move through rocks.\r\n\r\nYour goal is to find, from the optimal 'X' starting position of choice, the shortest sequence of directional moves (N for up, E for right, W for left and S for down) which guide Alice to the exit.\r\n\r\nAlice's friend, Lewis Carroll, is skeptical of abstraction in mathematics, so to keep him happy, she doesn't want you to use any arithmetic operators.  (*+-/^<> will wipe out your formulas.)\r\n\r\nAdditionally, the strange reflections may have unusual effects on your workings as you try to find the solution.\r\n\r\nGood luck.",
+                    QuestionText = "Alice has fallen into her mirror (looking-glass), and has found herself in an ice cavern where every single surface is reflective.\r\n\r\nIt is an extremely confusing place, and hard to keep track of what is where and which way is up.\r\n\r\nThe floor of the cavern is made out of ice (I), and there are patches of snow (S) and rocks (R) all over.\r\n\r\nAlice starts on one of the 'X' cells of your choice and her goal is to reach the exit marked 'Y'.\r\nIf alice steps on ice, she has to keep heading in that direction until colliding with a rock or hitting snow.\r\nIf she hits snow, she stops and from the snow tile she can then pick any direction (up/down/left/right) to move in and progress.\r\nIf she collides with a rock, she stops on the ice cell before the rock, not the rock itself, and can then choose a new direction, although she cannot move in the direction of a rock.\r\n\r\nYour goal is to find, from the optimal 'X' starting position, the shortest sequence of directional moves (N for up, E for right, W for left and S for down) which guide Alice to the exit.\r\n\r\nAlice's friend, Lewis Carroll, is skeptical of abstraction in mathematics, so to keep him happy, she doesn't want you to use any arithmetic operators.  (*+-/^<> will wipe out your formulas.)\r\n\r\nAdditionally, the strange reflections may have unusual effects on your workings as you try to find the solution.\r\n\r\nGood luck.",
                     QuestionLink = "https://unboundwiki.com/walkthrough/part-38/",
                     Data = new Dictionary<string, object[,]>()
                     {
