@@ -129,20 +129,34 @@ namespace Assets.Creator_Kit___RPG.Persistence
             return winners;
         }
 
-        public static string[] LockRandomFunctions()
+        private static readonly HashSet<string> _functionsNeverToKill = new()
+        {
+            "VLOOKUP",
+            "INDEX",
+            "XLOOKUP",
+            "ACOS",
+            "ACOT",
+            "ASIN",
+            "ATAN2"
+        };
+
+        public static string[] LockRandomFunctions(int numberOfLostFunctions = 1)
         {
             LoadGameData(out SaveData saveData);
 
             List<string> selectedFunctions = new();
 
-            string[] functionsInKillPool = saveData.UnlockedFunctions.Where(x => !x.Contains("RAND") && !x.Contains("BESSEL") && x != "VLOOKUP" && x != "INDEX" && x != "XLOOKUP").ToArray();
+            string[] functionsInKillPool = saveData.UnlockedFunctions.Where(x =>
+            !x.Contains("RAND")
+            && !x.Contains("BESSEL")
+            && !_functionsNeverToKill.Contains(x)).ToArray();
 
             if (!functionsInKillPool.Any())
             {
                 return selectedFunctions.ToArray();
             }
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < numberOfLostFunctions; i++)
             {
                 selectedFunctions.Add(functionsInKillPool[UnityEngine.Random.Range((int)0, functionsInKillPool.Length)]);
             }

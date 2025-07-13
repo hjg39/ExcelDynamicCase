@@ -45,6 +45,9 @@ namespace Assets.Creator_Kit___RPG.Persistence
                 case "UpdateHarrySeidersConversation":
                     SetConversationNumber("HarrySeiders", 2);
                     break;
+                case "UpdateSkulduggeryConversation":
+                    SetConversationNumber("SkulduggeryPleasant", 1);
+                    break;
                 case "UnlockAdvanced":
                     SetConversationNumber("ExcelWizard", 2);
                     SetConversationNumber("HarrySeiders", 3);

@@ -26,7 +26,7 @@ namespace Assets.ExcelDomain
             { QuestionRewardClassification.BasicManipulation, new string[] { "IFS", "EXPAND", "TRANSPOSE", "TOROW", "AREAS", "GESTEP", "TYPE", "ISOMITTED", "ISFORMULA", "ISLOGICAL", "IMAGE", "HYPERLINK", "NOT"    }  },
             { QuestionRewardClassification.AdvancedManipulation, new string[] { "SIGN", "LET", "LAMBDA", "IF", "OFFSET", "IFNA", "BYCOL", "BYROW", "MAKEARRAY", "MAP", "REDUCE", "SCAN", "TAKE", "DROP", "TOCOL"  }  },
             { QuestionRewardClassification.AdvancedDates, new string[] { "DATE", "DATEVALUE", "DAY", "DAYS", "HOUR", "MINUTE", "MONTH", "NOW", "SECOND", "TIME", "TIMEVALUE", "YEAR", "YEARFRAC", "FILTER" }  },
-            { QuestionRewardClassification.ExpertDates, new string[] { "DAYS360", "EDATE", "EOMONTH", "ISOWEEKNUM", "NETWORKDAYS", "NETWORKDAYS.INTL", "TODAY", "WEEKDAY", "WEEKNUM", "WORKDAY", "WORKDAY.INTL", }  },
+            { QuestionRewardClassification.ExpertDates, new string[] { "DAYS360", "EDATE", "EOMONTH", "ISOWEEKNUM", "NETWORKDAYS", "NETWORKDAYS.INTL", "TODAY", "WEEKDAY", "WEEKNUM", "WORKDAY", "WORKDAY.INTL", "CHOOSECOLS", "CHOOSEROWS" }  },
 
         };
     }

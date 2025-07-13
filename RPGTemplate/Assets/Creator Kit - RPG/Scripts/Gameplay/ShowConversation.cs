@@ -73,6 +73,11 @@ namespace RPGM.Events
                 npc.StartCoroutine(ExecuteBattleRoutine(pipeBootstrap, battleParameters));
             }
 
+            if (ci.text == "PUNCH")
+            {
+                model.input.KnockOut();
+            }
+
             //if this item contains an unstarted quest, schedule a start quest event for the quest.
             if (ci.quest != null)
             {

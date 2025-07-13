@@ -84,6 +84,34 @@ namespace RPGM.UI
             this.state = State.CharacterControl;
         }
 
+        public void KnockOut()
+        {
+            NPCController npcController = Events.ShowConversation.LastNpc;
+
+            string[] deletedFunctions = SaveManager.LockRandomFunctions(10);
+
+            Events.ShowConversation ev = Schedule.Add<Events.ShowConversation>();
+
+            // Grab (or auto-create) the reusable ConversationScript
+            var convo = ConversationHost.Instance;
+
+            // Overwrite its data for this one-off dialogue
+            convo.items = new List<ConversationPiece>
+            {
+                new ConversationPiece
+                {
+                    id = "None",
+                    text = (deletedFunctions?.Any() is true ? $"You were punched hard and lost the following functions!\r\n{string.Join(", ", deletedFunctions)}" : "You were knocked out, but lost no functions!"),
+                    options = new List<ConversationOption>()
+                }
+            };
+
+            ev.conversation = convo;
+            ev.npc = npcController;
+            ev.gameObject = npcController.gameObject;
+            ev.conversationItemKey = string.Empty;
+        }
+
         void Update()
         {
             switch (state)
