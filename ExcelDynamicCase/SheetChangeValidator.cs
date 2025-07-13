@@ -9,7 +9,7 @@ namespace ExcelDynamicCase
     {
         public static Regex ExcelFunctionRegex = new Regex(@"\b([A-Za-z_][A-Za-z0-9_.]*)\s*\(", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
 
-        public static Regex ExcelArithmetricRegex = new Regex(@"[\+\-\*\/\^]", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
+        public static Regex ExcelArithmetricRegex = new Regex(@"[\+\-\*\/><^]", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
 
         public static void DeleteAllNames()
         {

@@ -2635,6 +2635,20 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     Minutes = 8f,
                 }
             },
+            {
+                CaseQuestionEnum.RestrictedIncreasingPermutations,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.RestrictedIncreasingPermutations,
+                    QuestionText = "How many ways are there to order the numbers 1 to 6 such that if you read the order left to right, the number goes up 3 times (and down 2 times) overall?\r\n\r\nYou do not have access to arithmetic operators, but you do have access to these functions:\r\nADDRESS\r\nAGGREGATE\r\nCHAR\r\nCOLUMNS\r\nGCD\r\nGESTEP\r\nIMREAL\r\nRAND\r\nRANDARRAY\r\nRANDBETWEEN\r\nROWS\r\nSORTBY\r\nUNIQUE\r\nWEEKDAY\r\nXLOOKUP",
+                    QuestionLink = null,
+                    AllowArithmetic = false,
+                    AllowedFunctions = new[] { "ADDRESS","AGGREGATE","CHAR","COLUMNS","GCD","GESTEP","IMREAL","RAND","RANDARRAY","RANDBETWEEN","ROWS","SORTBY","UNIQUE","WEEKDAY","XLOOKUP", },
+                    Answer = "302",
+                    ExampleAnswer = 100d,
+                    Minutes = 5f,
+                }
+            }
         };
     }
 }
