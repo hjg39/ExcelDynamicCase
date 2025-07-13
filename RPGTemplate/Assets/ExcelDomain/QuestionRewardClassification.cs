@@ -33,5 +33,7 @@ namespace Assets.ExcelDomain
 
         AdvancedDates = 81,
         ExpertDates = 82,
+
+        BasicCurated = 100,
     }
 }

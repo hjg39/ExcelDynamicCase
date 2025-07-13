@@ -66,6 +66,8 @@ namespace Assets.Creator_Kit___RPG.Logic
                     return new int[] { 13, 33, 40020, 15, 40, 40007, 17, 30398, 40012, 24, 30390, 40015, 40023, 40024, 40025, 51088, 52111, 60003, 70000, 10017, 80001, 80002 };
                 case QuestionRewardClassification.DivineAggregates:
                     return new int[] { 16, 31, 43, 76, 10016, 10018, 20000, 30378, 30354, 50104 };
+                case QuestionRewardClassification.BasicCurated:
+                    return new int[] { 100_000 };
                 default:
                     throw new NotImplementedException();
             }
@@ -164,6 +166,7 @@ namespace Assets.Creator_Kit___RPG.Logic
             80001 => 15f,
             80002 => 15f,
             80003 => 10f,
+            100_000 => 4f,
             _ => throw new NotImplementedException(),
         };
     }

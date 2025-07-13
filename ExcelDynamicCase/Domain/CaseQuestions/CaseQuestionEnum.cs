@@ -92,5 +92,6 @@
         GeneralBadgerHedgehog = 80001,
         GeneralShapleyShubik = 80002,
         GeneralPiratePuzzle = 80003,
+        RestrictedMod = 100_000,
     }
 }

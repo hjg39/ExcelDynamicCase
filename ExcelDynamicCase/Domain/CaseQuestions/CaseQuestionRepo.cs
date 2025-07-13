@@ -2526,6 +2526,51 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     ExampleAnswer = 321837d,
                     Minutes = 40f,
                 }
+            },
+            {
+                CaseQuestionEnum.RestrictedMod,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.RestrictedMod,
+                    QuestionText = "For each pair of belows, find the value of the number MOD the mod number.\r\nAnswer with the sum of the results.\r\n\r\nFor this challenge, arithmetic operators: *+/-^ are not permitted.\r\nThe following functions are permitted:\r\nACOS\r\nCEILING.PRECISE\r\nCSC\r\nDB\r\nDCOUNT\r\nIMSUB\r\nNUMBERVALUE\r\nQUOTIENT\r\n\r\nThere are multiple ways to go about this, you do not necessarily need to know trigonometry.",
+                    QuestionLink = null,
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Numbers",
+                            new object[,]
+                            {
+                                {"Number","Mod",},
+                                {25720d,10d,},
+                                {84973d,19d,},
+                                {10654d,12d,},
+                                {76453d,17d,},
+                                {9817d,15d,},
+                                {92466d,10d,},
+                                {66390d,10d,},
+                                {56467d,13d,},
+                                {22583d,12d,},
+                                {4209d,11d,},
+                                {94911d,10d,},
+                                {1722d,15d,},
+                                {14056d,17d,},
+                                {48260d,11d,},
+                                {67993d,15d,},
+                                {49806d,13d,},
+                                {34177d,17d,},
+                                {17525d,11d,},
+                                {46739d,16d,},
+                                {37303d,13d,},
+                            }
+                        }
+                    },
+                    AllowArithmetic = false,
+                    AllowedFunctions = new[] { "CEILING.PRECISE", "QUOTIENT", "IMSUB", "NUMBERVALUE", "DCOUNT", "CSC", "ACOS", "DB" },
+                    Answer = "122",
+                    ExampleAnswer = 100d,
+                    Minutes = 4f,
+                
+                }
             }
         };
     }

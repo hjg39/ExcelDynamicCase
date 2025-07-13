@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ExcelDynamicCase.Domain;
 using ExcelDynamicCase.Domain.CaseQuestions;
 using System.Threading;
+using System.Linq;
 
 namespace ExcelDynamicCase
 {
@@ -28,6 +29,14 @@ namespace ExcelDynamicCase
 
 
             CaseQuestion caseQuestion = GetCaseQuestion(CaseQuestionCode);
+
+            if (caseQuestion.AllowedFunctions.Any())
+            {
+                Storage.AllowedFunctions = caseQuestion.AllowedFunctions.ToList();
+            }
+
+            Storage.AllowArithmetic = caseQuestion.AllowArithmetic;
+
             Battle.CaseQuestion = caseQuestion;
             StartBattle(caseQuestion, cts);
 

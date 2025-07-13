@@ -9,6 +9,8 @@ namespace ExcelDynamicCase
     {
         public static Regex ExcelFunctionRegex = new Regex(@"\b([A-Za-z_][A-Za-z0-9_.]*)\s*\(", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
 
+        public static Regex ExcelArithmetricRegex = new Regex(@"[\+\-\*\/\^]", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
+
         public static void DeleteAllNames()
         {
             foreach (Name name in Globals.ThisWorkbook.Names)
@@ -87,6 +89,14 @@ namespace ExcelDynamicCase
             if (formula.Length > 0 && formula[0] != '=')
             {
                 return true;
+            }
+
+            if (!Storage.AllowArithmetic)
+            {
+                if (ExcelArithmetricRegex.IsMatch(formula))
+                {
+                    return false;
+                }
             }
 
             MatchCollection matches = ExcelFunctionRegex.Matches(formula);

@@ -23,5 +23,9 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
         public object ExampleAnswer { get; set; }
 
         public double Minutes { get; set; }
+
+        public bool AllowArithmetic = true;
+
+        public string[] AllowedFunctions = Array.Empty<string>(); 
     }
 }

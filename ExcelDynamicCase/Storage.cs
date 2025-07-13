@@ -11,6 +11,8 @@ namespace ExcelDynamicCase
 
         public static List<string> AllowedFunctions { get; set; }
 
+        public static bool AllowArithmetic { get; set; }
+
         public const string PASSWORD = "fdfbgiskfhdspaoojoFODBSVFIUS";
 
         public static List<int> AlreadyCompletedQuestions = new List<int>();

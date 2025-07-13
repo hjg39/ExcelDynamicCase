@@ -56,7 +56,7 @@ namespace ExcelDynamicCase
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = @"C:\Users\harry\source\repos\ExcelDynamicCase\ExcelDynamicCase\overworld\Excelopolis.exe",
+                        FileName = @"C:\Users\harry\source\repos\ExcelDynamicCase\ExcelDynamicCase\publish\overworld\Excelopolis.exe",
                         Arguments = "-screen-fullscreen 0 -screen-width 1280 -screen-height 720",
                         UseShellExecute = true,
                         WindowStyle = ProcessWindowStyle.Normal,

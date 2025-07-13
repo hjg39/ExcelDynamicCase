@@ -107,6 +107,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - WinterVillage
+  - m_GUID: b3e79440217e92442abe4bde579a039a
+    m_Address: Assets/Audio/PaulBarnhurst.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PaulBarnhurst
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a7938880f27d61e4f8e2da6f1f73863d, type: 2}
   m_SchemaSet:

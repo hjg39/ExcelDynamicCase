@@ -28,6 +28,8 @@ namespace Assets.ExcelDomain
             { QuestionRewardClassification.AdvancedDates, new string[] { "DATE", "DATEVALUE", "DAY", "DAYS", "HOUR", "MINUTE", "MONTH", "NOW", "SECOND", "TIME", "TIMEVALUE", "YEAR", "YEARFRAC", "FILTER" }  },
             { QuestionRewardClassification.ExpertDates, new string[] { "DAYS360", "EDATE", "EOMONTH", "ISOWEEKNUM", "NETWORKDAYS", "NETWORKDAYS.INTL", "TODAY", "WEEKDAY", "WEEKNUM", "WORKDAY", "WORKDAY.INTL", "CHOOSECOLS", "CHOOSEROWS" }  },
 
+            { QuestionRewardClassification.BasicCurated, new string[] { "CEILING.PRECISE", "DECIMAL", "TREND", "SLN", "SLOPE", "QUOTIENT", "FLOOR.PRECISE", "GROWTH", "IMABS", "CSC", "SEC", "COT", "ASC"  }  },
+
         };
     }
 }
