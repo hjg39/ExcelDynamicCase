@@ -93,5 +93,6 @@
         GeneralShapleyShubik = 80002,
         GeneralPiratePuzzle = 80003,
         RestrictedMod = 100_000,
+        RestrictedConsecutiveSum = 100_001,
     }
 }

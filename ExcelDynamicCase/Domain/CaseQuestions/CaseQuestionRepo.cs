@@ -2532,7 +2532,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.RestrictedMod,
-                    QuestionText = "For each pair of belows, find the value of the number MOD the mod number.\r\nAnswer with the sum of the results.\r\n\r\nFor this challenge, arithmetic operators: *+/-^ are not permitted.\r\nThe following functions are permitted:\r\nACOS\r\nCEILING.PRECISE\r\nCSC\r\nDB\r\nDCOUNT\r\nIMSUB\r\nNUMBERVALUE\r\nQUOTIENT\r\n\r\nThere are multiple ways to go about this, you do not necessarily need to know trigonometry.",
+                    QuestionText = "For each pair of numbers below, find the value of the number MOD the mod number.\r\nAnswer with the sum of the results.\r\n\r\nFor this challenge, arithmetic operators: *+/-^ are not permitted.\r\nThe following functions are permitted:\r\nACOS\r\nCEILING.PRECISE\r\nCSC\r\nDB\r\nDCOUNT\r\nIMSUB\r\nNUMBERVALUE\r\nQUOTIENT\r\n\r\nThere are multiple ways to go about this, you do not necessarily need to know trigonometry.",
                     QuestionLink = null,
                     Data = new Dictionary<string, object[,]>()
                     {
@@ -2570,6 +2570,22 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     ExampleAnswer = 100d,
                     Minutes = 4f,
                 
+                }
+            },
+            {
+                CaseQuestionEnum.RestrictedConsecutiveSum,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.RestrictedConsecutiveSum,
+                    QuestionText = "In the number, 483290483209478209438249032849029483948348589358499054394732049732905267534254365427045208430242034593249589954739543973543231547328946328946329453294562389429191919914343943814381, find the largest product of 5 consecutive digits.\r\n\r\nFor this challenge, arithmetic operators are not permitted and you have access to:\r\nFIXED\r\nLEFTB\r\nLET\r\nINDEX\r\nMMULT\r\nRADIANS\r\nREPLACE\r\nTEXTBEFORE\r\nXOR",
+                    QuestionLink = null,
+                    Data = null,
+                    AllowArithmetic = false,
+                    AllowedFunctions = new[] { "FIXED", "LEFTB", "LET", "INDEX", "MMULT", "RADIANS", "REPLACE", "TEXTBEFORE", "XOR" },
+                    Answer = "29160",
+                    ExampleAnswer = 9999d,
+                    Minutes = 4f,
+
                 }
             }
         };
