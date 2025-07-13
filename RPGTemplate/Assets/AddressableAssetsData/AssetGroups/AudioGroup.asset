@@ -112,6 +112,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PaulBarnhurst
+  - m_GUID: 34282553b6ee56c478cb3ddd27c28659
+    m_Address: Assets/Audio/Alice.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Alice
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a7938880f27d61e4f8e2da6f1f73863d, type: 2}
   m_SchemaSet:

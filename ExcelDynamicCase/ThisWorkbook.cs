@@ -23,6 +23,8 @@ namespace ExcelDynamicCase
 
         private void ThisWorkbook_Startup(object sender, System.EventArgs e)
         {
+            
+
             ExcelCtx = WindowsFormsSynchronizationContext.Current
                 ?? new WindowsFormsSynchronizationContext();
 
@@ -45,7 +47,6 @@ namespace ExcelDynamicCase
             {
                 //Globals.ThisWorkbook.inter
             }
-
         }
 
         private async static Task StartUnity()

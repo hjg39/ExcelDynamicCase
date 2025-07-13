@@ -49,6 +49,7 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
             int[] expert = BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.ExpertAggregates);
             int[] divine = BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.DivineAggregates);
             int[] basicCurated = BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.BasicCurated);
+            int[] divineCurated = BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.DivineCuratedAlice);
 
 
 
@@ -60,27 +61,29 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
             int expertCount = completedQuestions.Where(x => expert.Contains(x)).Count();
             int divineCount = completedQuestions.Where(x => divine.Contains(x)).Count();
             int basicCuratedCount = completedQuestions.Where(x => basicCurated.Contains(x)).Count();
+            int divineCuratedCount = completedQuestions.Where(x => divineCurated.Contains(x)).Count();
 
-            string[] completedLevelFill = new string[5]
+            string[] completedLevelFill = new string[6]
             {
                 $"Easy: {basicCount}/{basic.Length}, {pureCompletedQuestions.Where(x => basic.Contains(x)).Count()}/{basic.Length}",
                 $"Advanced: {advancedCount}/{advanced.Length}, {pureCompletedQuestions.Where(x => advanced.Contains(x)).Count()}/{advanced.Length}",
                 $"Expert: {expertCount}/{expert.Length}, {pureCompletedQuestions.Where(x => expert.Contains(x)).Count()}/{expert.Length}",
                 $"Divine: {divineCount}/{divine.Length}, {pureCompletedQuestions.Where(x => divine.Contains(x)).Count()}/{divine.Length}",
                 $"EasyCurated: {basicCuratedCount}/{basicCurated.Length}, {pureCompletedQuestions.Where(x => basicCurated.Contains(x)).Count()}/{basicCurated.Length}",
+                $"DivineCurated: {divineCuratedCount}/{divineCurated.Length}, {pureCompletedQuestions.Where(x => divineCurated.Contains(x)).Count()}/{divineCurated.Length}",
             };
 
-            SetRank(basicCount, advancedCount, expertCount, divineCount, basicCuratedCount, basic.Length, advanced.Length, expert.Length, divine.Length, basicCurated.Length);
+            SetRank(basicCount, advancedCount, expertCount, divineCount, basicCuratedCount, divineCuratedCount, basic.Length, advanced.Length, expert.Length, divine.Length, basicCurated.Length, divineCurated.Length);
 
             Fill(unlockedFunctions.content, savedUnlockedFunctions, 0, savedUnlockedFunctions.Count);
             Fill(lockedFunctions.content, savedLockedFunctions, 0, savedLockedFunctions.Length);
             Fill(completedLevels.content, completedLevelFill, 0, completedLevelFill.Length);
         }
 
-        void SetRank(int basicCount, int advancedCount, int expertCount, int divineCount, int basicCuratedCount, int basicFullCount, int advancedFullCount, int expertFullCount, int divineFullCount, int basicCuratedFullCount)
+        void SetRank(int basicCount, int advancedCount, int expertCount, int divineCount, int basicCuratedCount, int divineCuratedCount, int basicFullCount, int advancedFullCount, int expertFullCount, int divineFullCount, int basicCuratedFullCount, int divineCuratedFullCount)
         {
-            double points = basicCount * 10 + advancedCount * 30 + expertCount * 150 + divineCount * 500 + basicCuratedCount * 20;
-            double totalPoints = basicFullCount * 10 + advancedFullCount * 30 + expertFullCount * 150 + divineFullCount * 500 + basicCuratedFullCount * 20;
+            double points = basicCount * 10 + advancedCount * 30 + expertCount * 150 + divineCount * 500 + basicCuratedCount * 20 + divineCuratedCount * 1000;
+            double totalPoints = basicFullCount * 10 + advancedFullCount * 30 + expertFullCount * 150 + divineFullCount * 500 + basicCuratedFullCount * 20 + divineCuratedFullCount * 1000;
             string rank;
 
             double ratioOfEarnedPoints = points / totalPoints;

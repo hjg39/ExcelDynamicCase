@@ -26,6 +26,8 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
 
         public bool AllowArithmetic = true;
 
-        public string[] AllowedFunctions = Array.Empty<string>(); 
+        public string[] AllowedFunctions = Array.Empty<string>();
+
+        public bool ReflectionModifier = false;
     }
 }

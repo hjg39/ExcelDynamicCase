@@ -7,11 +7,17 @@ using ExcelDynamicCase.Domain;
 using ExcelDynamicCase.Domain.CaseQuestions;
 using System.Threading;
 using System.Linq;
+using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
 
 namespace ExcelDynamicCase
 {
     public static class LevelManagement
     {
+        private static readonly Random _random = new Random();
+
+        public static readonly object _lockObject = new object();
+
         public static CaseQuestionEnum CaseQuestionCode { get; set; }
         public static string Challenger { get; set; }
 
@@ -40,6 +46,11 @@ namespace ExcelDynamicCase
             Battle.CaseQuestion = caseQuestion;
             StartBattle(caseQuestion, cts);
 
+            if (caseQuestion.ReflectionModifier)
+            {
+                Task.Delay(TimeSpan.FromMinutes(3), cts.Token).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => ApplyReflections(), cts.Token));
+            }
+
             Task.Delay(TimeSpan.FromMinutes(caseQuestion.Minutes), cts.Token).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => StopBattle(
                 new BattleResult()
                 {
@@ -48,7 +59,130 @@ namespace ExcelDynamicCase
                 }), null), cts.Token);
         }
 
+        private static void ApplyReflections(int attemptCount = 0)
+        {
+            if (attemptCount == 0)
+            {
+                lock (_lockObject)
+                {
+                    ApplyReflectionsLogic(attemptCount);
+                }
+            }
+            else
+            {
+                ApplyReflectionsLogic(attemptCount);
+            }
+        }
+
+        private static void ApplyReflectionsLogic(int attemptCount)
+        {
+            try
+            {
+                Globals.ThisWorkbook.UnHookSheetChangeEvent();
+                Globals.Workings.DisplayRightToLeft = _random.NextDouble() < 0.5;
+
+                Globals.Workings.DisplayPageBreaks = _random.NextDouble() < 0.05;
+
+                Range r = null;
+
+                try
+                {
+                    r = Globals.Workings.UsedRange;
+                }
+                catch (Exception)
+                {
+                }
+
+                if (!(r is null) && r.Cells.Count > 1)
+                {
+                    if (_random.NextDouble() < 0.2)
+                    {
+                        r.Interior.Color = 16776156;
+                    }
+
+                    if (_random.NextDouble() < 0.2)
+                    {
+                        r.Font.Color = 16316664;
+                    }
+
+                    if (_random.NextDouble() < 0.1)
+                    {
+                        r.Font.Italic = true;
+                    }
+
+                    if (_random.NextDouble() < 0.2)
+                    {
+                        r.ClearFormats();
+                    }
+
+                    if (_random.NextDouble() < 0.4)
+                    {
+                        r.HorizontalAlignment = _random.NextDouble() < 0.5 ? HorizontalAlignment.Left : HorizontalAlignment.Right;
+                    }
+                    if (_random.NextDouble() < 0.2)
+                    {
+                        r.Orientation = _random.NextDouble() < 0.5 ? 90 : -90;
+                    }
+                    if (_random.NextDouble() < 0.1)
+                    {
+                        if (Globals.Workings.Application.ActiveCell.Worksheet.Name == "Workings")
+                        {
+                            Globals.Workings.Application.ActiveWindow.FreezePanes = true;
+                        }
+                    }
+
+                    if (_random.NextDouble() < 0.05)
+                    {
+                        Globals.Workings.Application.Calculation = _random.NextDouble() < 0.5 ? XlCalculation.xlCalculationAutomatic : XlCalculation.xlCalculationManual;
+                    }
+
+                    if (_random.NextDouble() < 0.05)
+                    {
+                        Globals.Workings.Application.ReferenceStyle = _random.NextDouble() < 0.5 ? XlReferenceStyle.xlR1C1 : XlReferenceStyle.xlA1;
+                    }
+                }
+
+
+                Task.Delay(TimeSpan.FromMinutes(1)).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => ApplyReflections(), null));
+            }
+            catch (Exception)
+            {
+                if (attemptCount < 60)
+                {
+                    if (attemptCount == 40)
+                    {
+                        MessageBox.Show("Unable to trigger reflections events for 40 attempts, will crash if reaches 60.");
+                    }
+
+                    Task.Delay(3000).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => ApplyReflections(attemptCount + 1), null));
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            finally
+            {
+                Globals.ThisWorkbook.HookSheetChangeEvent();
+            }
+        }
+
         public static void StopBattle(BattleResult battleResult, int attemptCount = 0)
+        {
+            if (attemptCount == 0)
+            {
+                lock (_lockObject)
+                {
+                    StopBattleLogic(battleResult, attemptCount);
+                }
+            }
+            else
+            {
+                StopBattleLogic(battleResult, attemptCount);
+            }
+        }
+
+        private static void StopBattleLogic(BattleResult battleResult, int attemptCount = 0)
         {
             try
             {

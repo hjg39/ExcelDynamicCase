@@ -35,5 +35,6 @@ namespace Assets.ExcelDomain
         ExpertDates = 82,
 
         BasicCurated = 100,
+        DivineCuratedAlice = 101,
     }
 }

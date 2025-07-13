@@ -97,5 +97,6 @@
         RestrictedFindStringLength = 100_002,
         RestrictedKodCodeMaxRectangle = 100_003,
         RestrictedIncreasingPermutations = 100_004,
+        AliceIcePuzzle = 100_005,
     }
 }

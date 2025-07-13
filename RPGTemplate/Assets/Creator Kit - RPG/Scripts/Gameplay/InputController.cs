@@ -71,7 +71,7 @@ namespace RPGM.UI
                     id = "None",
                     text = battleResult.IsSuccess
                            ? (unlockedFunctions?.Any() is true ? $"You won and unlocked the following functions!\r\n{string.Join(", ", unlockedFunctions)}" : "You won, but no new unlocks this time!")
-                           : (deletedFunctions?.Any() is true ? $"You lost and gave away the following functions!\r\n{string.Join(", ", deletedFunctions)}" : "You lost, no unlocks this time!"),
+                           : (deletedFunctions?.Any() is true ? $"You lost and gave away the following functions!\r\n{string.Join(", ", deletedFunctions)}" : "You lost, but no lost functions this time!"),
                     options = new List<ConversationOption>()
                 }
             };

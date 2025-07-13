@@ -2569,7 +2569,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     Answer = "122",
                     ExampleAnswer = 100d,
                     Minutes = 4f,
-                
+
                 }
             },
             {
@@ -2647,6 +2647,57 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     Answer = "302",
                     ExampleAnswer = 100d,
                     Minutes = 5f,
+                }
+            },
+            {
+                CaseQuestionEnum.AliceIcePuzzle,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.AliceIcePuzzle,
+                    QuestionText = "Alice has fallen into her mirror (looking-glass), and has found herself in an ice cavern where every single surface is reflective.\r\n\r\nIt is an extremely confusing place, and hard to keep track of what is where and which way is up.\r\n\r\nThe floor of the cavern is made out of ice (I), and there are patches of snow (S) and rocks (R) all over.\r\n\r\nAlice starts on one of the 'X' cells of your choice and her goal is to reach the exit marked 'Y'.\r\nIf alice steps on ice, she has to keep heading in that direction until colliding with a rock or hitting snow.\r\nIf she hits snow, from the snow tile she can then pick any direction (up/down/left/right) to move in and progress.\r\nIf she collides with a rock, she stops on the ice cell before the rock, not the rock itself, and can do the same, although she can never move through rocks.\r\n\r\nYour goal is to find, from the optimal 'X' starting position of choice, the shortest sequence of directional moves (N for up, E for right, W for left and S for down) which guide Alice to the exit.\r\n\r\nAlice's friend, Lewis Carroll, is skeptical of abstraction in mathematics, so to keep him happy, she doesn't want you to use any arithmetic operators.  (*+-/^<> will wipe out your formulas.)\r\n\r\nAdditionally, the strange reflections may have unusual effects on your workings as you try to find the solution.\r\n\r\nGood luck.",
+                    QuestionLink = "https://unboundwiki.com/walkthrough/part-38/",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Ice Cavern",
+                            new object[,]
+                            {
+                                {"R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","Y","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R",},
+                                {"R","R","I","I","I","I","I","I","I","I","I","R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R","I","I","I","I","S","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R","I","R",},
+                                {"R","I","I","R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","R","I","I","I","I","I","I","R","R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","I","R","I","I","I","I","I","I","R","I","I","I","I","I","S","I","I","I","I","I","I","I","R","R",},
+                                {"R","I","I","R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R","I","I","I","I","I","I","I","I","I","I","R","R",},
+                                {"R","I","I","I","I","R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","S","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","S","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","R","I","I","I","I","I","I","I","I","I","I","I","I","R","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","R","I","I","I","I","I","R","R","R","R","X","X","X","R","R","R","R","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","R",null,null,null,"R","R","R",null,null,null,"R","I","I","I","I","I","R","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","R",null,null,null,null,null,null,null,null,null,"R","I","I","I","I","R","R","R","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","I","R",null,null,null,null,null,null,null,null,null,"R","I","I","I","I","I","R","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","R","I","I","R",null,null,null,null,null,null,null,null,null,"R","I","I","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","R","I","I","I","I","I","I","I","I","I","I","R",null,null,null,null,null,null,null,null,null,"R","I","S","I","I","I","I","I","I","I","I","I","I","R",},
+                                {"R","I","I","I","I","I","I","I","I","I","I","I","R","R",null,null,null,null,null,null,null,null,null,"R","I","I","I","I","I","I","I","I","I","I","R","I","R",},
+                                {"R","R","R","R","R","R","R","R","R","R","R","R","R","R",null,null,null,null,null,null,null,null,null,"R","R","R","R","R","R","R","R","R","R","R","R","R","R",},
+                            }
+                        }
+                    },
+                    AllowArithmetic = false,
+                    ReflectionModifier = true,
+                    Answer = "NWNESESWNENWSESWNWN",
+                    ExampleAnswer = "NSWNEWSNSWNEWSWNENNEEWNSN",
+                    Minutes = 23f,
                 }
             }
         };

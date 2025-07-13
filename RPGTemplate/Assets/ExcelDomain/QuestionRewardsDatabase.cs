@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Assets.ExcelDomain
 {
     public static class QuestionRewardsDatabase
     {
+        private readonly static string[] DivineCuratedRewards = new string[] { "BIN2DEC", "BIN2HEX", "BIN2OCT", "LOWER", "ISBLANK", "SIN", "COS", "TAN", "PERMUT", "IMPOWER", "PERMUTATIONA", "LEFTB", "LENB", "RIGHTB", "REPLACEB", "ISO.CEILING", "IMCONJUGATE", "COMBINA", "BAHTTEXT" };
+
         public static Dictionary<QuestionRewardClassification, string[]> FunctionRewardsByClassification = new()
         {
             { QuestionRewardClassification.None, new string[] { }  },
@@ -25,10 +23,11 @@ namespace Assets.ExcelDomain
             { QuestionRewardClassification.AdvancedText, new string[] { "SUBSTITUTE", "REGEXREPLACE", "REGEXTEST", "MID", "UPPER", "DOLLAR", "FORMULATEXT", "ISNONTEXT", "DETECTLANGUAGE", "TRANSLATE", "CONCAT", "TEXTBEFORE", "TEXTJOIN", "TEXTSPLIT" }  },
             { QuestionRewardClassification.BasicManipulation, new string[] { "IFS", "EXPAND", "TRANSPOSE", "TOROW", "AREAS", "GESTEP", "TYPE", "ISOMITTED", "ISFORMULA", "ISLOGICAL", "IMAGE", "HYPERLINK", "NOT"    }  },
             { QuestionRewardClassification.AdvancedManipulation, new string[] { "SIGN", "LET", "LAMBDA", "IF", "OFFSET", "IFNA", "BYCOL", "BYROW", "MAKEARRAY", "MAP", "REDUCE", "SCAN", "TAKE", "DROP", "TOCOL"  }  },
-            { QuestionRewardClassification.AdvancedDates, new string[] { "DATE", "DATEVALUE", "DAY", "DAYS", "HOUR", "MINUTE", "MONTH", "NOW", "SECOND", "TIME", "TIMEVALUE", "YEAR", "YEARFRAC", "FILTER" }  },
+            { QuestionRewardClassification.AdvancedDates, new string[] { "DATE", "DATEVALUE", "DAY", "DAYS", "HOUR", "MINUTE", "MONTH", "NOW", "SECOND", "TIME", "TIMEVALUE", "YEAR", "YEARFRAC", "FILTER", "IFERROR" }  },
             { QuestionRewardClassification.ExpertDates, new string[] { "DAYS360", "EDATE", "EOMONTH", "ISOWEEKNUM", "NETWORKDAYS", "NETWORKDAYS.INTL", "TODAY", "WEEKDAY", "WEEKNUM", "WORKDAY", "WORKDAY.INTL", "CHOOSECOLS", "CHOOSEROWS" }  },
 
-            { QuestionRewardClassification.BasicCurated, new string[] { "CEILING.PRECISE", "DECIMAL", "TREND", "SLN", "SLOPE", "QUOTIENT", "FLOOR.PRECISE", "GROWTH", "IMABS", "CSC", "SEC", "COT", "ASC"  }  },
+            { QuestionRewardClassification.BasicCurated, new string[] { "CEILING.PRECISE", "DECIMAL", "TREND", "SLN", "SLOPE", "QUOTIENT", "FLOOR.PRECISE", "GROWTH", "IMABS", "CSC", "SEC", "COT", "ASC", "PERCENTILE.INC","PERCENTILE.EXC", "POWER"  }  },
+            { QuestionRewardClassification.DivineCuratedAlice, DivineCuratedRewards }
 
         };
     }
