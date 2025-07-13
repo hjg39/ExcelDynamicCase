@@ -117,6 +117,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Alice
+  - m_GUID: 2afb796f1d01f944ebf7b4e8558d6441
+    m_Address: Assets/Audio/LakeVerity.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LakeVerity
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a7938880f27d61e4f8e2da6f1f73863d, type: 2}
   m_SchemaSet:

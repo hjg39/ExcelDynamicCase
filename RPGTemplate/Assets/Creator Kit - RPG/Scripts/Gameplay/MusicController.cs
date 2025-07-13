@@ -6,7 +6,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class MusicController : MonoBehaviour
 {
-    [SerializeField] string defaultKey = "TwinTown";
+    [SerializeField] public static string DefaultKey = "TwinTown";
     [SerializeField] float crossFade = 3f;
 
     readonly AudioSource[] sources = new AudioSource[2];
@@ -22,7 +22,7 @@ public class MusicController : MonoBehaviour
         sources[1] = gameObject.AddComponent<AudioSource>();
         sources[0].loop = sources[1].loop = true;
 
-        await PlayAsync(defaultKey, immediate: true);
+        await PlayAsync(DefaultKey, immediate: true);
     }
 
     public async void CrossFadeTo(string key)
@@ -44,8 +44,8 @@ public class MusicController : MonoBehaviour
 
     public void CrossFadeOutOfBattle()       // called when combat ends
     {
-        CrossFadeTo(defaultKey);             // fade back to the main/ambient theme
-        lastUsedKey = defaultKey;
+        CrossFadeTo(DefaultKey);             // fade back to the main/ambient theme
+        lastUsedKey = DefaultKey;
     }
 
     async Task PlayAsync(string key, bool immediate)

@@ -30,6 +30,7 @@ namespace Assets.Creator_Kit___RPG.Triggers
             if (musicController != null)
             {
                 musicController.CrossFadeTo(musicLabel);
+                MusicController.DefaultKey = musicLabel;
             }
         }
     }
