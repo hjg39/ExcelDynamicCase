@@ -23,6 +23,13 @@ If you want to run the pre-built version of this tool without building the solut
 13. Enjoy!
 14. (Optionally when you are done, you can remove the installation from 'add or remove programs > ExcelDynamicCase' remove
 
+## 🐢 Get updates as they come out without having to redownload the whole zip every time
+
+1. Install git (e.g. download and install 'git for windows' + 'tortoisegit (for the pull and clone commands to be available in a right click menu)'
+2. Using git, 'git clone' this repository to a non-cloud location on your computer. (git clone https://github.com/hjg39/ExcelDynamicCase.git) (Don't make the folder paths to this location too long or some files might end up over the file path limit.)
+3. When you want to try the latest updates, use 'git pull' on your local repository, only the changed files will be downloaded and you will not need to download the other files.
+4. No 'unblocking' steps are required when downloading the repository or playing the game in this way.  (I think, but let me know if you run into these sorts of issues when using it this way.)
+
 ## 🔧⚙ Troubleshoot Installation
 
 1. 'Deployment and application do not have matching security zones.' - This occurs if the zip was not unblocked correctly in step 2.  If you fix this and it still fails, restarting and/or extracting to an already Trusted location has been known to work although I'm not sure why.
