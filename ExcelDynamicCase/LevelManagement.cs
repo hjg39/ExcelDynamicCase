@@ -78,7 +78,7 @@ namespace ExcelDynamicCase
         {
             try
             {
-                Globals.ThisWorkbook.UnHookSheetChangeEvent();
+                //Globals.ThisWorkbook.UnHookSheetChangeEvent();
                 Globals.Workings.DisplayRightToLeft = _random.NextDouble() < 0.5;
 
                 Globals.Workings.DisplayPageBreaks = _random.NextDouble() < 0.05;
@@ -163,7 +163,7 @@ namespace ExcelDynamicCase
             }
             finally
             {
-                Globals.ThisWorkbook.HookSheetChangeEvent();
+                //Globals.ThisWorkbook.HookSheetChangeEvent();
             }
         }
 
