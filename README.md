@@ -8,7 +8,7 @@ It is a basic demo for an Excel battle case with an overworld that you can navig
 If you want to run the pre-built version of this tool without building the solution yourself (i.e. just play the game without editing it):
 
 0. If you have installed a previous version of the project, go to 'Add or remove programs > ExcelDynamicCase' and uninstall it.  (This will not remove any save data.)
-1. **Download the repository (Code > Download ZIP).
+1. Download the repository (Code > Download ZIP).
 2. Right click on the downloaded zip file, select 'Properties' and then select 'Unblock'
 3. Unzip the zip file to a folder (to a non-cloud location, cloud locations like places automatically backup up to onedrive will not work)
 4. Open a blank instance of Excel
