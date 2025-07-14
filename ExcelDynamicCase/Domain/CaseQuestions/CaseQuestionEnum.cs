@@ -98,5 +98,6 @@
         RestrictedKodCodeMaxRectangle = 100_003,
         RestrictedIncreasingPermutations = 100_004,
         AliceIcePuzzle = 100_005,
+        RestrictedFactorial = 100_006,
     }
 }
