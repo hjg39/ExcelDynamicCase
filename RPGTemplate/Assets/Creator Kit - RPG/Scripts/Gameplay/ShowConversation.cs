@@ -126,7 +126,6 @@ namespace RPGM.Events
             //setup conversation choices, if any.
             if (ci.options.Count == 0)
             {
-                NPCController.ConversationInProgress = false;
                 //do nothing
             }
             else

@@ -47,6 +47,7 @@ namespace RPGM.UI
                 //there are no buttons, just Hide when required.
                 model.input.ChangeNonBattleState(InputController.State.CharacterControl);
                 Hide();
+                NPCController.ConversationInProgress = false;
             }
         }
 
