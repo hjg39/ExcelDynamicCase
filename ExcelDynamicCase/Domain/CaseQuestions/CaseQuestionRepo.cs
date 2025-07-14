@@ -2706,10 +2706,10 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.RestrictedFactorial,
-                    QuestionText = "Find the factorial of 13 (13!).\r\n\r\nYou do not have access to arithmetic operators (*+-/^<>).\r\n\r\nYou do have access to:\r\nCOVAR\r\nDB\r\nDDB\r\nEXP\r\nLN\r\nNOW\r\nREPT\r\nSERIESSUM\r\nSLN\r\nSQRT\r\nSQRTPI",
+                    QuestionText = "Find the factorial of 13 (13!).\r\n\r\nYou do not have access to arithmetic operators (*+-/^<>).\r\n\r\nYou do have access to:\r\nCOVAR\r\nDB\r\nDDB\r\nLN\r\nNOW\r\nREPT\r\nSERIESSUM\r\nSLN\r\nSQRT\r\nSQRTPI",
                     QuestionLink = null,
                     AllowArithmetic = false,
-                    AllowedFunctions = new string[] { "COVAR", "DB", "DDB", "EXP", "LN", "NOW", "REPT", "SERIESSUM", "SLN", "SQRT", "SQRTPI" },
+                    AllowedFunctions = new string[] { "COVAR", "DB", "DDB", "LN", "NOW", "REPT", "SERIESSUM", "SLN", "SQRT", "SQRTPI" },
                     Answer = "6227020800",
                     ExampleAnswer = 327139217d,
                     Minutes = 4f,
