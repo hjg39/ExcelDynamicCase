@@ -2714,6 +2714,43 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     ExampleAnswer = 327139217d,
                     Minutes = 4f,
                 }
+            },
+            {
+                CaseQuestionEnum.RestrictedSubtraction,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.RestrictedSubtraction,
+                    QuestionText = "Find the differences between these pairs of numbers.  Answer with the concatentation of the results.\r\n\r\nYou do not have access to arithmetic operators (*+-/^<>).\r\n\r\nYou do have access to:\r\nCOMPLEX\r\nCONCAT\r\nCUBEVALUE\r\nDAYS\r\nEOMONTH\r\nEXP\r\nIMAGINARY\r\nIMCONJUGATE\r\nIMPRODUCT\r\nIMSUM\r\nLOGEST\r\nLOG10\r\nMOD\r\nNETWORKDAYS\r\nQUOTIENT\r\nROUNDDOWN\r\nSIGN\r\nVALUE\r\nXLOOKUP",
+                    QuestionLink = null,
+                    AllowArithmetic = false,
+                    AllowedFunctions = new string[] { "COMPLEX", "CONCAT", "CUBEVALUE", "DAYS", "EOMONTH", "EXP", "IMAGINARY", "IMCONJUGATE", "IMPRODUCT", "IMSUM", "LOGEST", "LOG10", "MOD", "NETWORKDAYS", "QUOTIENT", "ROUNDDOWN", "SIGN", "VALUE", "XLOOKUP" },
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Pairs",
+                            new object[,]
+                            {
+                                { "NumberToSubtractFrom", "NumberToSubtract", },
+                                {3214432d,562488d,},
+                                {9764646d,885842d,},
+                                {5393551d,278903d,},
+                                {7861679d,542039d,},
+                                {2799035d,859138d,},
+                                {4029531d,824727d,},
+                                {4730250d,785034d,},
+                                {1263668d,925815d,},
+                                {9588916d,371412d,},
+                                {4778789d,109218d,},
+                                {7284889d,593748d,},
+                                {3004777d,229685d,},
+                                {3186008d,419241d,},
+                            }
+                        }
+                    },
+                    Answer = "265194488788045114648731964019398973204804394521633785392175044669571669114127750922766767",
+                    ExampleAnswer = "'312123189037104612461946312894623",
+                    Minutes = 3f,
+                }
             }
         };
     }
