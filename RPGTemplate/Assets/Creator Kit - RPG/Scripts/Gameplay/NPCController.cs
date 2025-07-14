@@ -14,6 +14,8 @@ namespace RPGM.Gameplay
         public int conversationNumber = 0;
         public QuestionRewardClassification rewardClassification;
 
+        public static bool ConversationInProgress = false;
+
         Quest activeQuest = null;
         
         Quest[] quests;
@@ -27,6 +29,13 @@ namespace RPGM.Gameplay
 
         public void OnCollisionEnter2D(Collision2D collision)
         {
+            // Conversation already in progress
+            if (ConversationInProgress)
+            {
+                return;
+            }
+            ConversationInProgress = true;
+
             var c = GetConversation();
             if (c != null)
             {
