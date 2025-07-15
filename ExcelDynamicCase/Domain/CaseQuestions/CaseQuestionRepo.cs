@@ -2783,7 +2783,19 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     ExampleAnswer = "'312123189037104612461946312894623",
                     Minutes = 3f,
                 }
-            }
+            },
+            {
+                CaseQuestionEnum.CsesDeBrujinSequence,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.CsesDeBrujinSequence,
+                    QuestionText = "John has sets of three coloured tiles labelled A, B and C.\r\nHe wants to lay them out in a ring so that, if you read clockwise around the ring, every possible 4-letter word you can make out of the A, B and C tilesets appears at least once.\r\n\r\nHis final sequence as it appears in the asnwer will follow 2 minimality rules:\r\n1) Shortest length first\r\n2) Earliest in the dictionary second (A<B<C)\r\n\r\nHelp John by finding and answering with his minimal string.",
+                    QuestionLink = "https://cses.fi/book/book.pdf",
+                    Answer = "AAAABAAACAABBAABCAACBAACCABABBABCACBACCBBBCBCCCABBACBBCCBCACCAABACACAACABABAABABCBABBBABBCBCBBCCCBCAACBACABCCACBCCCC",
+                    ExampleAnswer = "ABABBABCABABCBCABCABCBACBABCABCABBAAAACBC",
+                    Minutes = 22f,
+                }
+            },
         };
     }
 }

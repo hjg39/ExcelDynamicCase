@@ -92,6 +92,7 @@
         GeneralBadgerHedgehog = 80001,
         GeneralShapleyShubik = 80002,
         GeneralPiratePuzzle = 80003,
+        CsesDeBrujinSequence = 90000,
         RestrictedMod = 100_000,
         RestrictedConsecutiveSum = 100_001,
         RestrictedFindStringLength = 100_002,
