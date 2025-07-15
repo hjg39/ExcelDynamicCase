@@ -2794,7 +2794,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     QuestionLink = "https://cses.fi/book/book.pdf",
                     Answer = "AAAABAAACAABBAABCAACBAACCABABBABCACBACCBBBCBCCCABBACBBCCBCACCAABACACAACABABAABABCBABBBABBCBCBBCCCBCAACBACABCCACBCCCC",
                     ExampleAnswer = "ABABBABCABABCBCABCABCBACBABCABCABBAAAACBC",
-                    Minutes = 22f,
+                    Minutes = 18f,
                 }
             },
             {

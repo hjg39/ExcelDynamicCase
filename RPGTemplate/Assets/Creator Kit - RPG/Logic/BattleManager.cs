@@ -63,9 +63,9 @@ namespace Assets.Creator_Kit___RPG.Logic
                 case QuestionRewardClassification.ExpertBases:
                 case QuestionRewardClassification.ExpertMaths:
                 case QuestionRewardClassification.ExpertDates:
-                    return new int[] { 13, 33, 40020, 15, 40, 40007, 17, 30398, 40012, 24, 30390, 40015, 40023, 40024, 40025, 51088, 52111, 60003, 70000, 10017, 80001, 80002, 90000 };
+                    return new int[] { 13, 33, 40020, 15, 40, 40007, 17, 30398, 40012, 24, 30390, 40015, 40023, 40024, 40025, 51088, 52111, 60003, 70000, 10017, 80001, 80002 };
                 case QuestionRewardClassification.DivineAggregates:
-                    return new int[] { 16, 31, 43, 76, 10016, 10018, 20000, 30378, 30354, 50104, 90001 };
+                    return new int[] { 16, 31, 43, 76, 10016, 10018, 20000, 30378, 30354, 50104, 90000, 90001 };
                 case QuestionRewardClassification.BasicCurated:
                     return new int[] { 100_000, 100_001, 100_002, 100_003, 100_004, 100_006, 100_007 };
                 case QuestionRewardClassification.DivineCuratedAlice:
@@ -168,7 +168,7 @@ namespace Assets.Creator_Kit___RPG.Logic
             80001 => 15f,
             80002 => 15f,
             80003 => 10f,
-            90000 => 22f,
+            90000 => 18f,
             90001 => 13f,
             100_000 => 4f,
             100_001 => 4f,
