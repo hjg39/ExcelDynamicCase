@@ -8,7 +8,7 @@ It is a basic demo for an Excel battle case with an overworld that you can navig
 If you want to run the pre-built version of this tool without building the solution yourself (i.e. just play the game without editing it):
 
 0. If you have installed a previous version of the project, go to 'Add or remove programs > ExcelDynamicCase' and uninstall it.  (This will not remove any save data.)
-1. **Download the repository (Code > Download ZIP).
+1. Download the repository (Code > Download ZIP).
 2. Right click on the downloaded zip file, select 'Properties' and then select 'Unblock'
 3. Unzip the zip file to a folder (to a non-cloud location, cloud locations like places automatically backup up to onedrive will not work)
 4. Open a blank instance of Excel
@@ -21,7 +21,7 @@ If you want to run the pre-built version of this tool without building the solut
 11. Open the xlsx
 12. Click 'Install'
 13. Enjoy!
-14. (Optionally when you are done, you can remove the installation from 'add or remove programs > ExcelDynamicCase' remove
+14. (Optionally when you are done, you can remove the installation from 'Add or Remove Programs > ExcelDynamicCase > Remove'
 
 ## 🐢 Get updates as they come out without having to redownload the whole zip every time
 
@@ -29,6 +29,7 @@ If you want to run the pre-built version of this tool without building the solut
 2. Using git, 'git clone' this repository to a non-cloud location on your computer. (git clone https://github.com/hjg39/ExcelDynamicCase.git) (Don't make the folder paths to this location too long or some files might end up over the file path limit.)
 3. When you want to try the latest updates, use 'git pull' on your local repository, only the changed files will be downloaded and you will not need to download the other files.
 4. No 'unblocking' steps are required when downloading the repository or playing the game in this way.  (I think, but let me know if you run into these sorts of issues when using it this way.)
+5. You will still need to uninstall the old version in 'Add or remove programs > ExcelDynamicCase' (step 0) and install the new version (steps 11-13) each time.
 
 ## 🔧⚙ Troubleshoot Installation
 
