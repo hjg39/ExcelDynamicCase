@@ -173,7 +173,7 @@ namespace Assets.Creator_Kit___RPG.Logic
             100_002 => 1f,
             100_003 => 8f,
             100_004 => 5f,
-            100_005 => 23f,
+            100_005 => 30f,
             100_006 => 4f,
             100_007 => 3f,
             _ => throw new NotImplementedException(),
