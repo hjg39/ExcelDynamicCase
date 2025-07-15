@@ -2808,6 +2808,42 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     ExampleAnswer = 2362934d,
                     Minutes = 13f,
                 }
+            },
+            {
+                CaseQuestionEnum.CsesDivisibilityAndDigit,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.CsesDivisibilityAndDigit,
+                    QuestionText = "How many positive integers 1-100,000,000 (inclusive):\r\na) are not divisible by 60\r\nand simultaneously\r\nb) don't contain a digit 7?",
+                    QuestionLink = "https://cses.fi/book/book.pdf",
+                    Answer = "42160996",
+                    ExampleAnswer = 2362934d,
+                    Minutes = 20f,
+                }
+            },
+            {
+                CaseQuestionEnum.CsesDominos,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.CsesDominos,
+                    QuestionText = "How many complete tilings of a 3x20 grid are there using only 2x1 and 1x2 dominoes?\r\nEvery cell in the 3x20 grid should be covered by half of a domino.\r\n\r\nHint: It might be worth identifying each of the 4 'ways' a cell can be covered in the tiling with a unique symbol.",
+                    QuestionLink = "https://cses.fi/book/book.pdf",
+                    Answer = "413403",
+                    ExampleAnswer = 3213190d,
+                    Minutes = 20f,
+                }
+            },
+            {
+                CaseQuestionEnum.CsesDerangements,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.CsesDerangements,
+                    QuestionText = "Andrew and his 9 closest friends are all playing a game of musical chairs.\r\nIn this special game, instead of a chair being taken away, every person has to sit on a different chair to where they sat at the very start of the game, and they can't all simulataneously sit in the same seats as they were all simultaneously in on any previous round.\r\n\r\nNot counting how the players were sat at the start as a round, what is the highest number of rounds the game can last in total?",
+                    QuestionLink = "https://cses.fi/book/book.pdf",
+                    Answer = "1334961",
+                    ExampleAnswer = 3213190d,
+                    Minutes = 15f,
+                }
             }
         };
     }
