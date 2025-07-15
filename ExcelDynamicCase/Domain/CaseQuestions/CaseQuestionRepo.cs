@@ -1,6 +1,7 @@
 ﻿using Microsoft.Office.Interop.Excel;
 using System.Collections.Generic;
 using System.Diagnostics;
+using static System.Net.WebRequestMethods;
 
 namespace ExcelDynamicCase.Domain.CaseQuestions
 {
@@ -2796,6 +2797,18 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     Minutes = 22f,
                 }
             },
+            {
+                CaseQuestionEnum.CsesValidParentheses,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.CsesValidParentheses,
+                    QuestionText = "How many valid parentheses expressions can you make out of exactly 20 left brackets and exactly 20 right brackets?\r\n\r\nA valid parenthesis expression is one where if we choose any prefix of the expression, it contains at least as many left parentheses as right parentheses.\r\nFor example, with three left brackets and three right brackets, the valid expressions would be:\r\n()()()\r\n(())()\r\n()(())\r\n((()))\r\n(()())",
+                    QuestionLink = "https://cses.fi/book/book.pdf",
+                    Answer = "6564120420",
+                    ExampleAnswer = 2362934d,
+                    Minutes = 13f,
+                }
+            }
         };
     }
 }

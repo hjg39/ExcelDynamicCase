@@ -93,6 +93,7 @@
         GeneralShapleyShubik = 80002,
         GeneralPiratePuzzle = 80003,
         CsesDeBrujinSequence = 90000,
+        CsesValidParentheses = 90001,
         RestrictedMod = 100_000,
         RestrictedConsecutiveSum = 100_001,
         RestrictedFindStringLength = 100_002,
