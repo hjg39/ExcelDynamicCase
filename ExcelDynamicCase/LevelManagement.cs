@@ -76,9 +76,14 @@ namespace ExcelDynamicCase
 
         private static void ApplyReflectionsLogic(int attemptCount)
         {
+            bool rareEffectApplied = false;
+
             try
             {
+
+
                 //Globals.ThisWorkbook.UnHookSheetChangeEvent();
+
                 Globals.Workings.DisplayRightToLeft = _random.NextDouble() < 0.5;
 
                 Globals.Workings.DisplayPageBreaks = _random.NextDouble() < 0.05;
@@ -95,14 +100,16 @@ namespace ExcelDynamicCase
 
                 if (!(r is null) && r.Cells.Count > 1)
                 {
-                    if (_random.NextDouble() < 0.2)
+                    if (_random.NextDouble() < 0.1)
                     {
                         r.Interior.Color = 16776156;
+                        rareEffectApplied = true;
                     }
 
-                    if (_random.NextDouble() < 0.2)
+                    if (_random.NextDouble() < 0.1)
                     {
                         r.Font.Color = 16316664;
+                        rareEffectApplied = true;
                     }
 
                     if (_random.NextDouble() < 0.1)
@@ -119,9 +126,10 @@ namespace ExcelDynamicCase
                     // {
                     //     r.HorizontalAlignment = _random.NextDouble() < 0.5 ? HorizontalAlignment.Left : HorizontalAlignment.Right;
                     // }
-                    if (_random.NextDouble() < 0.2)
+                    if (_random.NextDouble() < 0.05)
                     {
                         r.Orientation = _random.NextDouble() < 0.5 ? 90 : -90;
+                        rareEffectApplied = true;
                     }
                     if (_random.NextDouble() < 0.1)
                     {
@@ -129,16 +137,6 @@ namespace ExcelDynamicCase
                         {
                             Globals.Workings.Application.ActiveWindow.FreezePanes = true;
                         }
-                    }
-
-                    if (_random.NextDouble() < 0.05)
-                    {
-                        Globals.Workings.Application.Calculation = _random.NextDouble() < 0.5 ? XlCalculation.xlCalculationAutomatic : XlCalculation.xlCalculationManual;
-                    }
-
-                    if (_random.NextDouble() < 0.05)
-                    {
-                        Globals.Workings.Application.ReferenceStyle = _random.NextDouble() < 0.5 ? XlReferenceStyle.xlR1C1 : XlReferenceStyle.xlA1;
                     }
                 }
 
@@ -154,7 +152,10 @@ namespace ExcelDynamicCase
                         MessageBox.Show("Unable to trigger reflections events for 40 attempts, will crash if reaches 60.");
                     }
 
-                    Task.Delay(3000).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => ApplyReflections(attemptCount + 1), null));
+                    if (!rareEffectApplied)
+                    {
+                        Task.Delay(3000).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => ApplyReflections(attemptCount + 1), null));
+                    }
                 }
                 else
                 {

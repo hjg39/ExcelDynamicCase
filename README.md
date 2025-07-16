@@ -58,13 +58,13 @@ If you want to build or modify the source code:
 Zame (Twinleaf Town: Remastered), (Battle! Mercury (Barry's Ancestor))  
 https://www.youtube.com/@The_Zame  
 https://www.patreon.com/join/TheZame  
-https://www.youtube.com/watch?v=j9iqC5-xAAM  
-https://www.youtube.com/watch?v=Qsk0rCuuRso  
 
 Kevin Grim (BATTLE! Cynthia)  
 https://www.youtube.com/@kevingrim  
 https://soundcloud.com/kevin_grim  
-https://www.youtube.com/watch?v=YtB8HTv6xTI
 
 Lala19357 - The Zephyr  
 https://www.youtube.com/user/lala19357
+
+VanilluxePavilion
+https://www.youtube.com/@VanilluxePavilion

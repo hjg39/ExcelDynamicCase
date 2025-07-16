@@ -113,15 +113,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - PaulBarnhurst
   - m_GUID: 34282553b6ee56c478cb3ddd27c28659
-    m_Address: Assets/Audio/Alice.mp3
+    m_Address: Assets/Audio/LanaBanana.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Alice
+    - LanaBanana
   - m_GUID: 2afb796f1d01f944ebf7b4e8558d6441
     m_Address: Assets/Audio/LakeVerity.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - LakeVerity
+  - m_GUID: eee7721ae8368ac4b8082f8cb5ff182c
+    m_Address: Assets/Audio/Alice.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Alice
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a7938880f27d61e4f8e2da6f1f73863d, type: 2}
   m_SchemaSet:
