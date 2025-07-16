@@ -36,5 +36,6 @@ namespace Assets.ExcelDomain
 
         BasicCurated = 100,
         DivineCuratedAlice = 101,
+        DivineCuratedLanaBanana = 102,
     }
 }

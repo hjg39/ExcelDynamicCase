@@ -554,7 +554,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.EulerCountingSummations,
-                    QuestionText = "It is possible to write five as a sum in exactly six different ways:\r\n\r\n4+1\r\n3+2\r\n3+1+1\r\n3+1+1\r\n2+2+1\r\n2+1+1+1\r\n1+1+1+1+1\r\n\r\nHow many different ways can one hundred be written as a sum of at least two positive integers?",
+                    QuestionText = "It is possible to write five as a sum in exactly six different ways:\r\n\r\n4+1\r\n3+2\r\n3+1+1\r\n2+2+1\r\n2+1+1+1\r\n1+1+1+1+1\r\n\r\nHow many different ways can one hundred be written as a sum of at least two positive integers?",
                     QuestionLink = "https://projecteuler.net/problem=76",
                     Answer = "190569291",
                     ExampleAnswer = 3213290d,
@@ -2370,7 +2370,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.WikiGaleShapley,
-                    QuestionText = "Pair up the 10 applicants with the assigned universities such that each applicant is matched to exactly one university and no blocking pair exists - i.e. there is no pair of one applicant and one university who are not matched to each other, who would both prefer to be matched to easy other.\r\n\r\nAnswer with the list of pairs.",
+                    QuestionText = "Pair up the 10 applicants with the assigned universities such that each applicant is matched to exactly one university and no blocking pair exists - i.e. there is no pair of one applicant and one university who are not matched to each other, who would both prefer to be matched to each other.\r\n\r\nAnswer with the list of pairs.\r\nBe careful with the answer format.",
                     QuestionLink = "https://en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm",
                     Data = new Dictionary<string, object[,]>()
                     {

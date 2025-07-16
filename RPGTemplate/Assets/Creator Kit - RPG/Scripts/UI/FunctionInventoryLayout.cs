@@ -49,8 +49,11 @@ namespace Assets.Creator_Kit___RPG.Scripts.UI
             int[] expert = BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.ExpertAggregates);
             int[] divine = BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.DivineAggregates);
             int[] basicCurated = BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.BasicCurated);
-            int[] divineCurated = BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.DivineCuratedAlice);
 
+            List<int> divineCuratedList = new();
+            divineCuratedList.AddRange(BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.DivineCuratedAlice));
+            divineCuratedList.AddRange(BattleManager.GetQuestionsByRewardClassification(QuestionRewardClassification.DivineCuratedLanaBanana));
+            int[] divineCurated = divineCuratedList.ToArray();
 
 
             List<int> pureCompletedQuestions = saveData.PureCompletedQuestions;

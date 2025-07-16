@@ -132,6 +132,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - MichaelJarman2
+  - m_GUID: 0afe9d2cfed2b694097adab700985155
+    m_Address: Assets/Audio/LanaBanana.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LanaBanana
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a7938880f27d61e4f8e2da6f1f73863d, type: 2}
   m_SchemaSet:

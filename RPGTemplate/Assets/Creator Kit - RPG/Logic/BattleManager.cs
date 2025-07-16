@@ -70,6 +70,8 @@ namespace Assets.Creator_Kit___RPG.Logic
                     return new int[] { 100_000, 100_001, 100_002, 100_003, 100_004, 100_006, 100_007 };
                 case QuestionRewardClassification.DivineCuratedAlice:
                     return new int[] { 100_005 };
+                case QuestionRewardClassification.DivineCuratedLanaBanana:
+                    return new int[] { };
                 default:
                     throw new NotImplementedException();
             }
