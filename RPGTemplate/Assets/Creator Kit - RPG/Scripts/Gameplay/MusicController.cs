@@ -25,15 +25,32 @@ public class MusicController : MonoBehaviour
         await PlayAsync(DefaultKey, immediate: true);
     }
 
-    public async void CrossFadeTo(string key)
+    public async void CrossFadeTo(string originalKey)
     {
-        if (lastUsedKey == key)
+        string key = originalKey;
+
+        if (lastUsedKey == originalKey)
         {
             return;
         }
 
+        if (originalKey == "MichaelJarman")
+        {
+            switch (Random.Range(0, 3))
+            {
+                case 1:
+                    key = "MichaelJarman1";
+                    break;
+                case 2:
+                    key = "MichaelJarman2";
+                    break;
+                default:
+                    break;
+            }
+        }
+
         await PlayAsync(key, immediate: false);
-        lastUsedKey = key;
+        lastUsedKey = originalKey;
     }
 
     public void CrossFadeIntoBattle(string addressableLabel)       // called when combat ends

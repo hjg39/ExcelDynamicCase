@@ -113,10 +113,10 @@ MonoBehaviour:
     m_SerializedLabels:
     - PaulBarnhurst
   - m_GUID: 34282553b6ee56c478cb3ddd27c28659
-    m_Address: Assets/Audio/LanaBanana.mp3
+    m_Address: Assets/Audio/Champion1.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
-    - LanaBanana
+    - MichaelJarman1
   - m_GUID: 2afb796f1d01f944ebf7b4e8558d6441
     m_Address: Assets/Audio/LakeVerity.mp3
     m_ReadOnly: 0
@@ -127,6 +127,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Alice
+  - m_GUID: 5bfe62a46215d8141ba766d049e4b495
+    m_Address: Assets/Audio/Champion2.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MichaelJarman2
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a7938880f27d61e4f8e2da6f1f73863d, type: 2}
   m_SchemaSet:
