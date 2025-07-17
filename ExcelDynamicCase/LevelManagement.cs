@@ -27,6 +27,8 @@ namespace ExcelDynamicCase
             => CaseQuestionRepo.CaseQuestions[questionCode];
 
         private static LanaOverlay LanaOverlay { get; set; }
+        private static bool IsOverlayOpenAndNotClosed { get; set; }
+
 
         public static CancellationTokenSource BattleTimerCts { get; set; }
 
@@ -60,7 +62,9 @@ namespace ExcelDynamicCase
                     _ = new System.Windows.Application();
 
                 LanaOverlay = new LanaOverlay();
+                LanaOverlay.Closed += LanaOverlay_Closed;
                 LanaOverlay.Show();
+                IsOverlayOpenAndNotClosed = true;
             }
 
             Task.Delay(TimeSpan.FromMinutes(caseQuestion.Minutes), cts.Token).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => StopBattle(
@@ -69,6 +73,19 @@ namespace ExcelDynamicCase
                     BattleResultId = Guid.NewGuid(),
                     IsSuccess = false,
                 }), null), cts.Token);
+        }
+
+        private static void LanaOverlay_Closed(object sender, EventArgs e)
+        {
+            if (IsOverlayOpenAndNotClosed)
+            {
+                StopBattle(new BattleResult()
+                {
+                    BattleResultId = Guid.NewGuid(),
+                    IsSuccess = false,
+                    IsPure = false,
+                });
+            }
         }
 
         private static void ApplyReflections(int attemptCount = 0)
@@ -180,6 +197,17 @@ namespace ExcelDynamicCase
             }
         }
 
+        public static void CloseOverlay()
+        {
+            IsOverlayOpenAndNotClosed = false;
+
+            if (LanaOverlay == null) return;      // nothing to close
+
+            // always hop onto the window’s UI thread
+            LanaOverlay.Dispatcher.Invoke(() => LanaOverlay.Close());
+            LanaOverlay = null;
+        }
+
         public static void StopBattle(BattleResult battleResult, int attemptCount = 0)
         {
             if (attemptCount == 0)
@@ -199,6 +227,8 @@ namespace ExcelDynamicCase
         {
             try
             {
+                CloseOverlay();
+
                 BattleTimerCts.Cancel();
                 Globals.ThisWorkbook.UnHookSheetChangeEvent();
 
