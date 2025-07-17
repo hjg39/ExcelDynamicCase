@@ -53,7 +53,7 @@ namespace ExcelDynamicCase
 
             if (caseQuestion.ReflectionModifier)
             {
-                Task.Delay(TimeSpan.FromMinutes(3), cts.Token).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => ApplyReflections(), cts.Token));
+                Task.Delay(TimeSpan.FromMinutes(3), cts.Token).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => ApplyReflections(cts.Token), null));
             }
 
             if (caseQuestion.WhirlpoolBananaModifier && RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -88,22 +88,27 @@ namespace ExcelDynamicCase
             }
         }
 
-        private static void ApplyReflections(int attemptCount = 0)
+        private static void ApplyReflections(CancellationToken cancellationToken, int attemptCount = 0)
         {
+            if (cancellationToken.IsCancellationRequested)
+            {
+                return;
+            }
+
             if (attemptCount == 0)
             {
                 lock (_lockObject)
                 {
-                    ApplyReflectionsLogic(attemptCount);
+                    ApplyReflectionsLogic(attemptCount, cancellationToken);
                 }
             }
             else
             {
-                ApplyReflectionsLogic(attemptCount);
+                ApplyReflectionsLogic(attemptCount, cancellationToken);
             }
         }
 
-        private static void ApplyReflectionsLogic(int attemptCount)
+        private static void ApplyReflectionsLogic(int attemptCount, CancellationToken cancellationToken)
         {
             bool rareEffectApplied = false;
 
@@ -170,7 +175,7 @@ namespace ExcelDynamicCase
                 }
 
 
-                Task.Delay(TimeSpan.FromMinutes(1)).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => ApplyReflections(), null));
+                Task.Delay(TimeSpan.FromMinutes(1)).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => ApplyReflections(cancellationToken), null));
             }
             catch (Exception)
             {
@@ -183,7 +188,7 @@ namespace ExcelDynamicCase
 
                     if (!rareEffectApplied)
                     {
-                        Task.Delay(3000).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => ApplyReflections(attemptCount + 1), null));
+                        Task.Delay(3000, cancellationToken).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => ApplyReflections(cancellationToken, attemptCount + 1), null));
                     }
                 }
                 else
