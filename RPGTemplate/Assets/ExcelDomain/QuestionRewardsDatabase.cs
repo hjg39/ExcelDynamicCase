@@ -27,7 +27,8 @@ namespace Assets.ExcelDomain
             { QuestionRewardClassification.ExpertDates, new string[] { "DAYS360", "EDATE", "EOMONTH", "ISOWEEKNUM", "NETWORKDAYS", "NETWORKDAYS.INTL", "TODAY", "WEEKDAY", "WEEKNUM", "WORKDAY", "WORKDAY.INTL", "CHOOSECOLS", "CHOOSEROWS" }  },
 
             { QuestionRewardClassification.BasicCurated, new string[] { "CEILING.PRECISE", "DECIMAL", "TREND", "SLN", "SLOPE", "QUOTIENT", "FLOOR.PRECISE", "GROWTH", "IMABS", "CSC", "SEC", "COT", "ASC", "PERCENTILE.INC","PERCENTILE.EXC", "POWER"  }  },
-            { QuestionRewardClassification.DivineCuratedAlice, DivineCuratedRewards }
+            { QuestionRewardClassification.DivineCuratedAlice, DivineCuratedRewards },
+            { QuestionRewardClassification.DivineCuratedLanaBanana, DivineCuratedRewards }
 
         };
     }

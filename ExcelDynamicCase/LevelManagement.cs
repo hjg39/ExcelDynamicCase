@@ -10,6 +10,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
+using LanaBananaDivineQuestionModifierProject;
 
 namespace ExcelDynamicCase
 {
@@ -25,10 +26,11 @@ namespace ExcelDynamicCase
         public static CaseQuestion GetCaseQuestion(CaseQuestionEnum questionCode)
             => CaseQuestionRepo.CaseQuestions[questionCode];
 
+        private static LanaOverlay LanaOverlay { get; set; }
+
         public static CancellationTokenSource BattleTimerCts { get; set; }
 
         public static CancellationTokenSource WaitForNextBattleCts { get; set; }
-
 
         public static void StartCaseQuestion()
         {
@@ -54,7 +56,11 @@ namespace ExcelDynamicCase
 
             if (caseQuestion.WhirlpoolBananaModifier && RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                //Task.Delay(TimeSpan.FromMinutes(3), cts.Token).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => , cts.Token));
+                if (System.Windows.Application.Current == null)
+                    _ = new System.Windows.Application();
+
+                LanaOverlay = new LanaOverlay();
+                LanaOverlay.Show();
             }
 
             Task.Delay(TimeSpan.FromMinutes(caseQuestion.Minutes), cts.Token).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => StopBattle(

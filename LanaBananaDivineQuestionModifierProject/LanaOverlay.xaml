@@ -1,0 +1,44 @@
+﻿<Window x:Class="LanaBananaDivineQuestionModifierProject.LanaOverlay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Topmost="True"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        Loaded="Window_Loaded"
+        Opacity="0.2"
+        >
+
+    <Grid>
+        <Image x:Name="Banana"
+       Width="256" Height="256"
+       HorizontalAlignment="Center"
+       VerticalAlignment="Center"
+       Source="pack://siteoforigin:,,,/Media/banana.png"
+       RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform x:Name="BananaRotate"/>
+                    <TranslateTransform x:Name="BananaTranslate"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <!-- Banana #2 (identical markup) -->
+        <Image x:Name="Banana2"
+       Width="256" Height="256"
+       HorizontalAlignment="Center"
+       VerticalAlignment="Center"
+       Source="pack://siteoforigin:,,,/Media/banana.png"
+       RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform x:Name="Banana2Rotate"/>
+                    <TranslateTransform x:Name="Banana2Translate"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+    </Grid>
+</Window>

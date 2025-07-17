@@ -2949,7 +2949,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                         }
                     },
                     Answer = "0001000101100001100000011000000100000001",
-                    ExampleAnswer = "10101010100101010101010101010101000101",
+                    ExampleAnswer = "'10101010100101010101010101010101000101",
                     Minutes = 45f,
                 }
             }
