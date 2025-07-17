@@ -16,7 +16,7 @@
        Width="256" Height="256"
        HorizontalAlignment="Center"
        VerticalAlignment="Center"
-       Source="pack://application:,,,/Media/banana.png"
+       Source="pack://application:,,,/LanaBananaDivineQuestionModifierProject;component/Media/banana.png"
        RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -31,7 +31,7 @@
        Width="256" Height="256"
        HorizontalAlignment="Center"
        VerticalAlignment="Center"
-       Source="pack://application:,,,/Media/banana.png"
+       Source="pack://application:,,,/LanaBananaDivineQuestionModifierProject;component/Media/banana.png"
        RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
             <Image.RenderTransform>
                 <TransformGroup>
