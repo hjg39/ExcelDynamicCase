@@ -8,7 +8,7 @@
         ShowInTaskbar="False"
         ResizeMode="NoResize"
         Loaded="Window_Loaded"
-        Opacity="0.2"
+        Opacity="0.1"
         >
 
     <Grid>
