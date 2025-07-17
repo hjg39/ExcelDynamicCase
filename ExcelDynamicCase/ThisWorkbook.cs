@@ -1,5 +1,6 @@
 ﻿using ExcelDynamicCase.PipelineToUnity;
 using ExcelDynamicCase.Utility;
+using LanaBananaDivineQuestionModifierProject;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Diagnostics;
@@ -133,6 +134,7 @@ namespace ExcelDynamicCase
 
         private void ThisWorkbook_Shutdown(object sender, EventArgs e)
         {
+            LevelManagement.CloseOverlay();
             PipelineToUnity.PipelineToUnity.ClosePipe();
         }
 

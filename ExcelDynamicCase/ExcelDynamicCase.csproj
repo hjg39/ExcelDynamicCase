@@ -19,7 +19,7 @@
     <PublishUrl>..\ExcelDynamicCase\publish\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.54</ApplicationVersion>
+    <ApplicationVersion>1.0.0.58</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -74,6 +74,8 @@
     <Reference Include="HtmlAgilityPack, Version=1.12.1.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.12.1\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
@@ -119,6 +121,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -239,6 +242,10 @@
     <ProjectReference Include="..\ExcelUnityPipeline\ExcelUnityPipeline.csproj">
       <Project>{9130accf-a59f-42e6-96b9-555c538f46c8}</Project>
       <Name>ExcelUnityPipeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LanaBananaDivineQuestionModifierProject\LanaBananaDivineQuestionModifierProject.csproj">
+      <Project>{2ad58ddc-8fd7-4ede-a333-62e15c416637}</Project>
+      <Name>LanaBananaDivineQuestionModifierProject</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -29,5 +29,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
         public string[] AllowedFunctions = Array.Empty<string>();
 
         public bool ReflectionModifier = false;
+
+        public bool WhirlpoolBananaModifier = false;
     }
 }
