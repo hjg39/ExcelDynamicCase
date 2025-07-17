@@ -71,7 +71,7 @@ namespace Assets.Creator_Kit___RPG.Logic
                 case QuestionRewardClassification.DivineCuratedAlice:
                     return new int[] { 100_005 };
                 case QuestionRewardClassification.DivineCuratedLanaBanana:
-                    return new int[] { };
+                    return new int[] { 100_008 };
                 default:
                     throw new NotImplementedException();
             }
@@ -183,6 +183,7 @@ namespace Assets.Creator_Kit___RPG.Logic
             100_005 => 30f,
             100_006 => 4f,
             100_007 => 3f,
+            100_008 => 45f,
             _ => throw new NotImplementedException(),
         };
     }

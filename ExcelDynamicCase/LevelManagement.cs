@@ -9,6 +9,7 @@ using System.Threading;
 using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 
 namespace ExcelDynamicCase
 {
@@ -49,6 +50,11 @@ namespace ExcelDynamicCase
             if (caseQuestion.ReflectionModifier)
             {
                 Task.Delay(TimeSpan.FromMinutes(3), cts.Token).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => ApplyReflections(), cts.Token));
+            }
+
+            if (caseQuestion.WhirlpoolBananaModifier && RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                //Task.Delay(TimeSpan.FromMinutes(3), cts.Token).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => , cts.Token));
             }
 
             Task.Delay(TimeSpan.FromMinutes(caseQuestion.Minutes), cts.Token).ContinueWith(_ => ThisWorkbook.ExcelCtx.Post(__ => StopBattle(

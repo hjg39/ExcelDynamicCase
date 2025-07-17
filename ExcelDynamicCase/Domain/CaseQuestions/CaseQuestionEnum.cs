@@ -105,5 +105,6 @@
         AliceIcePuzzle = 100_005,
         RestrictedFactorial = 100_006,
         RestrictedSubtraction = 100_007,
+        LanaWhirlpoolPuzzle = 100_008,
     }
 }
