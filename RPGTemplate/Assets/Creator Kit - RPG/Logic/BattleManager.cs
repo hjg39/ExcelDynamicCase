@@ -183,7 +183,7 @@ namespace Assets.Creator_Kit___RPG.Logic
             100_005 => 30f,
             100_006 => 4f,
             100_007 => 3f,
-            100_008 => 45f,
+            100_008 => 60f,
             _ => throw new NotImplementedException(),
         };
     }
