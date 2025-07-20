@@ -48,7 +48,6 @@
         MEWC2021LumberjackLevel2 = 40004,
         MEWC2021ItIsASnakeLevel1 = 40005,
         MEWC2021ItIsASnakeLevel2 = 40006,
-        MEWC2021ItIsASnakeLevel3 = 40007,
         MEWC2022TheSocialNetworkL1 = 40008,
         MEWC2022TheSocialNetworkL2 = 40009,
         MEWC2022TheSocialNetworkL3 = 40010,

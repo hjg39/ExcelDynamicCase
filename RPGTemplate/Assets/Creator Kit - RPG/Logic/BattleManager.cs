@@ -126,7 +126,6 @@ namespace Assets.Creator_Kit___RPG.Logic
             40004 => 5f,
             40005 => 10f,
             40006 => 12f,
-            40007 => 15f,
             40008 => 3f,
             40009 => 3f,
             40010 => 8f,
