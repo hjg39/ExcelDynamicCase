@@ -578,7 +578,7 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                 new CaseQuestion()
                 {
                     Id = CaseQuestionEnum.CodeGolf9x9Rooks,
-                    QuestionText = "This a puzzle involving a 9x9 grid.  Your goal is to exactly one rook (R) in each row, column, diagonal and region [regions represented by the numbers in the grid below].\r\n\r\nAnswer in a format where you concatenate the positions in the grid, with '.' representing no rook and R representing a Rook.",
+                    QuestionText = "This a puzzle involving a 9x9 grid.  Your goal is to exactly one rook (R) in each row, column and region [regions represented by the numbers in the grid below].\r\n\r\nAnswer in a format where you concatenate the positions in the grid, with '.' representing no rook and R representing a Rook.",
                     QuestionLink = "https://codegolf.stackexchange.com/questions/282183/solve-queens-puzzle",
                     Data = new Dictionary<string, object[,]>
                     {
