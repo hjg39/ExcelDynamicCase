@@ -2899,6 +2899,236 @@ namespace ExcelDynamicCase.Domain.CaseQuestions
                     ExampleAnswer = "'10101010100101010101010101010101000101",
                     Minutes = 60f,
                 }
+            },
+            {
+                CaseQuestionEnum.MEWCUK2025MaliceInWonderlandL3,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.MEWCUK2025MaliceInWonderlandL3,
+                    QuestionText = "For each row there is a unique 'answer' that is possible out of all of the options when the game is viewed as a whole.\r\nAnswer with a semi-colon concatenated set of the appropriate answers.",
+                    QuestionLink = "https://excel-esports.uk/shop-full/",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Data",
+                            new object[,]
+                            {
+                                {"Not the answer to any other game in this chapter","9,11,13"},
+                                {"Not the answer to any other game in this chapter","8,17,19"},
+                                {"Not the answer to any other game in this chapter","5,10,11"},
+                                {"Not the answer to any other game in this chapter","9,16,18"},
+                                {"Not the answer to any other game in this chapter","11,12,14"},
+                                {"Not the answer to any other game in this chapter","3,13,20"},
+                                {"Not the answer to any other game in this chapter","13,17,19"},
+                                {"Not the answer to any other game in this chapter","8,11,15"},
+                                {"Not the answer to any other game in this chapter","5,8,11"},
+                                {"Not the answer to any other game in this chapter","8,12,18"},
+                                {"Not the answer to any other game in this chapter","4,8,17"},
+                                {"Not the answer to any other game in this chapter","2,6,9"},
+                                {"Not the answer to any other game in this chapter","3,10,12"},
+                                {"Not the answer to any other game in this chapter","2,5,7"},
+                                {"Not the answer to any other game in this chapter","2,4,13"},
+                                {"Not the answer to any other game in this chapter","4,12,13"},
+                                {"Not the answer to any other game in this chapter","11,13,19"},
+                                {"The same answer as one other game in this chapter","2,11,20"},
+                                {"The same answer as one other game in this chapter","13,15,17"},
+                                {"The same answer as one other game in this chapter","3,7,13"},
+                                {"The same answer as one other game in this chapter","6,11,21"},
+                            }
+                        }
+                    },
+                    Answer = "9;8;10;16;14;20;17;15;5;18;4;6;3;7;2;12;19;11;13;13;11",
+                    ExampleAnswer = "1;2;3;4;5;6",
+                    Minutes = 5f,
+                }
+            },
+            {
+                CaseQuestionEnum.APPSIncrement,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.APPSIncrement,
+                    QuestionText = "You are given three integers A, B and C.\r\nFind the minimum number of operations required to make A, B and C all equal by repeatedly performing the following two kinds of operations in any order:\r\n - Choose two among A, B and C, then increase both by 1.\r\n - Choose one among A, B and C, then increase it by 2.\r\nA = 13, B = 48, C = 20",
+                    QuestionLink = "https://github.com/hendrycks/apps",
+                    Answer = "33",
+                    ExampleAnswer = 25,
+                    Minutes = 3f,
+                }
+            },
+            {
+                CaseQuestionEnum.APPSBurger,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.APPSBurger,
+                    QuestionText = "In some other world, today is Christmas.\r\nMr. Takaha decides to make a multi-dimensional burger in his party. A level-L burger (L is an integer greater than or equal to 0) is the following thing:\r\n - A level-0 burger is a patty.\r\n - A level-L burger (L \\geq 1) is a bun, a level-(L-1) burger, a patty, another level-(L-1) burger and another bun, stacked vertically in this order from the bottom.\r\nFor example, a level-1 burger and a level-2 burger look like BPPPB and BBPPPBPBPPPBB (rotated 90 degrees), where B and P stands for a bun and a patty.\r\nThe burger Mr. Takaha will make is a level-50 burger. Lunlun the Dachshund will eat 604208208396631 layers from the bottom of this burger (a layer is a patty or a bun). How many patties will she eat?",
+                    QuestionLink = "https://github.com/hendrycks/apps",
+                    Answer = "302104104198311",
+                    ExampleAnswer = "236293222991132",
+                    Minutes = 7f,
+                }
+            },
+            {
+                CaseQuestionEnum.APPSStormtroopers,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.APPSStormtroopers,
+                    QuestionText = "Han Solo stands at cell reference G5 with his duplex laser gun.\r\nAcross the battlefield, 60 Imperial stormtroopers are positioned at various Excel-style cell locations listed below.\r\nThe laser destroys all stormtroopers that lie on a straight line passing through G5.\r\nEach unique slope from G5 to a stormtrooper’s cell defines a distinct firing direction.\r\nVertical and horizontal alignments count as separate directions.\r\nDetermine the minimum number of laser shots Han Solo needs to destroy all stormtroopers.\r\nAnswer with a single integer.",
+                    QuestionLink = "https://github.com/hendrycks/apps",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Stormtrooper Co-ordinates",
+                            new object[,]
+                            {
+                                { "A1" },{ "A5" },{ "A9" },{ "A13" },{ "A17" },
+                                { "B2" },{ "B4" },{ "B6" },{ "B8" },{ "B10" },
+                                { "C3" },{ "C5" },{ "C7" },{ "C9" },{ "C11" },
+                                { "D1" },{ "D4" },{ "D7" },{ "D10" },{ "D13" },
+                                { "E2" },{ "E6" },{ "E10" },{ "E14" },{ "E18" },
+                                { "F3" },{ "F6" },{ "F9" },{ "F12" },{ "F15" },
+                                { "G1" },{ "G2" },{ "G3" },{ "G4" },{ "G6" },
+                                { "G7" },{ "G8" },{ "G9" },{ "G10" },{ "G11" },
+                                { "H2" },{ "H4" },{ "H6" },{ "H8" },{ "H10" },
+                                { "I1" },{ "I5" },{ "I9" },{ "I13" },{ "I17" },
+                                { "J2" },{ "J7" },{ "J12" },{ "J17" },{ "J22" },
+                                { "K3" },{ "K6" },{ "K9" },{ "K12" },{ "K15" },
+                                { "L2" },{ "L8" },{ "L14" },{ "L20" },{ "L26" }
+                            }
+                        }
+                    },
+                    Answer = "39",
+                    ExampleAnswer = "22",
+                    Minutes = 6f,
+                }
+            },
+            {
+                CaseQuestionEnum.APPSBalancedPairs3D,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.APPSBalancedPairs3D,
+                    QuestionText = "In a 3D Excel grid, each cell reference represents a point in space where columns, rows, and sheets correspond to the x, y, and z axes respectively.\r\n\r\nYou can remove all points in a sequence of snaps. In one snap, you can remove any two points that have not yet been removed and that form a perfectly balanced pair.\r\n\r\nTwo points form a perfectly balanced pair if no other point still remaining lies within the minimum and maximum of their coordinates along each axis (x, y, z).\r\n\r\nDetermine one valid sequence of snaps (pairs of point indices) that removes all points. Each point must appear exactly once in the output.\r\n\r\nAnswer with the concatenated indexes of the pairs (first row = 1, second row = 2, etc) sorted as if they were numbers, then joined by semicolons.\r\n\r\nIf multiple valid sequences exist, always choose, at each snap, the valid pair with the smallest first index; break ties by the smallest second index.",
+                    QuestionLink = "https://github.com/hendrycks/apps",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Point Co-ordinates",
+                            new object[,]
+                            {
+                                { "S2!C2" },{ "S2!F12" },{ "S2!E9" },{ "S2!D9" },{ "S3!D9" },{ "S1!D2" },
+                                { "S1!F12" },{ "S3!H8" },{ "S3!F12" },{ "S2!F3" },{ "S2!A12" },{ "S2!B11" },
+                                { "S3!G13" },{ "S1!H8" },{ "S1!G13" },{ "S3!H4" },{ "S1!B11" },{ "S1!C10" },
+                                { "S2!H14" },{ "S1!A12" },{ "S1!D9" },{ "S1!G7" },{ "S1!H4" },{ "S1!H14" },
+                                { "S2!H4" },{ "S3!A1" },{ "S1!F3" },{ "S2!H8" },{ "S3!C10" },{ "S1!E3" },
+                                { "S3!C2" },{ "S1!E9" },{ "S1!G4" },{ "S2!A5" },{ "S2!C10" },{ "S3!A5" },
+                                { "S1!B1" },{ "S3!B11" },{ "S2!D2" },{ "S1!A1" },{ "S2!B6" },{ "S3!D2" },
+                                { "S1!F6" },{ "S2!B1" },{ "S3!A12" },{ "S3!B6" },{ "S3!F6" },{ "S1!B6" },
+                                { "S3!G4" },{ "S1!A5" },{ "S2!G13" },{ "S3!G7" },{ "S2!A1" },{ "S2!E3" },
+                                { "S3!F3" },{ "S1!C2" },{ "S3!B1" },{ "S2!G7" },{ "S3!E9" },{ "S3!E3" },
+                                { "S2!G4" },{ "S2!F6" },
+                            }
+                        }
+                    },
+                    Answer = "23;45;79;131;621;813;1027;1112;1415;1625;1718;1924;2032;2233;2328;2636;2935;3043;3439;3740;3845;4144;4246;4749;4850;5158;5255;5354;5657;5960;6162",
+                    ExampleAnswer = "12;34;56;78;910;1112;1314",
+                    Minutes = 18f,
+                }
+            },
+            {
+                CaseQuestionEnum.APPSTableStability,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.APPSTableStability,
+                    QuestionText = "Arthur bought a table with 24 legs. Each leg has a length and a removal cost (energy units).\r\n\r\nA table with k legs is stable if strictly more than half of the remaining legs have the maximum length among the remaining legs. (A 1-leg table is always stable; a 2-leg table is stable only if the two legs have the same length.)\r\n\r\nFind the minimum total energy Arthur must spend to make the table stable.\r\n\r\nAnswer with a single integer: the minimum energy.",
+                    QuestionLink = "https://github.com/hendrycks/apps",
+                    Data = new Dictionary<string, object[,]>()
+                    {
+                        {
+                            "Legs",
+                            new object[,]
+                            {
+                                { "Length", "Removal Cost" },
+                                {  2,   89 },
+                                {  3,   45 },
+                                {  3,   14 },
+                                {  4,  155 },
+                                {  5,   31 },
+                                {  5,  180 },
+                                {  5,   94 },
+                                {  6,  132 },
+                                {  6,  122 },
+                                {  6,   96 },
+                                {  7,  118 },
+                                {  7,   40 },
+                                {  7,  153 },
+                                {  7,   70 },
+                                {  8,  119 },
+                                {  8,   89 },
+                                {  8,   25 },
+                                {  8,  141 },
+                                {  9,   33 },
+                                {  9,  124 },
+                                {  9,   46 },
+                                { 10,  282 },
+                                { 10,   22 },
+                                { 10,   22 },
+                            }
+                        }
+                    },
+                    Answer = "1380",
+                    ExampleAnswer = "1001",
+                    Minutes = 6f,
+                }
+            },
+            {
+                CaseQuestionEnum.APPSSpongebob,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.APPSSpongebob,
+                    QuestionText = "Spongebob is tired of coming up with scenarios for games, so he simply asks you to count how many distinct rectangular tables with positive integer numbers of rows (n) and columns (m) have exactly 420 distinct squares in total.\r\n\r\nFor example, a 3×5 table has 26 distinct squares in total.\r\n\r\nFind how many (n, m) pairs exist that produce exactly 420 distinct squares.\r\n\r\nAnswer with a single integer: the count of valid pairs.",
+                    QuestionLink = "https://github.com/hendrycks/apps",
+                    Data = null,
+                    Answer = "10",
+                    ExampleAnswer = "6",
+                    Minutes = 12f,
+                }
+            },
+            {
+                CaseQuestionEnum.APPSSumOnes,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.APPSSumOnes,
+                    QuestionText = "Prof. Vasechkin wants to represent a positive integer as a sum of integers where each addend consists only of the digit 1 (e.g., 1, 11, 111, ...).\r\n\r\nYou may use plus or minus between addends.\r\nFor example, 121 can be written as 111 + 11 - 1, which uses 6 total digits '1'.\r\n\r\nFind the minimum total number of digits '1' needed to represent the number 79263 in this way.\r\n\r\nAnswer with a single integer.",
+                    QuestionLink = "https://github.com/hendrycks/apps",
+                    Data = null,
+                    Answer = "45",
+                    ExampleAnswer = "100",
+                    Minutes = 2f,
+                }
+            },
+            {
+                CaseQuestionEnum.APPSVasyaString,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.APPSVasyaString,
+                    QuestionText = "Vasya has a string of length 52, consisting only of the letters 'a' and 'b'. He may change at most 7 characters. The string is:\r\n\r\nabbaabbbaababbbaababbabbbaabbaababbbaababaabbabbaaab\r\n\r\nThe beauty of a string is the maximum length of a substring (consecutive sequence) consisting of equal letters. What is the maximum beauty he can achieve by changing no more than 7 characters?\r\n\r\nAnswer with a single integer.",
+                    QuestionLink = "https://github.com/hendrycks/apps",
+                    Data = null,
+                    Answer = "20",
+                    ExampleAnswer = "4",
+                    Minutes = 5f,
+                }
+            },
+            {
+                CaseQuestionEnum.APPSVowelEvenRule,
+                new CaseQuestion()
+                {
+                    Id = CaseQuestionEnum.APPSVowelEvenRule,
+                    QuestionText = "Your friend has some two-sided cards. Each card has a lowercase English letter on one side and a digit on the other. You currently see only one side of each card.\r\n\r\nYou want to verify the statement: \"If a card has a vowel on one side (a, e, i, o, u), then it has an even digit (0, 2, 4, 6, 8) on the other side.\" You may flip cards to see the other side.\r\n\r\nGiven the current visible sides string:\r\n\r\na2e7b8i1o3u5z0x4y6\r\n\r\nWhat is the minimum number of cards you must flip in the worst case to verify the statement? (Answer with a single integer.)",
+                    QuestionLink = "https://github.com/hendrycks/apps",
+                    Data = null,
+                    Answer = "9",
+                    ExampleAnswer = "2",
+                    Minutes = 3f,
+                }
             }
         };
     }

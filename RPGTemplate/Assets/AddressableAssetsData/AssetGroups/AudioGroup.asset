@@ -137,6 +137,31 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - LanaBanana
+  - m_GUID: 433b2d73a950cdd4ea97328cf54bc8bc
+    m_Address: Assets/Audio/Champion5.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MichaelJarman3
+  - m_GUID: 95d900eb1cdd9ec418c5d40d6a877fce
+    m_Address: Assets/Audio/Champion4.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MichaelJarman4
+  - m_GUID: aae14a0bf5a99a94bbb1752091fff046
+    m_Address: Assets/Audio/Champion7.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MichaelJarman5
+  - m_GUID: d20d99e3549064346a89cb0beed00eab
+    m_Address: Assets/Audio/Champion3.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MichaelJarman6
+  - m_GUID: 2ed30975013efa341bef5783d16afd96
+    m_Address: Assets/Audio/Champion6.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MichaelJarman7
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a7938880f27d61e4f8e2da6f1f73863d, type: 2}
   m_SchemaSet:

@@ -36,16 +36,11 @@ public class MusicController : MonoBehaviour
 
         if (originalKey == "MichaelJarman")
         {
-            switch (Random.Range(0, 3))
+            int i = Random.Range(0, 8);
+
+            if (i != 0)
             {
-                case 1:
-                    key = "MichaelJarman1";
-                    break;
-                case 2:
-                    key = "MichaelJarman2";
-                    break;
-                default:
-                    break;
+                key = $"MichaelJarman{i}";
             }
         }
 
